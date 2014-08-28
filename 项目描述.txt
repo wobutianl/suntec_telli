@@ -1,0 +1,71 @@
+1: UI（交互）
+	触发条件
+	界面显示方式
+	开启和终止提示方式
+
+2：功能
+	天气 + 股票（这都是要连接server的）
+	打开手机自带APP（可以不连接server）
+
+#################################################
+任务分配：
+	朱晓林 + 张健 ：语音识别与集成
+	林炳 + 潘勇飞： 数据解析与网络交互
+
+
+#################################################
+时间分配：
+
+第一周：确定详细设计
+	需求分析   	  （一天）
+	详细设计	  （一天）
+	UML图		  （一天）
+	接口与数据结构设计（一天半）
+	环境配置	  （半天）
+
+第二周：代码编写与界面
+	已有软件的交互收集（一天）
+	代码编写	  （四天）
+
+第三周：集成与测试与完善
+	集成与实机测试	（两天）
+	功能测试 	（一天）
+	细节完善	（两天）
+
+
+#####################################################
+android 开发环境配置
+	软件下载
+	eclipse: \\solar\pset\software\Android\R12\eclipse-SDK-3.6.1-win32.zip 
+	Android Development Toolkit: \\solar\pset\software\Android\R12\ADT-12.0.0.zip
+	Android SDK :　\\solar\pset\software\Android\R12\android-sdk-windows_r12.exe
+
+	配置：
+	   1：安装 Java 
+	   2：解压 Eclipse 和 SDK
+	   3：Eclipse -> help -> install new software -> add 
+		input :  adt &&  jar:file:/D:/ADT-12.0.0.zip!/
+	   4：将SDK下的Tools目录添加到 windows 环境
+	   5：后面参考：http://www.cnblogs.com/skynet/archive/2010/04/12/1709892.html
+
+PS：统一用：Java 1.6  &&  Android 2.3.1
+
+## Eclipse新建项目时候报此错误，Package name must have at least two identifiers
+解决办法：
+Package name :  com.domain.your_package_name
+
+## Path for project must have only one segment
+解决办法：
+Project -> Properties -> Run/Debug Settings:
+1. select "Launching New_configuration"
+2. Delete
+3. OK
+
+## git bush 里面，右键没有反映
+解决方法：
+在git bush 里右键，选择属性 -> 选项-> 编辑选项 -> 快速编辑模式
+
+#####################################################
+
+
+
