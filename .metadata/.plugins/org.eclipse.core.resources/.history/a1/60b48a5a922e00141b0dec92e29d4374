@@ -1,0 +1,36 @@
+package suntec_telli.voice;
+
+
+
+public class Record {
+
+	
+	/*
+	 * Begin to Record 
+	 * event by MainActivity
+	 */
+	public void BeginRecord(){
+		
+	}
+	
+	/*
+	 * end the Record and return waveType
+	 */
+	public String EndRecord(){
+		return "wave";
+	}
+	/*
+	 * phrase wave to TXT 
+	 */
+	public String PhraseWave(String wave) {
+		return "Txt";
+	}
+	
+    public static void main(String[] args){
+       
+
+    }
+
+
+    private String wave;
+}

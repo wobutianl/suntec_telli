@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="768" width="1024" x="107" y="121">
+<window height="768" maximized="true" width="1024" x="93" y="122">
 <fastViewData fastViewLocation="1024"/>
-<intro standby="true"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
@@ -16,11 +15,16 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="135" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="78" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="78" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -29,10 +33,110 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Record.java" partName="Record.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/Record.java" title="Record.java" tooltip="suntec_telli/src/suntec_telli/voice/Record.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/Record.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="758" selectionTopPixel="302"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataPhrase.java" partName="DataPhrase.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/DataPhrase.java" title="DataPhrase.java" tooltip="suntec_telli/src/suntec_telli/voice/DataPhrase.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/DataPhrase.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="428" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectServer.java" partName="ConnectServer.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/ConnectServer.java" title="ConnectServer.java" tooltip="suntec_telli/src/suntec_telli/voice/ConnectServer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/ConnectServer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="398" selectionTopPixel="36"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Suntec_telliActivity.java" partName="Suntec_telliActivity.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java" title="Suntec_telliActivity.java" tooltip="suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="350" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WaveInfo.java" partName="WaveInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/WaveInfo.java" title="WaveInfo.java" tooltip="suntec_telli/src/model/WaveInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/WaveInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="70" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecordInfo.java" partName="RecordInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/RecordInfo.java" title="RecordInfo.java" tooltip="suntec_telli/src/model/RecordInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/RecordInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="37" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SendMsgInfo.java" partName="SendMsgInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/SendMsgInfo.java" title="SendMsgInfo.java" tooltip="suntec_telli/src/model/SendMsgInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/SendMsgInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="41" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SendXMLInfo.java" partName="SendXMLInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/SendXMLInfo.java" title="SendXMLInfo.java" tooltip="suntec_telli/src/model/SendXMLInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/SendXMLInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="50" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReceiveXMLInfo.java" partName="ReceiveXMLInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/ReceiveXMLInfo.java" title="ReceiveXMLInfo.java" tooltip="suntec_telli/src/model/ReceiveXMLInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/ReceiveXMLInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="46" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReceiveMsgInfo.java" partName="ReceiveMsgInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/ReceiveMsgInfo.java" title="ReceiveMsgInfo.java" tooltip="suntec_telli/src/model/ReceiveMsgInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/ReceiveMsgInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="49" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="ReadMe.txt" partName="ReadMe.txt" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/ReadMe.txt" title="ReadMe.txt" tooltip="suntec_telli/src/suntec_telli/voice/ReadMe.txt" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/ReadMe.txt"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="563" selectionTopPixel="93"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbnfSettings.java" partName="AbnfSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/speech/setting/AbnfSettings.java" title="AbnfSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="70" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="MainActivity Manifest" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/AndroidManifest.xml" title="MainActivity Manifest" tooltip="MainActivity/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatDemo.java" partName="IatDemo.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/voicedemo/IatDemo.java" title="IatDemo.java" tooltip="MainActivity/src/com/iflytek/voicedemo/IatDemo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/voicedemo/IatDemo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/voicedemo/MainActivity.java" title="MainActivity.java" tooltip="MainActivity/src/com/iflytek/voicedemo/MainActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/voicedemo/MainActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="1206" selectionTopPixel="114"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TtsSettings.java" partName="TtsSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/speech/setting/TtsSettings.java" title="TtsSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/TtsSettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/speech/setting/TtsSettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatSettings.java" partName="IatSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/speech/setting/IatSettings.java" title="IatSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/IatSettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/speech/setting/IatSettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatSettings.java" partName="IatSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_ui_1.039_53ff2ca2/sample/SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java" title="IatSettings.java" tooltip="SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="64" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TtsSettings.java" partName="TtsSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_ui_1.039_53ff2ca2/sample/SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java" title="TtsSettings.java" tooltip="SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="381" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApkInstaller.java" partName="ApkInstaller.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_ui_1.039_53ff2ca2/sample/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java" title="ApkInstaller.java" tooltip="SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="454" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
@@ -40,6 +144,10 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -47,6 +155,9 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1409209124974">
@@ -77,19 +188,13 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.internal.introview" partName="Welcome">
-<viewState>
-<presentation currentPage="root" restore="true"/>
-<standbyPart/>
-</viewState>
-</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.ui.views.ContentOutline" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -147,8 +252,8 @@
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.ui.internal.introview"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -165,34 +270,33 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@f9aa66" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
-<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.19936958" ratioLeft="253" ratioRight="1016" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7496136" ratioLeft="485" ratioRight="162" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProgressView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.7598425" ratioLeft="772" ratioRight="244" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
@@ -207,12 +311,188 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/suntec_telli/voice/Record.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/suntec_telli/voice/DataPhrase.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/suntec_telli/voice/ConnectServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/WaveInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/RecordInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/SendMsgInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/SendXMLInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/ReceiveXMLInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/suntec_telli/src/model/ReceiveMsgInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/suntec_telli/src/suntec_telli/voice/ReadMe.txt"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/.project"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/project.properties"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/default.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/MainActivity/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MainActivity/src/com/iflytek/voicedemo/IatDemo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MainActivity/src/com/iflytek/voicedemo/MainActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MainActivity/src/com/iflytek/speech/setting/TtsSettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MainActivity/src/com/iflytek/speech/setting/IatSettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java"/>
+</editors>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="343" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="807" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="633" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="365" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="387" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="365" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="803" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="387" y="0"/>
+</item>
+<item historyLabel="WaveInfo.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="RecordInfo.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SendMsgInfo.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SendXMLInfo.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReceiveXMLInfo.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReceiveMsgInfo.java" index="8">
+<position info="not_deleted" x="49" y="0"/>
+</item>
+<item historyLabel="ReceiveXMLInfo.java" index="7">
+<position info="not_deleted" x="46" y="0"/>
+</item>
+<item historyLabel="RecordInfo.java" index="4">
+<position info="not_deleted" x="37" y="0"/>
+</item>
+<item historyLabel="SendMsgInfo.java" index="5">
+<position info="not_deleted" x="41" y="0"/>
+</item>
+<item historyLabel="SendXMLInfo.java" index="6">
+<position info="not_deleted" x="50" y="0"/>
+</item>
+<item historyLabel="WaveInfo.java" index="3">
+<position info="not_deleted" x="70" y="0"/>
+</item>
+<item historyLabel="ReceiveMsgInfo.java" index="8">
+<position info="not_deleted" x="49" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="387" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="235" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="428" y="0"/>
+</item>
+<item historyLabel="ReadMe.txt" index="9">
+<position info="not_deleted" x="563" y="0"/>
+</item>
+<item historyLabel="ConnectServer.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ConnectServer.java" index="2">
+<position info="not_deleted" x="236" y="0"/>
+</item>
+<item historyLabel="ConnectServer.java" index="2">
+<position info="not_deleted" x="296" y="0"/>
+</item>
+<item historyLabel="ConnectServer.java" index="2">
+<position info="not_deleted" x="392" y="0"/>
+</item>
+<item historyLabel="ConnectServer.java" index="2">
+<position info="not_deleted" x="398" y="0"/>
+</item>
+<item historyLabel="DataPhrase.java" index="1">
+<position info="not_deleted" x="428" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="803" y="0"/>
+</item>
+<item historyLabel=".project" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="project.properties" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="default.properties" index="12">
+<position info="not_deleted" x="393" y="0"/>
+</item>
+<item historyLabel="project.properties" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel=".project" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Record.java" index="0">
+<position info="not_deleted" x="758" y="0"/>
+</item>
+<item historyLabel="AbnfSettings.java" index="13">
+<position info="not_deleted" x="1207" y="0"/>
+</item>
+<item historyLabel="MainActivity Manifest" index="14"/>
+<item historyLabel="IatDemo.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="16">
+<position info="not_deleted" x="1206" y="1"/>
+</item>
+<item historyLabel="IatDemo.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AbnfSettings.java" index="13">
+<position info="not_deleted" x="1207" y="0"/>
+</item>
+<item historyLabel="TtsSettings.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="IatSettings.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AbnfSettings.java" index="13">
+<position info="not_deleted" x="70" y="0"/>
+</item>
+<item historyLabel="IatSettings.java" index="19">
+<position info="not_deleted" x="64" y="0"/>
+</item>
+<item historyLabel="TtsSettings.java" index="20">
+<position info="not_deleted" x="381" y="0"/>
+</item>
+<item historyLabel="IatSettings.java" index="19">
+<position info="not_deleted" x="64" y="0"/>
+</item>
+<item active="true" historyLabel="ApkInstaller.java" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@f9aa66"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -223,5 +503,51 @@
 </trimArea>
 </trimLayout>
 </window>
-<mruList/>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApkInstaller.java" tooltip="SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java">
+<persistable path="/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TtsSettings.java" tooltip="SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java">
+<persistable path="/SpeechDemo/src/com/iflytek/speech/setting/TtsSettings.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatSettings.java" tooltip="SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java">
+<persistable path="/SpeechDemo/src/com/iflytek/speech/setting/IatSettings.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/IatSettings.java">
+<persistable path="/MainActivity/src/com/iflytek/speech/setting/IatSettings.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TtsSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/TtsSettings.java">
+<persistable path="/MainActivity/src/com/iflytek/speech/setting/TtsSettings.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="MainActivity/src/com/iflytek/voicedemo/MainActivity.java">
+<persistable path="/MainActivity/src/com/iflytek/voicedemo/MainActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IatDemo.java" tooltip="MainActivity/src/com/iflytek/voicedemo/IatDemo.java">
+<persistable path="/MainActivity/src/com/iflytek/voicedemo/IatDemo.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="MainActivity/AndroidManifest.xml">
+<persistable path="/MainActivity/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbnfSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java">
+<persistable path="/MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="D:\jerryfive\File\2014年7月Library培训_作业\android_speechservice_1.063_53ff2ca2\sample\default.properties">
+<persistable uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/default.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="D:\jerryfive\File\2014年7月Library培训_作业\android_speechservice_1.063_53ff2ca2\sample\project.properties">
+<persistable uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/project.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name=".project" tooltip="D:\jerryfive\File\2014年7月Library培训_作业\android_speechservice_1.063_53ff2ca2\sample\.project">
+<persistable uri="file:/D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/.project"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="ReadMe.txt" tooltip="suntec_telli/src/suntec_telli/voice/ReadMe.txt">
+<persistable path="/suntec_telli/src/suntec_telli/voice/ReadMe.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReceiveMsgInfo.java" tooltip="suntec_telli/src/model/ReceiveMsgInfo.java">
+<persistable path="/suntec_telli/src/model/ReceiveMsgInfo.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReceiveXMLInfo.java" tooltip="suntec_telli/src/model/ReceiveXMLInfo.java">
+<persistable path="/suntec_telli/src/model/ReceiveXMLInfo.java"/>
+</file>
+</mruList>
 </workbench>
