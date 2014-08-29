@@ -2345,3 +2345,1801 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/SpeechDemo/gen
 !MESSAGE Resource '/SpeechDemo/gen' does not exist.
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-28 21:42:01.538
 !MESSAGE Resource '/SpeechDemo/gen' does not exist.
+!SESSION 2014-08-29 11:45:03.166 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_07
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 11:45:27.867
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /SpeechDemo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:347)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:95)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:111)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:79)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:564)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2014-08-29 11:45:29.682
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 11:46:14.036
+!MESSAGE Failed to load properties file for project 'TextRecord'
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-08-29 12:03:13.444
+!MESSAGE AndroidManifest: Ignoring unknown '!' XML element
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-08-29 12:03:13.829
+!MESSAGE AndroidManifest: Ignoring unknown '!' XML element
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.392
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.422
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.570
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.573
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.591
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.593
+!MESSAGE loadAndParseRClass: failed to find manifest package for project VoiceRecognitionDemo
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:23.662
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:24.645
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:24.645
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:46:24.765
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:06.548
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:06.549
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:26.990
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:27.142
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:27.142
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:47:27.317
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.302
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.304
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.468
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.470
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.489
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.490
+!MESSAGE loadAndParseRClass: failed to find manifest package for project VoiceRecognitionDemo
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:38.661
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:39.201
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:39.542
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:39.542
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:50:39.601
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:19.712
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:19.713
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:19.754
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:24.668
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:24.672
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:24.673
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 14:51:24.673
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:38:36.753
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:38:41.130
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:42:49.390
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:42:49.390
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:42:49.407
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:16.255
+!MESSAGE Unable to read C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+!STACK 0
+com.android.io.StreamException: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+	at com.android.io.FileWrapper.getContents(FileWrapper.java:92)
+	at com.android.sdklib.xml.AndroidManifestParser.parse(AndroidManifestParser.java:608)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:71)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseForData(AndroidManifestHelper.java:171)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage.extractNamesFromAndroidManifest(NewProjectCreationPage.java:1116)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage.access$14(NewProjectCreationPage.java:1102)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage$3.widgetSelected(NewProjectCreationPage.java:486)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:257)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:277)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+Caused by: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.android.io.FileWrapper.getContents(FileWrapper.java:90)
+	... 48 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:16.269
+!MESSAGE Unable to read C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+!STACK 0
+com.android.io.StreamException: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+	at com.android.io.FileWrapper.getContents(FileWrapper.java:92)
+	at com.android.sdklib.xml.AndroidManifestParser.parse(AndroidManifestParser.java:608)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:71)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseForData(AndroidManifestHelper.java:171)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage.extractNamesFromAndroidManifest(NewProjectCreationPage.java:1116)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage.access$14(NewProjectCreationPage.java:1102)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreationPage$3.widgetSelected(NewProjectCreationPage.java:486)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:257)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:277)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+Caused by: java.io.FileNotFoundException: C:\Users\zhuxiaolin\Downloads\android-sdk-windows\samples\android-9\AndroidManifest.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.android.io.FileWrapper.getContents(FileWrapper.java:90)
+	... 48 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:40.986
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:40.987
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.015
+!MESSAGE New Project Wizard failed
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.createProjectAsync(NewProjectWizard.java:625)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.access$0(NewProjectWizard.java:564)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard$1.execute(NewProjectWizard.java:387)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: Java Model Exception: Java Model Status [Build path contains duplicate entry: 'src' for project 'VoiceRecognitionDemoActivity']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.setupSourceFolders(NewProjectWizard.java:1133)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.createEclipseProject(NewProjectWizard.java:684)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.createProjectAsync(NewProjectWizard.java:573)
+	... 6 more
+Root exception:
+Java Model Exception: Java Model Status [Build path contains duplicate entry: 'src' for project 'VoiceRecognitionDemoActivity']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.setupSourceFolders(NewProjectWizard.java:1133)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.createEclipseProject(NewProjectWizard.java:684)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.createProjectAsync(NewProjectWizard.java:573)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard.access$0(NewProjectWizard.java:564)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectWizard$1.execute(NewProjectWizard.java:387)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.145
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.148
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.150
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.283
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:41.752
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:42.203
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:42.204
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:44:42.206
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:13.450
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:13.451
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:13.506
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:18.141
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:18.141
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:18.149
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:27.290
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:28.918
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:28.919
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:28.920
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:33.793
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:33.793
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:33.796
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:37.066
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:37.066
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:49.484
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:49.485
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:45:49.489
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemoActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:37.773
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:37.775
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:37.936
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:37.948
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:37.953
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:38.062
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:38.591
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:39.005
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:39.006
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:49:39.010
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2014-08-29 15:50:33.237
+!MESSAGE Connection to jar:file:/C:/Users/zhuxiaolin/Downloads/ADT-12.0.0.zip/p2.index failed on no !/ in spec. Retry attempt 0 started
+!STACK 0
+java.net.MalformedURLException: no !/ in spec
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URI.toURL(Unknown Source)
+	at org.eclipse.ecf.provider.filetransfer.identity.FileTransferID.getURL(FileTransferID.java:76)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:881)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:349)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:295)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:87)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:137)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2014-08-29 15:50:33.439
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/ADT-12.0.0.zip/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:189)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	... 12 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2014-08-29 15:50:33.439
+!MESSAGE Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/ADT-12.0.0.zip/content.xml.
+!STACK 1
+org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.ecf.identity 4 0 2014-08-29 15:50:33.439
+!MESSAGE Exception creating URL for {0}
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2014-08-29 15:50:49.744
+!MESSAGE Connection to jar:file:/C:/Users/zhuxiaolin/Downloads/android-sdk-windows_r12.exe/p2.index failed on no !/ in spec. Retry attempt 0 started
+!STACK 0
+java.net.MalformedURLException: no !/ in spec
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URI.toURL(Unknown Source)
+	at org.eclipse.ecf.provider.filetransfer.identity.FileTransferID.getURL(FileTransferID.java:76)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:881)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:349)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:295)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:87)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:137)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2014-08-29 15:50:49.946
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/android-sdk-windows_r12.exe/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:189)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	... 12 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2014-08-29 15:50:49.946
+!MESSAGE Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/android-sdk-windows_r12.exe/content.xml.
+!STACK 1
+org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.ecf.identity 4 0 2014-08-29 15:50:49.947
+!MESSAGE Exception creating URL for {0}
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2014-08-29 15:50:50.018
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at jar:file:/D:/ADT-12.0.0.zip!/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2014-08-29 15:50:50.018
+!MESSAGE No repository found at jar:file:/D:/ADT-12.0.0.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.ui 4 1000 2014-08-29 15:50:50.019
+!MESSAGE Some sites could not be found.  See the error log for more detail.
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2014-08-29 15:50:50.019
+!MESSAGE Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/ADT-12.0.0.zip/content.xml.
+!STACK 1
+org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.ecf.identity 4 0 2014-08-29 15:50:50.019
+!MESSAGE Exception creating URL for {0}
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2014-08-29 15:50:50.019
+!MESSAGE Unable to read repository at jar:file:/C:/Users/zhuxiaolin/Downloads/android-sdk-windows_r12.exe/content.xml.
+!STACK 1
+org.eclipse.ecf.filetransfer.RemoteFileSystemException: Exception creating URL for {0}
+	at org.eclipse.ecf.provider.filetransfer.browse.MultiProtocolFileSystemBrowserAdapter.sendBrowseRequest(MultiProtocolFileSystemBrowserAdapter.java:75)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.sendBrowseRequest(FileInfoReader.java:186)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:112)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:128)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:133)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:210)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:171)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:749)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.ecf.identity 4 0 2014-08-29 15:50:50.019
+!MESSAGE Exception creating URL for {0}
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2014-08-29 15:50:50.019
+!MESSAGE No repository found at jar:file:/D:/ADT-12.0.0.zip!/.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.005
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.006
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.168
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.173
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.207
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.210
+!MESSAGE loadAndParseRClass: failed to find manifest package for project VoiceRecognitionDemo
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:51.285
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:52.261
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:52.262
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:53:52.368
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:54:03.046
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:54:03.047
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:54:03.123
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:54:26.630
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 15:54:26.631
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:34.147
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:34.148
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:34.277
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:37.628
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:37.629
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:14:37.631
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:16:35.767
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:16:35.768
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:16:35.878
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:16:40.530
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:16:40.531
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:17:11.372
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:17:11.373
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:17:11.412
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:07.144
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:07.144
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:42.147
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:42.303
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:42.304
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:42.460
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:44.133
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:44.133
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:18:44.166
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:20:24.571
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:20:24.572
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:20:24.616
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:22:11.417
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:22:11.418
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:23:25.739
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:23:25.740
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:23:25.774
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:29.801
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:29.802
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:29.845
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:43.298
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:43.299
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:24:43.352
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:01.146
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:01.147
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:01.186
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:27.953
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:27.954
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:25:28.003
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.core.resources 4 2 2014-08-29 16:26:37.150
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:26:37.151
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:26:37.151
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:37.152
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /SpeechDemo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:347)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:95)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:111)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:79)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:564)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.core 4 4 2014-08-29 16:26:37.159
+!MESSAGE JavaBuilder handling ImageBuilderInternalException while building: SpeechDemo
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource already exists on disk: '/SpeechDemo/bin/.project'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:306)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:542)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:379)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder$3.visit(BatchImageBuilder.java:222)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:65)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:75)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.copyExtraResourcesBack(BatchImageBuilder.java:191)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:119)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:46)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:254)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:173)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-08-29 16:26:37.160
+!MESSAGE Resource already exists on disk: '/SpeechDemo/bin/.project'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:37.162
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:37.163
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.core.resources 4 75 2014-08-29 16:26:37.167
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 com.android.ide.eclipse.adt 4 75 2014-08-29 16:26:37.167
+!MESSAGE Errors running builder 'Android Resource Manager' on project 'SpeechDemo'.
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.jdt.core 4 964 2014-08-29 16:26:37.168
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:26:37.168
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:53.640
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:53.641
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:26:53.694
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:27:08.770
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:27:08.771
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.core.resources 4 2 2014-08-29 16:29:05.668
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:29:05.668
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:29:05.668
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:29:05.669
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /SpeechDemo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:347)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:95)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:111)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:79)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:564)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.core 4 4 2014-08-29 16:29:05.675
+!MESSAGE JavaBuilder handling ImageBuilderInternalException while building: SpeechDemo
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource already exists on disk: '/SpeechDemo/bin/.project'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:306)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:542)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:379)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder$3.visit(BatchImageBuilder.java:222)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:65)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:75)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.copyExtraResourcesBack(BatchImageBuilder.java:191)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:119)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:46)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:254)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:173)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-08-29 16:29:05.675
+!MESSAGE Resource already exists on disk: '/SpeechDemo/bin/.project'.
+
+!ENTRY org.eclipse.core.resources 4 75 2014-08-29 16:29:05.679
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 com.android.ide.eclipse.adt 4 75 2014-08-29 16:29:05.680
+!MESSAGE Errors running builder 'Android Resource Manager' on project 'SpeechDemo'.
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.jdt.core 4 964 2014-08-29 16:29:05.680
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:29:05.680
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY org.eclipse.core.resources 4 2 2014-08-29 16:30:11.675
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:30:11.676
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:30:11.676
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:30:11.677
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /SpeechDemo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:347)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:95)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:111)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:79)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:564)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2014-08-29 16:30:11.690
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 com.android.ide.eclipse.adt 4 75 2014-08-29 16:30:11.690
+!MESSAGE Errors running builder 'Android Resource Manager' on project 'SpeechDemo'.
+!STACK 1
+Java Model Exception: Java Model Status [Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo']
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:784)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3093)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3055)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:3108)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(ResourceManagerBuilder.java:205)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.jdt.core 4 964 2014-08-29 16:30:11.690
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+!SUBENTRY 1 org.eclipse.jdt.core 4 964 2014-08-29 16:30:11.690
+!MESSAGE Cannot nest 'SpeechDemo/gen' inside 'SpeechDemo'. To enable the nesting exclude 'gen/' from 'SpeechDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:21.411
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:21.412
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:21.457
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:25.813
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:25.814
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:25.815
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:42.729
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:42.729
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:42.824
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:58.041
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:41:58.042
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:42:00.372
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:42:00.373
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:42:00.415
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:43:41.099
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:43:41.100
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:43:41.144
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:44:13.217
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:44:13.217
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:44:13.287
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:45:06.105
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:45:06.106
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:37.842
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:37.843
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:37.845
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.core.resources 4 2 2014-08-29 16:46:54.411
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/VoiceRecognitionDemo/gen' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.Resource.setDerived(Resource.java:1721)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.doClean(PreCompilerBuilder.java:531)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.clean(PreCompilerBuilder.java:517)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:394)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:114)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog.doClean(CleanDialog.java:310)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog$1.runInWorkspace(CleanDialog.java:151)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:46:54.411
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:46:54.411
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+
+!ENTRY org.eclipse.core.resources 4 566 2014-08-29 16:46:54.429
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 com.android.ide.eclipse.adt 4 75 2014-08-29 16:46:54.429
+!MESSAGE Errors running builder 'Android Pre Compiler' on project 'VoiceRecognitionDemo'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/VoiceRecognitionDemo/gen' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.Resource.setDerived(Resource.java:1721)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.doClean(PreCompilerBuilder.java:531)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.clean(PreCompilerBuilder.java:517)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:394)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:114)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog.doClean(CleanDialog.java:310)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog$1.runInWorkspace(CleanDialog.java:151)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.core.resources 4 368 2014-08-29 16:46:54.429
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:46:54.429
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:54.560
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:54.561
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:46:54.622
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.core.resources 4 2 2014-08-29 16:47:34.597
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/VoiceRecognitionDemo/gen' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.Resource.setDerived(Resource.java:1721)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.doClean(PreCompilerBuilder.java:531)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.clean(PreCompilerBuilder.java:517)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:394)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:114)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog.doClean(CleanDialog.java:310)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog$1.runInWorkspace(CleanDialog.java:151)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:47:34.597
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:47:34.597
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+
+!ENTRY org.eclipse.core.resources 4 566 2014-08-29 16:47:34.609
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 com.android.ide.eclipse.adt 4 75 2014-08-29 16:47:34.609
+!MESSAGE Errors running builder 'Android Pre Compiler' on project 'VoiceRecognitionDemo'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/VoiceRecognitionDemo/gen' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.Resource.setDerived(Resource.java:1721)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.doClean(PreCompilerBuilder.java:531)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.clean(PreCompilerBuilder.java:517)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:394)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:114)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog.doClean(CleanDialog.java:310)
+	at org.eclipse.ui.internal.ide.dialogs.CleanDialog$1.runInWorkspace(CleanDialog.java:151)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 2 org.eclipse.core.resources 4 368 2014-08-29 16:47:34.609
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-29 16:47:34.609
+!MESSAGE Resource '/VoiceRecognitionDemo/gen' does not exist.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:34.747
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:34.747
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:34.807
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:44.268
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:44.269
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:44.271
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:51.838
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:51.838
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:47:51.897
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.797
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.831
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.856
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.875
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.895
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:27.944
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:36.494
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:37.339
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:50:37.960
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:51:37.893
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:51:37.894
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:39.689
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:39.689
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:39.689
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:39.689
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:39.690
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.627
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.632
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.633
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.634
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.634
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.636
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.638
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 16:53:57.639
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.ui 4 0 2014-08-29 16:54:13.116
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.RangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.saveState(ConfigurationComposite.java:1298)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.computeCurrentConfig(ConfigurationComposite.java:2195)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.onLocaleChange(ConfigurationComposite.java:2127)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.access$3(ConfigurationComposite.java:2120)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite$1.widgetSelected(ConfigurationComposite.java:424)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 0 2014-08-29 16:54:13.140
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.RangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.saveState(ConfigurationComposite.java:1298)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.computeCurrentConfig(ConfigurationComposite.java:2195)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.onLocaleChange(ConfigurationComposite.java:2127)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.access$3(ConfigurationComposite.java:2120)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite$1.widgetSelected(ConfigurationComposite.java:424)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 0 2014-08-29 16:54:13.545
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.RangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.saveState(ConfigurationComposite.java:1298)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.computeCurrentConfig(ConfigurationComposite.java:2195)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.onLocaleChange(ConfigurationComposite.java:2127)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite.access$3(ConfigurationComposite.java:2120)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite$1.widgetSelected(ConfigurationComposite.java:424)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:07:51.759
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:07:51.760
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:08:15.435
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:08:15.436
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:08:15.437
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.ui 4 4 2014-08-29 17:09:15.431
+!MESSAGE Save All Failed
+
+!ENTRY org.eclipse.ui 2 0 2014-08-29 17:09:15.431
+!MESSAGE Save All Failed
+!STACK 0
+java.lang.IllegalArgumentException: Illegal value: -1
+	at org.eclipse.core.internal.resources.Resource.revertModificationStamp(Resource.java:1702)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:396)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.jdt.internal.ui.javaeditor.DocumentAdapter.save(DocumentAdapter.java:472)
+	at org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:123)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:793)
+	at org.eclipse.jdt.internal.core.CompilationUnit.commitWorkingCopy(CompilationUnit.java:391)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.commitWorkingCopy(CompilationUnitDocumentProvider.java:1377)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$4.execute(CompilationUnitDocumentProvider.java:1450)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5048)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave(CompilationUnitEditor.java:1247)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:1301)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7177)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:349)
+	at org.eclipse.ui.internal.EditorManager$8.run(EditorManager.java:1269)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:277)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2649)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:285)
+	at org.eclipse.ui.internal.EditorManager.saveAll(EditorManager.java:1279)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1189)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.saveAllEditors(Workbench.java:1138)
+	at org.eclipse.jdt.ui.refactoring.RefactoringSaveHelper.saveEditors(RefactoringSaveHelper.java:137)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RefactoringStarter.canActivate(RefactoringStarter.java:56)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RefactoringStarter.activate(RefactoringStarter.java:33)
+	at org.eclipse.jdt.internal.ui.refactoring.UserInterfaceStarter.activate(UserInterfaceStarter.java:62)
+	at org.eclipse.jdt.internal.ui.refactoring.reorg.RenameUserInterfaceStarter.activate(RenameUserInterfaceStarter.java:32)
+	at org.eclipse.jdt.ui.refactoring.RenameSupport.openDialog(RenameSupport.java:160)
+	at org.eclipse.jdt.ui.refactoring.RenameSupport.openDialog(RenameSupport.java:116)
+	at org.eclipse.jdt.internal.corext.refactoring.RefactoringExecutionStarter.startRenameRefactoring(RefactoringExecutionStarter.java:438)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RenameJavaElementAction.run(RenameJavaElementAction.java:214)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RenameJavaElementAction.run(RenameJavaElementAction.java:105)
+	at org.eclipse.jdt.ui.actions.RenameAction.run(RenameAction.java:110)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:275)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:251)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 4 2014-08-29 17:09:24.525
+!MESSAGE Save All Failed
+
+!ENTRY org.eclipse.ui 2 0 2014-08-29 17:09:24.525
+!MESSAGE Save All Failed
+!STACK 0
+java.lang.IllegalArgumentException: Illegal value: -1
+	at org.eclipse.core.internal.resources.Resource.revertModificationStamp(Resource.java:1702)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:396)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.jdt.internal.ui.javaeditor.DocumentAdapter.save(DocumentAdapter.java:472)
+	at org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:123)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:793)
+	at org.eclipse.jdt.internal.core.CompilationUnit.commitWorkingCopy(CompilationUnit.java:391)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.commitWorkingCopy(CompilationUnitDocumentProvider.java:1377)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$4.execute(CompilationUnitDocumentProvider.java:1450)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5048)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave(CompilationUnitEditor.java:1247)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:1301)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7177)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:349)
+	at org.eclipse.ui.internal.EditorManager$8.run(EditorManager.java:1269)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:277)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2649)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:285)
+	at org.eclipse.ui.internal.EditorManager.saveAll(EditorManager.java:1279)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1189)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.saveAllEditors(Workbench.java:1138)
+	at org.eclipse.jdt.ui.refactoring.RefactoringSaveHelper.saveEditors(RefactoringSaveHelper.java:137)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RefactoringStarter.canActivate(RefactoringStarter.java:56)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RefactoringStarter.activate(RefactoringStarter.java:33)
+	at org.eclipse.jdt.internal.ui.refactoring.UserInterfaceStarter.activate(UserInterfaceStarter.java:62)
+	at org.eclipse.jdt.internal.ui.refactoring.reorg.RenameUserInterfaceStarter.activate(RenameUserInterfaceStarter.java:32)
+	at org.eclipse.jdt.ui.refactoring.RenameSupport.openDialog(RenameSupport.java:160)
+	at org.eclipse.jdt.ui.refactoring.RenameSupport.openDialog(RenameSupport.java:116)
+	at org.eclipse.jdt.internal.corext.refactoring.RefactoringExecutionStarter.startRenameRefactoring(RefactoringExecutionStarter.java:438)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RenameJavaElementAction.run(RenameJavaElementAction.java:214)
+	at org.eclipse.jdt.internal.ui.refactoring.actions.RenameJavaElementAction.run(RenameJavaElementAction.java:105)
+	at org.eclipse.jdt.ui.actions.RenameAction.run(RenameAction.java:110)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:275)
+	at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:251)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2014-08-29 17:09:36.591 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_07
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:09:40.855
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:09:42.439
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.ui 4 4 2014-08-29 17:09:44.940
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:58.247
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:58.248
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:58.329
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:59.383
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:59.384
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-29 17:15:59.387
+!MESSAGE Failed to load properties file for project 'VoiceRecognitionDemo'
+
+!ENTRY org.eclipse.ui 4 4 2014-08-29 17:27:39.922
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.

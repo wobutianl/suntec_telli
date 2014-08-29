@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.baidu.android.voicedemo&apos; to &apos;baidu.voicedemo&apos;&#x0D;&#x0A;- Original project: &apos;VoiceRecognitionDemo&apos;&#x0D;&#x0A;- Original element: &apos;VoiceRecognitionDemo/src/com.baidu.android.voicedemo&apos;&#x0D;&#x0A;- Renamed element: &apos;VoiceRecognitionDemo/src/baidu.voicedemo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.baidu.android.voicedemo&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.baidu.android.voicedemo" name="baidu.voicedemo" qualified="false" references="true" stamp="1409303758090" textual="false" version="1.0"/>
+</session>

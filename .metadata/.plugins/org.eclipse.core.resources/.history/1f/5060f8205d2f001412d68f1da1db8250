@@ -1,0 +1,207 @@
+
+package record.test;
+
+import com.baidu.voicerecognition.android.Candidate;
+import com.baidu.voicerecognition.android.DataUploader;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient.VoiceClientStatusChangeListener;
+import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
+
+import com.baidu.voicerecognition.*;
+import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.List;
+
+import record.test.*;
+import record.test.NLUDemoActivity;
+
+
+/**
+ * 娴ｈ法鏁ゆ惔鏇炵湴API閺傜懓绱＄拠鍡楀焼Demo閿涘苯绱戦崣鎴ｏ拷閸欘垯浜掔�姘疅UI娴溿倓绨� * 
+ * @author yangliang02
+ */
+public class ApiDemoActivity extends FragmentActivity {
+    private ControlPanelFragment mControlPanel;
+
+    private VoiceRecognitionClient mASREngine;
+
+    /** 濮濓絽婀拠鍡楀焼娑擄拷*/
+    private boolean isRecognition = false;
+
+    /** 闂婃娊鍣洪弴瀛樻煀闂傛挳娈�*/
+    private static final int POWER_UPDATE_INTERVAL = 100;
+
+    /** 鐠囧棗鍩嗛崶鐐剁殶閹恒儱褰�*/
+    private MyVoiceRecogListener mListener = new MyVoiceRecogListener();
+
+    /** 娑撹崵鍤庣粙濠琣ndler */
+    private Handler mHandler;
+
+    /**
+     * 缂佹挻鐏夌仦鏇犮仛
+     */
+    private EditText mResult = null;
+
+    /**
+     * 闂婃娊鍣洪弴瀛樻煀娴犺濮�     */
+    private Runnable mUpdateVolume = new Runnable() {
+        public void run() {
+            if (isRecognition) {
+                long vol = mASREngine.getCurrentDBLevelMeter();
+                mControlPanel.volumeChange((int) vol);
+                mHandler.removeCallbacks(mUpdateVolume);
+                mHandler.postDelayed(mUpdateVolume, POWER_UPDATE_INTERVAL);
+            }
+        }
+    };
+
+    protected void onCreate(android.os.Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.api_demo_activity);
+        mResult = (EditText) findViewById(R.id.recognition_text);
+        mASREngine = VoiceRecognitionClient.getInstance(this);
+        mASREngine.setTokenApis(Constants.API_KEY, Constants.SECRET_KEY);
+        //uploadContacts();
+        mHandler = new Handler();
+        mControlPanel = (ControlPanelFragment) (getSupportFragmentManager()
+                .findFragmentById(R.id.control_panel));
+        mControlPanel.setOnEventListener(new ControlPanelFragment.OnEventListener() {
+
+            @Override
+            public boolean onStopListening() {
+                mASREngine.speakFinish();
+                return true;
+            }
+
+            @Override
+            public boolean onStartListening()
+            {
+                mResult.setText(null);
+                VoiceRecognitionConfig config = new VoiceRecognitionConfig();
+                config.setProp(Config.CURRENT_PROP);
+                config.setLanguage(Config.getCurrentLanguage());
+                config.enableContacts(); // 閸氼垳鏁ら柅姘愁唵瑜帮拷                config.enableVoicePower(Config.SHOW_VOL); // 闂婃娊鍣洪崣宥夘湆閵嗭拷                if (Config.PLAY_START_SOUND) {
+                config.enableBeginSoundEffect(R.raw.bdspeech_recognition_start); // 鐠佸墽鐤嗙拠鍡楀焼瀵拷顬婇幓鎰仛闂婏拷                }
+                if (Config.PLAY_END_SOUND) 
+                {
+                    config.enableEndSoundEffect(R.raw.bdspeech_speech_end); // 鐠佸墽鐤嗙拠鍡楀焼缂佹挻娼幓鎰仛闂婏拷                }
+                    config.setSampleRate(VoiceRecognitionConfig.SAMPLE_RATE_8K); // 鐠佸墽鐤嗛柌鍥ㄧ壉閻滐拷闂囷拷顪呮稉搴☆檱闁劑鐓舵０鎴滅閼凤拷                // 娑撳娼伴崣鎴ｆ崳鐠囧棗鍩�                    int code = mASREngine.startVoiceRecognition(mListener, config);
+	                if (code != VoiceRecognitionClient.START_WORK_RESULT_WORKING) 
+	                {
+	                    mResult.setText(getString(R.string.error_start, code));
+	                } 
+
+	                return code == VoiceRecognitionClient.START_WORK_RESULT_WORKING;
+                }
+                return true;
+            }
+
+            @Override
+            public boolean onCancel() {
+                mASREngine.stopVoiceRecognition();
+                return true;
+            }
+        });
+    };
+
+    /**
+     * 闁插秴鍟撻悽銊ょ艾婢跺嫮鎮婄拠顓㈢叾鐠囧棗鍩嗛崶鐐剁殶閻ㄥ嫮娲冮崥顒�珤
+     */
+    class MyVoiceRecogListener implements VoiceClientStatusChangeListener {
+
+        @Override
+        public void onClientStatusChange(int status, Object obj) 
+        {
+            switch (status) 
+            {
+            // 鐠囶參鐓剁拠鍡楀焼鐎圭偤妾锟筋瀶閿涘矁绻栭弰顖滄埂濮濓絽绱戞慨瀣槕閸掝偆娈戦弮鍫曟？閻愮櫢绱濋棁锟芥躬閻ｅ矂娼伴幓鎰仛閻劍鍩涚拠纾嬬樈閵嗭拷                case VoiceRecognitionClient.CLIENT_STATUS_START_RECORDING:
+            	case VoiceRecognitionClient.CLIENT_STATUS_ERROR:
+            		isRecognition = true;
+                    mHandler.removeCallbacks(mUpdateVolume);
+                    mHandler.postDelayed(mUpdateVolume, POWER_UPDATE_INTERVAL);
+                    mControlPanel.statusChange(ControlPanelFragment.STATUS_RECORDING_START);
+                    break;
+                case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_START: // 濡拷绁撮崚鎷岊嚔闂婂疇鎹ｉ悙锟�                   mControlPanel.statusChange(ControlPanelFragment.STATUS_SPEECH_START);
+                    break;
+                // 瀹歌尙绮″Λ锟界ゴ閸掓媽顕㈤棅宕囩矒閻愮櫢绱濈粵澶婄窡缂冩垹绮舵潻鏂挎礀
+                case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_END:
+                    mControlPanel.statusChange(ControlPanelFragment.STATUS_SPEECH_END);
+                    break;
+                // 鐠囶參鐓剁拠鍡楀焼鐎瑰本鍨氶敍灞炬▔缁�皡bj娑擃厾娈戠紒鎾寸亯
+                case VoiceRecognitionClient.CLIENT_STATUS_FINISH:
+                    mControlPanel.statusChange(ControlPanelFragment.STATUS_FINISH);
+                    isRecognition = false;
+                    updateRecognitionResult(obj);
+                    break;
+                // 婢跺嫮鎮婃潻鐐电敾娑撳﹤鐫�                case VoiceRecognitionClient.CLIENT_STATUS_UPDATE_RESULTS:
+                case VoiceRecognitionClient.CLIENT_STATUS_UPDATE_RESULTS:
+                    updateRecognitionResult(obj);
+                    break;
+                // 閻劍鍩涢崣鏍ㄧХ
+                case VoiceRecognitionClient.CLIENT_STATUS_USER_CANCELED:
+                    mControlPanel.statusChange(ControlPanelFragment.STATUS_FINISH);
+                    isRecognition = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+    
+
+        
+
+        @Override
+        public void onError(int errorType, int errorCode) {
+            isRecognition = false;
+            mResult.setText(getString(R.string.error_occur, Integer.toHexString(errorCode)));
+            mControlPanel.statusChange(ControlPanelFragment.STATUS_FINISH);
+        }
+
+        @Override
+        public void onNetworkStatusChange(int status, Object obj) {
+            // 鏉╂瑩鍣锋稉宥呬粵娴犺缍嶉幙宥勭稊娑撳秴濂栭崫宥囩暆閸楁洝鐦戦崚锟�       }
+    }
+
+    /**
+     * 鐏忓棜鐦戦崚顐ょ波閺嬫粍娲块弬鏉垮煂UI娑撳绱濋幖婊呭偍濡�绱＄紒鎾寸亯缁鐎锋稉绡杋st<String>,鏉堟挸鍙嗗Ο鈥崇础缂佹挻鐏夌猾璇茬�娑撶瘱ist<List<Candidate>>
+     * 
+     * @param result
+     */
+    private void updateRecognitionResult(Object result) {
+        if (result != null && result instanceof List) {
+            List results = (List) result;
+            if (results.size() > 0) {
+                if (results.get(0) instanceof List) {
+                    List<List<Candidate>> sentences = (List<List<Candidate>>) result;
+                    StringBuffer sb = new StringBuffer();
+                    for (List<Candidate> candidates : sentences) {
+                        if (candidates != null && candidates.size() > 0) {
+                            sb.append(candidates.get(0).getWord());
+                        }
+                    }
+                    mResult.setText(sb.toString());
+                } else {
+                    mResult.setText(results.get(0).toString());
+                }
+            }
+        }
+    }
+    
+    /**
+     * 娑撳﹣绱堕柅姘愁唵瑜帮拷     * */
+    private void uploadContacts(){
+    	DataUploader dataUploader = new DataUploader(ApiDemoActivity.this);
+    	dataUploader.setApiKey(Constants.API_KEY, Constants.SECRET_KEY);
+    	
+    	String jsonString = "[{\"name\":\"閸忓棛娣甛\", \"frequency\":1}, {\"name\":\"閺嬫鏌婂Ч婕抃\",\"frequency\":2}]";
+    	try{
+    		dataUploader.uploadContactsData(jsonString.getBytes("utf-8"));
+    	}catch (Exception e){
+    		e.printStackTrace();
+    	}
+    }
+}
+}

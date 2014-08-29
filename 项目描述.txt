@@ -9,8 +9,9 @@
 
 #################################################
 任务分配：
-	朱晓林 + 张健 ：语音识别与集成
-	林炳 + 潘勇飞： 数据解析与网络交互
+	组长		： 朱晓林
+	朱晓林 + 张健   ：语音识别与集成
+	林炳   + 潘勇飞 ： 数据解析与网络交互
 
 
 #################################################
@@ -48,7 +49,10 @@ android 开发环境配置
 	   4：将SDK下的Tools目录添加到 windows 环境
 	   5：后面参考：http://www.cnblogs.com/skynet/archive/2010/04/12/1709892.html
 
-PS：统一用：Java 1.6  &&  Android 2.3.1
+PS：统一
+用：Java 1.6  &&  Android 2.3.1
+用： android 2.3.1 即 android 9
+用： 百度语音服务
 
 ## Eclipse新建项目时候报此错误，Package name must have at least two identifiers
 解决办法：
@@ -64,6 +68,25 @@ Project -> Properties -> Run/Debug Settings:
 ## git bush 里面，右键没有反映
 解决方法：
 在git bush 里右键，选择属性 -> 选项-> 编辑选项 -> 快速编辑模式
+
+## import ***.**  cannot be resolved
+解决方法：
+没有引入相关的库，方法：
+project -> properties -> java build path -> libraries -> add extra jar 
+
+主要添加：android 9 &&  android-support-v4 (这个在extra下） && 其他库
+
+## R cannot be resolved
+原因：
+	引入的程序，无法解析layout下的View文件
+解决方法：
+	自己建一个工程，把相关文件添加进来就好了。（网上的方法试验了，都不太好使）
+
+## 百度Api key & secret key
+public static final String API_KEY = "tdwReBfwGNjg0SRmQEziq3nR";
+public static final String SECRET_KEY = "**"; 这个找我要。
+
+
 
 #####################################################
 

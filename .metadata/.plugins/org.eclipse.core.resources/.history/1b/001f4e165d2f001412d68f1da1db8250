@@ -1,0 +1,119 @@
+
+package com.baidu.android.voicedemo;
+
+import com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog;
+import com.baidu.voicerecognition.android.ui.DialogRecognitionListener;
+
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
+
+/**
+ * 璇嗗埆瀵硅瘽妗嗘彁绀鸿Demo銆傞�杩�{@link BaiduASRDigitalDialog#getParams()}鑾峰彇鍒拌瘑鍒弬鏁�璋冪敤
+ * Bundle.putStringArray({@link BaiduASRDigitalDialog#PARAM_TIPS}, String[])
+ * 鏂规硶璁剧疆鎻愮ず璇垪琛ㄣ�璁剧疆鎻愮ず璇悗锛屽湪璇嗗埆瀵硅瘽妗嗗乏涓婅浼氭湁鈥滐紵鈥濇寜閽紝鐐瑰嚮鍚庢樉绀烘彁绀鸿鍒楄〃銆傝缃彁绀鸿锛岃繕鍙互閫氳繃
+ * {@link Bundle#putBoolean(String, boolean)}鏂规硶璁剧疆浠ヤ笅鍙傛暟锛屾墦寮�浉鍏冲姛鑳� * <table border="1">
+ * <tr>
+ * <th>鍙傛暟鍚�/th>
+ * <th>鍙傛暟绫诲瀷</th>
+ * <th>榛樿鍊�/th>
+ * <th>鎻忚堪</th>
+ * </tr>
+ * <tr>
+ * <td>{@link BaiduASRDigitalDialog#PARAM_SHOW_TIPS_ON_START}</td>
+ * <td>boolean</td>
+ * <td>false</td>
+ * <td>瀵硅瘽妗嗘樉绀烘椂涓嶅惎鍔ㄨ瘑鍒紝灞曠ず鎻愮ず璇垪琛�/td>
+ * </tr>
+ * <tr>
+ * <td>{@link BaiduASRDigitalDialog#PARAM_SHOW_TIP}</td>
+ * <td>boolean</td>
+ * <td>false</td>
+ * <td>璇嗗埆鍚姩3绉掑悗鏈娴嬪埌璇煶锛屽湪闊虫晥鍔ㄧ敾涓嬫柟灞曠ず涓�潯鎻愮ず璇�/td>
+ * </tr>
+ * <tr>
+ * <td>{@link BaiduASRDigitalDialog#PARAM_SHOW_HELP_ON_SILENT}</td>
+ * <td>boolean</td>
+ * <td>false</td>
+ * <td>鐢变簬鏈娴嬪埌璇煶鑰屽紓甯哥粨鏉熸椂锛屾浛鎹㈠彇娑堟寜閽负甯姪鎸夐挳锛岀敤鎴风偣鍑诲悗灞曠ず鎻愮ず璇垪琛�/td>
+ * </tr>
+ * </table>
+ * 
+ * @author yangliang02
+ */
+public class DialogTipsDemoActivity extends PreferenceActivity {
+    private static final String SHOW_TIPS_ONSTART = "dialog_show_tips_onstart";
+
+    private static final String SHOW_TIP_ONSILENT = "dialog_show_tip_onsilent";
+
+    private static final String SHOW_HELP_ONSILENT = "dialog_show_help_onsilent";
+
+    private static final int RECOGNITION_DIALOG = 1;
+
+    private static final String INTENT_ACTION_START = "baidu.voicedemo.intent.action.START";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        PreferenceManager.setDefaultValues(getApplication(), R.xml.dialog_tips, false);
+        addPreferencesFromResource(R.xml.dialog_tips);
+        startRecognition(getIntent());
+    }
+
+    private void startRecognition(Intent intent) {
+        if (INTENT_ACTION_START.equals(intent.getAction())) {
+            showDialog(RECOGNITION_DIALOG);
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        startRecognition(intent);
+    }
+
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        if (id == RECOGNITION_DIALOG) {
+            Bundle params = new Bundle();
+            params.putString(BaiduASRDigitalDialog.PARAM_API_KEY, Constants.API_KEY);
+            params.putString(BaiduASRDigitalDialog.PARAM_SECRET_KEY, Constants.SECRET_KEY);
+            params.putInt(BaiduASRDigitalDialog.PARAM_DIALOG_THEME, Config.DIALOG_THEME);
+            BaiduASRDigitalDialog mDialog = new BaiduASRDigitalDialog(this, params);
+            mDialog.setDialogRecognitionListener(new DialogRecognitionListener() {
+
+                @Override
+                public void onResults(Bundle arg0) {
+                    // TODO Auto-generated method stub
+
+                }
+            });
+            return mDialog;
+        }
+        return super.onCreateDialog(id);
+    }
+
+    @Override
+    @Deprecated
+    protected void onPrepareDialog(int id, Dialog dialog) {
+        if (id == RECOGNITION_DIALOG) {
+            BaiduASRDigitalDialog mDialog = (BaiduASRDigitalDialog) dialog;
+            // 璁剧疆鎻愮ず璇垪琛ㄣ�璁剧疆鎻愮ず璇悗锛屽湪璇嗗埆瀵硅瘽妗嗗乏涓婅浼氭湁鈥滐紵鈥濇寜閽紝鐐瑰嚮鍚庢樉绀烘彁绀鸿鍒楄〃銆�            mDialog.getParams().putStringArray(BaiduASRDigitalDialog.PARAM_TIPS,
+                    getResources().getStringArray(R.array.command_tips);
+            SharedPreferences preferences = PreferenceManager
+                    .getDefaultSharedPreferences(getApplication());
+            // 璁剧疆涓篢rue锛屽璇濇鏄剧ず鏃朵笉鍚姩璇嗗埆锛屽睍绀烘彁绀鸿鍒楄〃
+            mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_SHOW_TIPS_ON_START,
+                    preferences.getBoolean(SHOW_TIPS_ONSTART, false));
+            // 璁剧疆涓篢rue锛岃瘑鍒惎鍔�绉掑悗鏈娴嬪埌璇煶锛屽湪闊虫晥鍔ㄧ敾涓嬫柟灞曠ず涓�潯鎻愮ず璇�            mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_SHOW_TIP,
+                    preferences.getBoolean(SHOW_TIP_ONSILENT, false);
+            // 璁剧疆涓篢rue锛屾湭妫�祴鍒拌闊宠�寮傚父缁撴潫鏃讹紝鏇挎崲鍙栨秷鎸夐挳涓哄府鍔╂寜閽紝鐢ㄦ埛鐐瑰嚮鍚庡睍绀烘彁绀鸿鍒楄〃銆�            mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_SHOW_HELP_ON_SILENT,
+                    preferences.getBoolean(SHOW_HELP_ONSILENT, false);
+        }
+        super.onPrepareDialog(id, dialog);
+    }
+}

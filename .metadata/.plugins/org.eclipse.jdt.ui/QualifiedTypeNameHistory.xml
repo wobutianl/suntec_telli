@@ -2,4 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="android.R.bool"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="record.test.NLUDemoActivity"/>
 </qualifiedTypeNameHistroy>
