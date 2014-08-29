@@ -86,7 +86,11 @@ project -> properties -> java build path -> libraries -> add extra jar
 public static final String API_KEY = "tdwReBfwGNjg0SRmQEziq3nR";
 public static final String SECRET_KEY = "**"; 这个找我要。
 
-
+## 给其他人权限在GitHub上提交代码
+解决方法：
+找到我建的GitHub ， 然后申请 pull request。
+最后我来确定是否同意代码提交。
+（或者建一个 SVN）
 
 #####################################################
 

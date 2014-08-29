@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">百度TTS Sample</string>
+    <string name="inputHint">请输入文本</string>
+    <string name="startSynthesize">开始合成</string>
+
+</resources>
