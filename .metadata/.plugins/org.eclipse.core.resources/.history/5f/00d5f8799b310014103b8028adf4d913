@@ -1,0 +1,191 @@
+package test.TTS;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.media.AudioManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.ScrollingMovementMethod;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.baidu.speechsynthesizer.SpeechSynthesizer;
+import com.baidu.speechsynthesizer.SpeechSynthesizerListener;
+import com.baidu.speechsynthesizer.publicutility.SpeechError;
+
+public class Test_TTSActivity extends Activity implements OnClickListener,
+        SpeechSynthesizerListener {
+
+    protected static final int UI_LOG_TO_VIEW = 0;
+    private SpeechSynthesizer speechSynthesizer;
+    private TextView logView;
+    private EditText inputTextView;
+    private Button startButton;
+    private Handler uiHandler;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        logView = (TextView) findViewById(R.id.logView);
+        logView.setMovementMethod(new ScrollingMovementMethod());
+        inputTextView = (EditText) findViewById(R.id.inputTextView);
+        startButton = (Button) findViewById(R.id.start);
+        startButton.setOnClickListener(this);
+        speechSynthesizer = new SpeechSynthesizer(getApplicationContext(),
+                "holder", this);
+        // 此处需要将setApiKey方法的两个参数替换为你在百度开发者中心注册应用所得到的apiKey和secretKey
+        speechSynthesizer.setApiKey("your-apiKey", "your-secretKey");
+        speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        uiHandler = new Handler(getMainLooper()) {
+
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                case UI_LOG_TO_VIEW:
+                    logView.append((CharSequence) msg.obj);
+                    scrollLogViewToBottom();
+                    break;
+                default:
+                    break;
+                }
+            }
+        };
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+        case R.id.start:
+            new Thread(new Runnable() {
+
+                @Override
+                public void run() {
+                    setParams();
+                    int ret = speechSynthesizer.speak(inputTextView.getText()
+                            .toString());
+                    if (ret != 0) {
+                        logError("开始合成器失败：" + errorCodeAndDescription(ret));
+                    }
+                }
+            }).start();
+            break;
+        default:
+            break;
+        }
+    }
+
+    private void setParams() {
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "0");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEED, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_ENCODE, "1");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_RATE, "4");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_LANGUAGE, "ZH");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_NUM_PRON, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_ENG_PRON, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PUNC, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_BACKGROUND, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_STYLE, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TERRITORY, "0");
+    }
+
+    @Override
+    public void onStartWorking(SpeechSynthesizer synthesizer) {
+        logDebug("开始工作，请等待数据...");
+    }
+
+    @Override
+    public void onSpeechStart(SpeechSynthesizer synthesizer) {
+        logDebug("朗读开始");
+    }
+
+    @Override
+    public void onSpeechResume(SpeechSynthesizer synthesizer) {
+        logDebug("朗读继续");
+    }
+
+    @Override
+    public void onSpeechProgressChanged(SpeechSynthesizer synthesizer,
+            int progress) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onSpeechPause(SpeechSynthesizer synthesizer) {
+        logDebug("朗读已暂停");
+    }
+
+    @Override
+    public void onSpeechFinish(SpeechSynthesizer synthesizer) {
+        logDebug("朗读已停止");
+    }
+
+    @Override
+    public void onNewDataArrive(SpeechSynthesizer synthesizer,
+            byte[] dataBuffer, int dataLength) {
+        logDebug("新的音频数据：" + dataLength);
+    }
+
+    @Override
+    public void onError(SpeechSynthesizer synthesizer, SpeechError error) {
+        logError("发生错误：" + error.errorDescription + "(" + error.errorCode + ")");
+    }
+
+    @Override
+    public void onCancel(SpeechSynthesizer synthesizer) {
+        logDebug("已取消");
+    }
+
+    @Override
+    public void onBufferProgressChanged(SpeechSynthesizer synthesizer,
+            int progress) {
+        // TODO Auto-generated method stub
+
+    }
+
+    private void logDebug(String logMessage) {
+        logMessage(logMessage, Color.BLUE);
+    }
+
+    private void logError(String logMessage) {
+        logMessage(logMessage, Color.RED);
+    }
+
+    private void logMessage(String logMessage, int color) {
+        Spannable colorfulLog = new SpannableString(logMessage + "\n");
+        colorfulLog.setSpan(new ForegroundColorSpan(color), 0,
+                logMessage.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        uiHandler.sendMessage(uiHandler.obtainMessage(UI_LOG_TO_VIEW,
+                colorfulLog));
+    }
+
+    private void scrollLogViewToBottom() {
+        int scrollAmount = logView.getLayout().getLineTop(
+                logView.getLineCount())
+                - logView.getHeight();
+        if (scrollAmount > 0) {
+            logView.scrollTo(0,
+                    scrollAmount + logView.getCompoundPaddingBottom());
+        } else {
+            logView.scrollTo(0, 0);
+        }
+    }
+
+    private String errorCodeAndDescription(int errorCode) {
+        String errorDescription = SpeechError.errorDescription(errorCode);
+        return errorDescription + "(" + errorCode + ")";
+    }
+
+}

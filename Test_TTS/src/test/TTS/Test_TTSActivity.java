@@ -43,7 +43,7 @@ public class Test_TTSActivity extends Activity implements OnClickListener,
         speechSynthesizer = new SpeechSynthesizer(getApplicationContext(),
                 "holder", this);
         // 此处需要将setApiKey方法的两个参数替换为你在百度开发者中心注册应用所得到的apiKey和secretKey
-        speechSynthesizer.setApiKey("your-apiKey", "your-secretKey");
+        speechSynthesizer.setApiKey("tdwReBfwGNjg0SRmQEziq3nR", "MGwWG3ZetWtUEvHus4UUbuGq7gaLfP06");
         speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         uiHandler = new Handler(getMainLooper()) {

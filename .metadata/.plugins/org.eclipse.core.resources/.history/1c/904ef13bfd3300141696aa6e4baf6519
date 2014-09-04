@@ -1,0 +1,14 @@
+package list.show;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import android.app.Activity;
+import android.widget.BaseAdapter;
+
+public class msgAdapter extends BaseAdapter{
+	
+	public Activity activity; 
+	public List<File> list = new LinkedList<File>();
+
+}

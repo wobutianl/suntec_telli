@@ -1,0 +1,7 @@
+digraph yewu_flow{
+	user_speak -> system [label="input data"];
+	
+	system -> server [label="XML data"];
+	server -> system [label="recevie XML data"];
+	system -> user_speak [label="TTS data"]
+	}

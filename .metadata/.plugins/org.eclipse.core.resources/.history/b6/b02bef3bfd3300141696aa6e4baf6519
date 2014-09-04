@@ -1,0 +1,11 @@
+package list.show;
+
+import android.app.Activity;
+import android.widget.BaseAdapter;
+
+public class msgAdapter extends BaseAdapter{
+	
+	public Activity activity; 
+	
+
+}

@@ -3,11 +3,116 @@ package suntec_telli.voice;
 import android.app.Activity;
 import android.os.Bundle;
 
+
+import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
+import com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog;
+import com.baidu.voicerecognition.android.ui.DialogRecognitionListener;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+
+import suntec_telli.voice.Constants;
+
+/**
+ * 开发用例，含有一次语音识别的全过程。
+ */
 public class Suntec_telliActivity extends Activity {
-    /** Called when the activity is first created. */
+	
+	/**
+     * 结果展示
+     */
+    private EditText mResult = null;
+
+    private BaiduASRDigitalDialog mDialog = null;
+
+    private DialogRecognitionListener mRecognitionListener;
+
+    /**
+     * 播放开始音
+     */
+    public static boolean PLAY_START_SOUND = true;
+
+    /**
+     * 播放结束音
+     */
+    public static boolean PLAY_END_SOUND = true;
+    
+    /**
+     * 对话框提示音
+     */
+    public static boolean DIALOG_TIPS_SOUND = true;
+
+    /**
+     * 显示音量
+     */
+    public static boolean SHOW_VOL = true;
+    
+   // private int mCurrentTheme = Config.DIALOG_THEME;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        mResult = (EditText) findViewById(R.id.recognition_text);
+        
+	    Bundle params=new Bundle();
+	      
+	      //设置开放 API Key
+	      params.putString(BaiduASRDigitalDialog.PARAM_API_KEY,Constants.API_KEY);
+	      //设置开放平台 Secret Key
+	      params.putString(BaiduASRDigitalDialog.PARAM_SECRET_KEY,Constants.SECRET_KEY);
+	      
+	      //设置识别领域：搜索、输入、地图、音乐……，可选。默认为输入。
+	      params.putInt( BaiduASRDigitalDialog.PARAM_PROP,VoiceRecognitionConfig.PROP_INPUT);
+	     
+	      //设置语种类型：中文普通话，中文粤语，英文，可选。默认为中文普通话
+	      params.putString( BaiduASRDigitalDialog.PARAM_LANGUAGE,VoiceRecognitionConfig.LANGUAGE_CHINESE);
+	      
+	      //如果需要语义解析，设置下方参数。领域为输入不支持
+	      params.putBoolean(BaiduASRDigitalDialog.PARAM_NLU_ENABLE,false);
+	      
+	      // 设置对话框主题，可选。BaiduASRDigitalDialog 提供了蓝、暗、红、绿、橙四中颜色，每种颜
+	      // 色又分亮、暗两种色调。共 8 种主题，开发者可以按需选择，取值参考 BaiduASRDigitalDialog 中
+	      // 前缀为 THEME_的常量。默认为亮蓝色
+	      params.putInt(BaiduASRDigitalDialog.PARAM_DIALOG_THEME,BaiduASRDigitalDialog.THEME_RED_DEEPBG);
+	      mDialog=new BaiduASRDigitalDialog(this,params);
+	      
+	      mRecognitionListener = new DialogRecognitionListener() {
+
+	          @Override
+	          public void onResults(Bundle results) {
+	              ArrayList<String> rs = results != null ? results
+	                      .getStringArrayList(RESULTS_RECOGNITION) : null;
+	              if (rs != null && rs.size() > 0) {
+	                  mResult.setText(rs.get(0));
+	              }
+	
+	          }
+	      };
+	      
+	      mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_START_TONE_ENABLE, PLAY_START_SOUND);
+          mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_END_TONE_ENABLE, PLAY_END_SOUND);
+          mDialog.getParams().putBoolean(BaiduASRDigitalDialog.PARAM_TIPS_TONE_ENABLE, DIALOG_TIPS_SOUND);
+          mDialog.show();
+
     }
+
+   
+    
+    @Override
+    protected void onDestroy() {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
+        super.onDestroy();
+    }
+
+    
 }

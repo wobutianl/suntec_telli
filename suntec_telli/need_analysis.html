@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>android语音项目需求分析</title>
+<meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+<meta name="title" content="android语音项目需求分析"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-09-01T20:41+0800"/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">android语音项目需求分析</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 系统需要分析</a>
+<ul>
+<li><a href="#sec-1-1">1.1 概要</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 背景</a></li>
+<li><a href="#sec-1-1-2">1.1.2 系统目标</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 用户需求</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 业务需求</a></li>
+<li><a href="#sec-1-2-2">1.2.2 性能需求</a></li>
+<li><a href="#sec-1-2-3">1.2.3 其他需求</a></li>
+<li><a href="#sec-1-2-4">1.2.4 用户平台要求</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 业务流程</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1 与其他系统的关系</a></li>
+<li><a href="#sec-1-3-2">1.3.2 业务流程</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4 业务逻辑</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 业务分解</a></li>
+<li><a href="#sec-1-4-2">1.4.2 业务描述</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 数据调查及分析</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 原始数据</a></li>
+<li><a href="#sec-1-5-2">1.5.2 数据分析</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">1.6 附件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 系统需要分析</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 概要</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>编写说明：//
+    本章描述本软件开发的背景，用户组织机构的设置情况，用户的业务现状，以便使需求更易于理解。
+</p>
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> 背景</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ol>
+<li>项目提出者：姚树杰
+</li>
+<li>明确用户：Android手机使用者
+</li>
+<li>用户特点：普通的Android用户，对软件便利性要求较高。
+</li>
+<li>项目经费：***
+</li>
+<li>人力资源：四个人，一个指导。
+</li>
+<li>开发周期：三周，每周三一个开发节点。
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> 系统目标</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<ol>
+<li>开发意图：做一个方便用户使用Android手机的入口，实现通过语音来操纵自己的手机。
+</li>
+<li>应用目标：使用Suntec导航的用户都有一个这样的手机入口。
+</li>
+<li>系统边界：
+<ol>
+<li>系统可以做：实现天气预报 + 查询股票 + 打开手机内的APP
+</li>
+<li>系统不可以做：实现导航等其他语音命令
+</li>
+</ol>
+
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 用户需求</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> 业务需求</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ol>
+<li>用户需求：通过该软件，利用自然语言输入，获取需要的信息。
+</li>
+<li>流程图：<a href="file://d:/jerryfive/Android-voice-task/suntec_telli/flow.dot3. ">系统流程图</a>
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> 性能需求</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<ol>
+<li>快速响应：最长半分钟内获得响应
+</li>
+<li>错误提示：全面的错误提示
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> 其他需求</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<ol>
+<li>用户需要提供
+<ol>
+<li>录音权限
+</li>
+<li>联网（获取网络连接状态）
+</li>
+<li>IMEI号权限
+</li>
+</ol>
+
+</li>
+<li>可靠权限
+<ol>
+<li>蓝牙
+</li>
+<li>蓝牙录音
+</li>
+</ol>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> 用户平台要求</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+<ol>
+<li>android 系统 2.3.1以上的系统
+</li>
+<li>内存大于：512M
+</li>
+<li>硬盘大于：512M
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 业务流程</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> 与其他系统的关系</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<ol>
+<li>调用百度云的语音识别 + 语音合成库
+</li>
+<li>调用NLP组的Server服务
+</li>
+<li>Android 2.3.1 SDK
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> 业务流程</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<ol>
+<li><a href="file://d:/jerryfive/Android-voice-task/suntec_telli/yewu_flow.png">业务流程</a>
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 业务逻辑</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 业务分解</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<ol>
+<li>系统主要分为：
+<ol>
+<li>语音录入模块：实现语音的识别与合成
+</li>
+<li>数据解析模块：实现MSG与XML数据格式之间的转换
+</li>
+<li>服务器沟通模块：实现与服务器的数据传输与获取
+</li>
+</ol>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> 业务描述</h4>
+<div class="outline-text-4" id="text-1-4-2">
+
+<ol>
+<li>语音录入模块流程
+<ol>
+<li>添加baidu 的jar包
+</li>
+<li>添加权限
+        录音权限 
+        联网权限
+        获取网络状态
+        手机IMEI（唯一标识用户）
+        蓝牙（可以不用）
+        SCO音频连接（可以不用）
+        蓝牙录音检测耳机状态（可以不用）
+</li>
+<li>创建对话框
+</li>
+<li>设置回调函数
+</li>
+<li>启动识别（dialog.show()  -&gt; OnDestroy)
+</li>
+</ol>
+
+</li>
+<li>数据模块
+<ol>
+<li>从文本数据 到 XML数据的转换
+</li>
+<li>不同的网络XML数据到 需求的文本数据之间的转换
+</li>
+</ol>
+
+</li>
+<li>网络模块
+<ol>
+<li>实现将解析的XML数据发送给网络端
+</li>
+<li>实现接收网络端传回的数据
+</li>
+</ol>
+
+</li>
+<li>Model
+<ol>
+<li>实现数据结构的单独模块化
+</li>
+</ol>
+
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 数据调查及分析</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> 原始数据</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ol>
+<li>音频数据
+</li>
+<li>语音识别数据 JSON格式
+</li>
+<li>Server需求数据 XML格式
+</li>
+<li>Server返回数据　XML格式
+</li>
+<li>播放数据 TTS数据
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> 数据分析</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
+<ul>
+<li id="sec-1-5-2-1">数据分类<br/>
+<ol>
+<li>sendMsg:发送给Data组的JSON数据
+</li>
+<li>sendXML:发送给Server组的XML数据
+</li>
+<li>receiveXML：server组接收到的XML数据
+</li>
+<li>receiveMsg：转换后，给音频组的数据
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-5-2-2">数据项描述<br/>
+<ol>
+<li>sendMsg
+</li>
+</ol>
+
+
+
+
+<pre class="example">struct sendMsg{
+     string msgInfo;
+     int MsgID;
+     };
+
+struct sendXML{
+    int SID;
+    int DID;
+    string type_param;
+    string msg_info;
+    };
+
+struct receiveXML{
+    string type;
+    string content;
+    }receive[];
+
+</pre>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> 附件</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<p>编写说明：//
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-09-01T20:41+0800</p>
+<p class="author">Author: </p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

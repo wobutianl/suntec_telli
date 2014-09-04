@@ -1,0 +1,47 @@
+目标：
+	实现 UI 显示信息
+	包括：用户的输入  和  返回的结果
+
+实现步骤：
+	ListView + ListView 的配置
+	继承	BaseAdapter
+
+
+两个点：
+1：实现ListView的动态增加和删除：
+	    private void addItem(String str)  
+    {  
+	    HashMap<String, Object> map = new HashMap<String, Object>();  
+	    map.put("ItemImage", R.drawable.icon);  
+	    map.put("ItemTitle", "标题");  
+	    map.put("ItemText", str);  
+	    listItem.add(map);  
+	    Log.d("map",map.get("ItemText").toString());
+	    listItemAdapter.notifyDataSetChanged();  
+    }  
+      
+    private void deleteItem()  
+    {  
+	    int size = listItem.size();  
+	    if( size > 0 )  
+	    {  
+	    	listItem.remove(listItem.size() - 1);  
+		    listItemAdapter.notifyDataSetChanged();  
+	    }  
+    }  
+
+
+2：实现输入法不挡住
+	在MainFest.xml中添加一句：
+	android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+
+	类似：
+	<activity android:name=".ShowListActivity"
+                  android:label="@string/app_name"
+                  android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+
+
+
+
+代码：
+	ShowList 程序

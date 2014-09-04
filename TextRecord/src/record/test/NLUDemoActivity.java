@@ -38,7 +38,7 @@ public class NLUDemoActivity extends FragmentActivity {
 
     private static final int RECOGNITION_DIALOG = 1;
 
-    private DialogRecognitionListener mRecognitionListener;
+    private DialogRecognitionListener mRecognitionListener;  
 
     private ControlPanelFragment mControlPanel;
 

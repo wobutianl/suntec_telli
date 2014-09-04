@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ShowList/res/layout/listcontent.xml&apos; to &apos;sendlist.xml&apos;" description="Rename resource &apos;listcontent.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/listcontent.xml" name="sendlist.xml" stamp="1409795132540" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ShowList/src/list/show/msgAdapter.java&apos; to &apos;sendAdapter.java&apos;" description="Rename resource &apos;msgAdapter.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/list/show/msgAdapter.java" name="sendAdapter.java" stamp="1409796933562" updateReferences="true"/>
+</session>

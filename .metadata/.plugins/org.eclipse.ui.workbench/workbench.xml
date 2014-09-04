@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="93" y="122">
+<window height="984" maximized="true" width="783" x="497" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -21,7 +21,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -113,6 +113,11 @@
 <part id="75"/>
 <part id="76"/>
 <part id="77"/>
+<part id="78"/>
+<part id="79"/>
+<part id="80"/>
+<part id="81"/>
+<part id="82"/>
 </presentation>
 </folder>
 </info>
@@ -131,7 +136,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Suntec_telliActivity.java" partName="Suntec_telliActivity.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java" title="Suntec_telliActivity.java" tooltip="suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/Suntec_telliActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="350" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3207" selectionTopPixel="1316"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WaveInfo.java" partName="WaveInfo.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/model/WaveInfo.java" title="WaveInfo.java" tooltip="suntec_telli/src/model/WaveInfo.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/model/WaveInfo.java"/>
@@ -159,7 +164,7 @@
 </editor>
 <editor id="org.eclipse.ui.DefaultTextEditor" name="ReadMe.txt" partName="ReadMe.txt" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/ReadMe.txt" title="ReadMe.txt" tooltip="suntec_telli/src/suntec_telli/voice/ReadMe.txt" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/ReadMe.txt"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="563" selectionTopPixel="93"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="563" selectionTopPixel="176"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbnfSettings.java" partName="AbnfSettings.java" path="D:/jerryfive/File/2014年7月Library培训_作业/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/speech/setting/AbnfSettings.java" title="AbnfSettings.java" tooltip="MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MainActivity/src/com/iflytek/speech/setting/AbnfSettings.java"/>
@@ -203,9 +208,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VoiceRecognitionDemo/src/com/baidu/android/voicedemo/DialogTipsDemoActivity.java"/>
 <editorState selectionHorizontalPixel="5" selectionLength="0" selectionOffset="4560" selectionTopPixel="1461"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApkInstaller.java" partName="ApkInstaller.java" path="D:/jerryfive/File/VoiceTask/XunFeiVoice/android_ui/sample/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java" title="ApkInstaller.java" tooltip="SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApkInstaller.java" partName="ApkInstaller.java" path="D:/jerryfive/File/VoiceTask/XunFeiVoice/android_speechservice_1.063_53ff2ca2/sample/src/com/iflytek/speech/util/ApkInstaller.java" title="ApkInstaller.java" tooltip="SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeechDemo/src/com/iflytek/speech/util/ApkInstaller.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="530" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="517" selectionTopPixel="209"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="SpeechDemo Manifest" path="D:/jerryfive/File/VoiceTask/XunFeiVoice/android_ui/sample/SpeechDemo/AndroidManifest.xml" title="SpeechDemo Manifest" tooltip="SpeechDemo/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeechDemo/AndroidManifest.xml"/>
@@ -253,9 +258,6 @@
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="VoiceRecognitionDemo Manifest" path="D:/jerryfive/File/VoiceTask/baiduVoice/Baidu-Voice-SDK-Android-1.6.0/VoiceRecognitionDemo/AndroidManifest.xml" title="VoiceRecognitionDemo Manifest" tooltip="VoiceRecognitionDemo/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VoiceRecognitionDemo/AndroidManifest.xml"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/main.xml" title="main.xml" tooltip="TextRecord/res/layout/main.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/main.xml"/>
-</editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="api_demo_activity.xml" partName="api_demo_activity.xml" path="D:/jerryfive/File/VoiceTask/baiduVoice/Baidu-Voice-SDK-Android-1.6.0/VoiceRecognitionDemo/res/layout/api_demo_activity.xml" title="api_demo_activity.xml" tooltip="VoiceRecognitionDemo/res/layout/api_demo_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VoiceRecognitionDemo/res/layout/api_demo_activity.xml"/>
 </editor>
@@ -267,15 +269,6 @@
 </editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="api_demo_activity.xml" partName="api_demo_activity.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/api_demo_activity.xml" title="api_demo_activity.xml" tooltip="TextRecord/res/layout/api_demo_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/api_demo_activity.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="control_panel_fragment.xml" partName="control_panel_fragment.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/control_panel_fragment.xml" title="control_panel_fragment.xml" tooltip="TextRecord/res/layout/control_panel_fragment.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/control_panel_fragment.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="demo.xml" partName="demo.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/demo.xml" title="demo.xml" tooltip="TextRecord/res/layout/demo.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/demo.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="nlu_demo_activity.xml" partName="nlu_demo_activity.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/nlu_demo_activity.xml" title="nlu_demo_activity.xml" tooltip="TextRecord/res/layout/nlu_demo_activity.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/nlu_demo_activity.xml"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="setting.xml" partName="setting.xml" path="D:/jerryfive/Android-voice-task/TextRecord/res/layout/setting.xml" title="setting.xml" tooltip="TextRecord/res/layout/setting.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/res/layout/setting.xml"/>
@@ -330,7 +323,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApiDemoActivity.java" partName="ApiDemoActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/ApiDemoActivity.java" title="ApiDemoActivity.java" tooltip="TextRecord/src/record/test/ApiDemoActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/ApiDemoActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7570" selectionTopPixel="378"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="1636" selectionTopPixel="3532"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CommandListFragment.java" partName="CommandListFragment.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/CommandListFragment.java" title="CommandListFragment.java" tooltip="TextRecord/src/record/test/CommandListFragment.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/CommandListFragment.java"/>
@@ -340,21 +333,13 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/CommandsAdapter.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="909" selectionTopPixel="442"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Config.java" partName="Config.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/Config.java" title="Config.java" tooltip="TextRecord/src/record/test/Config.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/Config.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="46" selectionOffset="2655" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constants.java" partName="Constants.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/Constants.java" title="Constants.java" tooltip="TextRecord/src/record/test/Constants.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/Constants.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="32" selectionOffset="274" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VoiceRecognitionDemoActivity.java" partName="VoiceRecognitionDemoActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/VoiceRecognitionDemoActivity.java" title="VoiceRecognitionDemoActivity.java" tooltip="TextRecord/src/record/test/VoiceRecognitionDemoActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/VoiceRecognitionDemoActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1176" selectionTopPixel="644"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1176" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SettingActivity.java" partName="SettingActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/SettingActivity.java" title="SettingActivity.java" tooltip="TextRecord/src/record/test/SettingActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/SettingActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="515" selectionTopPixel="2874"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3826" selectionTopPixel="1425"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DialogTipsDemoActivity.java" partName="DialogTipsDemoActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/DialogTipsDemoActivity.java" title="DialogTipsDemoActivity.java" tooltip="TextRecord/src/record/test/DialogTipsDemoActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/DialogTipsDemoActivity.java"/>
@@ -366,11 +351,11 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NLUDemoActivity.java" partName="NLUDemoActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/NLUDemoActivity.java" title="NLUDemoActivity.java" tooltip="TextRecord/src/record/test/NLUDemoActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/NLUDemoActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="392" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2439" selectionTopPixel="1102"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextRecordActivity.java" partName="TextRecordActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/TextRecordActivity.java" title="TextRecordActivity.java" tooltip="TextRecord/src/record/test/TextRecordActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/TextRecordActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="797" selectionTopPixel="57"/>
+<editorState selectionHorizontalPixel="0" selectionLength="43" selectionOffset="1601" selectionTopPixel="342"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoListActivity.java" partName="DemoListActivity.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/DemoListActivity.java" title="DemoListActivity.java" tooltip="TextRecord/src/record/test/DemoListActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/DemoListActivity.java"/>
@@ -379,9 +364,9 @@
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="Test_TTS Manifest" path="D:/jerryfive/Android-voice-task/Test_TTS/AndroidManifest.xml" title="Test_TTS Manifest" tooltip="Test_TTS/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/AndroidManifest.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test_TTSActivity.java" partName="Test_TTSActivity.java" path="D:/jerryfive/Android-voice-task/Test_TTS/src/test/TTS/Test_TTSActivity.java" title="Test_TTSActivity.java" tooltip="Test_TTS/src/test/TTS/Test_TTSActivity.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test_TTSActivity.java" partName="Test_TTSActivity.java" path="D:/jerryfive/Android-voice-task/Test_TTS/src/test/TTS/Test_TTSActivity.java" title="Test_TTSActivity.java" tooltip="Test_TTS/src/test/TTS/Test_TTSActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/src/test/TTS/Test_TTSActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="51" selectionOffset="1645" selectionTopPixel="2166"/>
+<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="815" selectionTopPixel="0"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" partName="strings.xml" path="D:/jerryfive/Android-voice-task/Test_TTS/res/values/strings.xml" title="strings.xml" tooltip="Test_TTS/res/values/strings.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/res/values/strings.xml"/>
@@ -389,19 +374,81 @@
 <editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="dimens.xml" partName="dimens.xml" path="D:/jerryfive/Android-voice-task/Test_TTS/res/values/dimens.xml" title="dimens.xml" tooltip="Test_TTS/res/values/dimens.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/res/values/dimens.xml"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="styles.xml" partName="styles.xml" path="D:/jerryfive/Android-voice-task/Test_TTS/res/values/styles.xml" title="styles.xml" tooltip="Test_TTS/res/values/styles.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/res/values/styles.xml"/>
-</editor>
 <editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="dimens.xml" partName="dimens.xml" path="D:/jerryfive/Android-voice-task/Test_TTS/res/values-sw600dp/dimens.xml" title="dimens.xml" tooltip="Test_TTS/res/values-sw600dp/dimens.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/res/values-sw600dp/dimens.xml"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="D:/jerryfive/Android-voice-task/Test_TTS/res/layout/main.xml" title="main.xml" tooltip="Test_TTS/res/layout/main.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test_TTS/res/layout/main.xml"/>
 </editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="D:/jerryfive/Android-voice-task/suntec_telli/res/layout/main.xml" title="main.xml" tooltip="suntec_telli/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constants.java" partName="Constants.java" path="D:/jerryfive/Android-voice-task/suntec_telli/src/suntec_telli/voice/Constants.java" title="Constants.java" tooltip="suntec_telli/src/suntec_telli/voice/Constants.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/src/suntec_telli/voice/Constants.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="332" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Config.java" partName="Config.java" path="D:/jerryfive/Android-voice-task/TextRecord/src/record/test/Config.java" title="Config.java" tooltip="TextRecord/src/record/test/Config.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TextRecord/src/record/test/Config.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="645" selectionTopPixel="81"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="suntec_telli Manifest" path="D:/jerryfive/Android-voice-task/suntec_telli/AndroidManifest.xml" title="suntec_telli Manifest" tooltip="suntec_telli/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" partName="strings.xml" path="D:/jerryfive/Android-voice-task/suntec_telli/res/values/strings.xml" title="strings.xml" tooltip="suntec_telli/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/suntec_telli/res/values/strings.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadTestActivity.java" partName="ThreadTestActivity.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ThreadTestActivity.java" title="ThreadTestActivity.java" tooltip="ThreadTest/src/thread/Test/ThreadTestActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1394" selectionTopPixel="537"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="D:/jerryfive/Android-voice-task/ThreadTest/res/layout/main.xml" title="main.xml" tooltip="ThreadTest/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constraints.java" partName="Constraints.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/Constraints.java" title="Constraints.java" tooltip="ThreadTest/src/thread/Test/Constraints.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/Constraints.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="467" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataThread.java" partName="DataThread.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/DataThread.java" title="DataThread.java" tooltip="ThreadTest/src/thread/Test/DataThread.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/DataThread.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="40" selectionOffset="244" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectServer.java" partName="ConnectServer.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ConnectServer.java" title="ConnectServer.java" tooltip="ThreadTest/src/thread/Test/ConnectServer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ConnectServer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="402" selectionTopPixel="81"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadBase.java" partName="ThreadBase.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ThreadBase.java" title="ThreadBase.java" tooltip="ThreadTest/src/thread/Test/ThreadBase.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ThreadBase.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelMsg.java" partName="ModelMsg.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ModelMsg.java" title="ModelMsg.java" tooltip="ThreadTest/src/thread/Test/ModelMsg.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ModelMsg.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="324" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelData.java" partName="ModelData.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ModelData.java" title="ModelData.java" tooltip="ThreadTest/src/thread/Test/ModelData.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ModelData.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="573" selectionTopPixel="114"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VoiceThread.java" partName="VoiceThread.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/VoiceThread.java" title="VoiceThread.java" tooltip="ThreadTest/src/thread/Test/VoiceThread.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/VoiceThread.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="200" selectionTopPixel="81"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorldActivity.java" partName="HelloWorldActivity.java" path="D:/jerryfive/Android-voice-task/HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java" title="HelloWorldActivity.java" tooltip="HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="761" selectionTopPixel="860"/>
+</editor>
 </editors>
 <views>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=TextRecord/src&lt;record.test{NLUDemoActivity.java[NLUDemoActivity" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=TextRecord/src&lt;record.test{NLUDemoActivity.java[NLUDemoActivity" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName="Aggregate for window 1409209124974"/>
+</view>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
 <viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
+<viewState search_scope_type="1"/>
 </view>
 <view id="org.eclipse.ant.ui.views.AntView" partName="Ant">
 <viewState>
@@ -411,21 +458,50 @@
 <view id="org.eclipse.pde.runtime.LogView" partName="Error Log">
 <viewState activate="true" allSessions="true" column2="443" column3="296" column4="150" error="true" groupBy="0" info="true" limit="50" ok="true" orderType="2" orderValue="-1" show_filter_text="true" useLimit="true" warning="true"/>
 </view>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
-<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
+<viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
+<filters>
+<filter element="*.class" isEnabled="false"/>
+<filter element=".*" isEnabled="false"/>
+</filters>
+<expanded>
+<element path="/HelloWorld"/>
+<element path="/HelloWorld/res"/>
+<element path="/HelloWorld/res/layout"/>
+<element path="/HelloWorld/src"/>
+<element path="/HelloWorld/src/com"/>
+<element path="/HelloWorld/src/com/domain"/>
+<element path="/HelloWorld/src/com/domain/helloWorld"/>
+<element path="/ThreadTest"/>
+<element path="/ThreadTest/res"/>
+<element path="/ThreadTest/res/layout"/>
+<element path="/ThreadTest/src"/>
+<element path="/ThreadTest/src/thread"/>
+<element path="/ThreadTest/src/thread/Test"/>
+</expanded>
+<selection>
+<element path="/ThreadTest/src/thread/Server"/>
+</selection>
+</viewState>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -437,9 +513,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1409209124974">
-<customFilters userDefinedPatternsEnabled="false">
-<xmlDefinedFilters>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
@@ -474,7 +548,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -510,6 +584,7 @@
 <show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
 <show_view_action id="org.eclipse.pde.runtime.LogView"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_in_time id="org.eclipse.ui.views.ResourceNavigator" time="1409538510116"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
@@ -528,26 +603,31 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
+<view id="org.eclipse.jdt.callhierarchy.view"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ant.ui.views.AntView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -559,15 +639,16 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.2324665" ratioLeft="295" ratioRight="974" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.22787029" ratioLeft="260" ratioRight="881" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.72" ratioLeft="630" ratioRight="245" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.pde.runtime.LogView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -577,10 +658,11 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.64126986" ratioLeft="202" ratioRight="113" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.7884232" ratioLeft="395" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ant.ui.views.AntView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="Ant"/>
@@ -634,47 +716,65 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.5337143" ratioLeft="467" ratioRight="408" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.5337143" ratioLeft="467" ratioRight="408" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.48060346" ratioLeft="223" ratioRight="241" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info part="org.eclipse.ui.editorss" ratio="0.24784483" ratioLeft="115" ratioRight="349" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.BreakpointView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -686,112 +786,155 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/TTS_test/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/TTS_test/res/layout/activity_home.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/TTS_test/res/layout/main.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TTS_test/src/com/baidu/tts/sample/HomeActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TTS_test/src/test/TTS/TTS_testActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/TTS_test/res/values/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/TTS_test/res/values/strings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/TTS_test/res/values/dimens.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/TextRecord/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Test_TTS/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test_TTS/src/test/TTS/Test_TTSActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values/strings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values/dimens.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values-sw600dp/dimens.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Test_TTS/res/layout/activity_home.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Test_TTS/res/layout/main.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values-v11/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Test_TTS/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Test_TTS/res/values-v14/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Test_TTS/res/layout/activity_home.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Test_TTS/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/DataThread.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/Constraints.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/ModelMsg.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/VoiceThread.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/HelloWorld/res/layout/main.xml"/>
 </editors>
-<item historyLabel="main.xml" index="2"/>
-<item historyLabel="HomeActivity.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="413" y="0"/>
 </item>
-<item historyLabel="TTS_testActivity.java" index="4">
-<position info="not_deleted" x="328" y="0"/>
-</item>
-<item historyLabel="HomeActivity.java" index="3">
-<position info="not_deleted" x="1258" y="1"/>
-</item>
-<item historyLabel="TTS_testActivity.java" index="4">
-<position info="not_deleted" x="314" y="0"/>
-</item>
-<item historyLabel="styles.xml" index="5"/>
-<item historyLabel="strings.xml" index="6"/>
-<item historyLabel="dimens.xml" index="7"/>
-<item historyLabel="strings.xml" index="6"/>
-<item historyLabel="styles.xml" index="5"/>
-<item historyLabel="TTS_test Manifest" index="0"/>
-<item historyLabel="HomeActivity.java" index="3">
-<position info="not_deleted" x="1258" y="1"/>
-</item>
-<item historyLabel="TextRecord Manifest" index="8"/>
-<item historyLabel="TTS_test Manifest" index="0"/>
-<item historyLabel="TTS_testActivity.java" index="4">
-<position info="not_deleted" x="314" y="0"/>
-</item>
-<item historyLabel="TTS_test Manifest" index="0"/>
-<item historyLabel="TextRecord Manifest" index="8"/>
-<item historyLabel="TTS_test Manifest" index="0"/>
-<item historyLabel="TTS_testActivity.java" index="4">
-<position info="not_deleted" x="314" y="0"/>
-</item>
-<item historyLabel="main.xml" index="2"/>
-<item historyLabel="activity_home.xml" index="1"/>
-<item historyLabel="TTS_testActivity.java" index="4">
+<item historyLabel="ThreadTestActivity.java" index="1">
 <position/>
 </item>
-<item historyLabel="activity_home.xml" index="1"/>
-<item historyLabel="TextRecord Manifest" index="8"/>
-<item historyLabel="Test_TTS Manifest" index="9"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1509" y="4"/>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="419" y="42"/>
 </item>
-<item historyLabel="strings.xml" index="11"/>
-<item historyLabel="dimens.xml" index="12"/>
-<item historyLabel="styles.xml" index="13"/>
-<item historyLabel="dimens.xml" index="14"/>
-<item historyLabel="dimens.xml" index="12"/>
-<item historyLabel="strings.xml" index="11"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1509" y="4"/>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position/>
 </item>
-<item historyLabel="activity_home.xml" index="15"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1270" y="0"/>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="1425" y="0"/>
 </item>
-<item historyLabel="Test_TTS Manifest" index="9"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1266" y="1"/>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position/>
 </item>
-<item historyLabel="activity_home.xml" index="15"/>
-<item historyLabel="main.xml" index="16"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1266" y="1"/>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="1523" y="0"/>
 </item>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1272" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="2049" y="0"/>
 </item>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1266" y="4"/>
+<item historyLabel="ModelMsg.java" index="3">
+<position info="not_deleted" x="324" y="0"/>
 </item>
-<item historyLabel="styles.xml" index="17"/>
-<item historyLabel="Test_TTS Manifest" index="18"/>
-<item historyLabel="styles.xml" index="19"/>
-<item historyLabel="styles.xml" index="17"/>
-<item historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1225" y="0"/>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="1145" y="5"/>
 </item>
-<item historyLabel="activity_home.xml" index="20"/>
-<item historyLabel="main.xml" index="21"/>
-<item active="true" historyLabel="Test_TTSActivity.java" index="10">
-<position info="not_deleted" x="1225" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position/>
+</item>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="821" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="2016" y="0"/>
+</item>
+<item historyLabel="Constraints.java" index="2">
+<position info="not_deleted" x="467" y="0"/>
+</item>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="821" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="2049" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="234" y="0"/>
+</item>
+<item historyLabel="DataThread.java" index="0">
+<position info="not_deleted" x="244" y="40"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="1231" y="1"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="655" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="1337" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="1350" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="261" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="1350" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="261" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="1350" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="251" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="1646" y="0"/>
+</item>
+<item historyLabel="VoiceThread.java" index="4">
+<position info="not_deleted" x="200" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="1">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="1428" y="0"/>
+</item>
+<item historyLabel="main.xml" index="6"/>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="1428" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position/>
+</item>
+<item historyLabel="main.xml" index="6"/>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position/>
+</item>
+<item historyLabel="main.xml" index="6"/>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="1113" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="1141" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2066" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2002" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="1645" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2002" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2743" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2752" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="2758" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="761" y="0"/>
+</item>
+<item historyLabel="main.xml" index="6"/>
+<item active="true" historyLabel="HelloWorldActivity.java" index="5">
+<position info="not_deleted" x="761" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -810,50 +953,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="styles.xml" tooltip="Test_TTS/res/values-v14/styles.xml">
-<persistable path="/Test_TTS/res/values-v14/styles.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="HelloWorld/res/layout/main.xml">
+<persistable path="/HelloWorld/res/layout/main.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="styles.xml" tooltip="Test_TTS/res/values-v11/styles.xml">
-<persistable path="/Test_TTS/res/values-v11/styles.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorldActivity.java" tooltip="HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java">
+<persistable path="/HelloWorld/src/com/domain/helloWorld/HelloWorldActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="Test_TTS/res/layout/main.xml">
-<persistable path="/Test_TTS/res/layout/main.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VoiceThread.java" tooltip="ThreadTest/src/thread/Test/VoiceThread.java">
+<persistable path="/ThreadTest/src/thread/Test/VoiceThread.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="activity_home.xml" tooltip="Test_TTS/res/layout/activity_home.xml">
-<persistable path="/Test_TTS/res/layout/activity_home.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelData.java" tooltip="ThreadTest/src/thread/Test/ModelData.java">
+<persistable path="/ThreadTest/src/thread/Test/ModelData.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="dimens.xml" tooltip="Test_TTS/res/values-sw600dp/dimens.xml">
-<persistable path="/Test_TTS/res/values-sw600dp/dimens.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelMsg.java" tooltip="ThreadTest/src/thread/Test/ModelMsg.java">
+<persistable path="/ThreadTest/src/thread/Test/ModelMsg.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="styles.xml" tooltip="Test_TTS/res/values/styles.xml">
-<persistable path="/Test_TTS/res/values/styles.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadBase.java" tooltip="ThreadTest/src/thread/Test/ThreadBase.java">
+<persistable path="/ThreadTest/src/thread/Test/ThreadBase.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="dimens.xml" tooltip="Test_TTS/res/values/dimens.xml">
-<persistable path="/Test_TTS/res/values/dimens.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Thread.java" tooltip="ThreadTest/src/thread/Test/Thread.java">
+<persistable path="/ThreadTest/src/thread/Test/Thread.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" tooltip="Test_TTS/res/values/strings.xml">
-<persistable path="/Test_TTS/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectServer.java" tooltip="ThreadTest/src/thread/Test/ConnectServer.java">
+<persistable path="/ThreadTest/src/thread/Test/ConnectServer.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test_TTSActivity.java" tooltip="Test_TTS/src/test/TTS/Test_TTSActivity.java">
-<persistable path="/Test_TTS/src/test/TTS/Test_TTSActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Data.java" tooltip="ThreadTest/src/thread/Test/Data.java">
+<persistable path="/ThreadTest/src/thread/Test/Data.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Test_TTS/AndroidManifest.xml">
-<persistable path="/Test_TTS/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constraints.java" tooltip="ThreadTest/src/thread/Test/Constraints.java">
+<persistable path="/ThreadTest/src/thread/Test/Constraints.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoListActivity.java" tooltip="TextRecord/src/record/test/DemoListActivity.java">
-<persistable path="/TextRecord/src/record/test/DemoListActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="ThreadTest/res/layout/main.xml">
+<persistable path="/ThreadTest/res/layout/main.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VoiceRecognitionDemoActivity.java" tooltip="VoiceRecognitionDemo/src/baidu/voicedemo/VoiceRecognitionDemoActivity.java">
-<persistable path="/VoiceRecognitionDemo/src/baidu/voicedemo/VoiceRecognitionDemoActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadTestActivity.java" tooltip="ThreadTest/src/thread/Test/ThreadTestActivity.java">
+<persistable path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextRecordActivity.java" tooltip="TextRecord/src/record/test/TextRecordActivity.java">
-<persistable path="/TextRecord/src/record/test/TextRecordActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" tooltip="suntec_telli/res/values/strings.xml">
+<persistable path="/suntec_telli/res/values/strings.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NLUDemoActivity.java" tooltip="VoiceRecognitionDemo/src/baidu/voicedemo/NLUDemoActivity.java">
-<persistable path="/VoiceRecognitionDemo/src/baidu/voicedemo/NLUDemoActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="suntec_telli/AndroidManifest.xml">
+<persistable path="/suntec_telli/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NLUDemoActivity.java" tooltip="TextRecord/src/record/test/NLUDemoActivity.java">
-<persistable path="/TextRecord/src/record/test/NLUDemoActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Config.java" tooltip="TextRecord/src/record/test/Config.java">
+<persistable path="/TextRecord/src/record/test/Config.java"/>
 </file>
 </mruList>
 </workbench>

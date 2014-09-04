@@ -43,20 +43,29 @@ android 开发环境配置
 
 	配置：
 	   1：安装 Java 
+\\solar\pset\software\Android\common           win下的
+http://naviwiki/index.php/%E6%96%87%E4%BB%B6:Jdk-6u37-linux-x64.zip
 	   2：解压 Eclipse 和 SDK
 	   3：Eclipse -> help -> install new software -> add 
 		input :  adt &&  jar:file:/D:/ADT-12.0.0.zip!/
 	   4：将SDK下的Tools目录添加到 windows 环境
-	   5：后面参考：http://www.cnblogs.com/skynet/archive/2010/04/12/1709892.html
+	   5：后面参考： 从 1.5 开始看http://www.cnblogs.com/skynet/archive/2010/04/12/1709892.html
 
+
+！！！ 不能用 中文路径。。。
 PS：统一
-用：Java 1.6  &&  Android 2.3.1
+用： 32位的软件Eclipse  + 64 的 JDK
+用： Java 1.6  &&  Android 2.3.1
 用： android 2.3.1 即 android 9
 用： 百度语音服务
+
+
+
 
 ## Eclipse新建项目时候报此错误，Package name must have at least two identifiers
 解决办法：
 Package name :  com.domain.your_package_name
+
 
 ## Path for project must have only one segment
 解决办法：
@@ -65,9 +74,11 @@ Project -> Properties -> Run/Debug Settings:
 2. Delete
 3. OK
 
+
 ## git bush 里面，右键没有反映
 解决方法：
 在git bush 里右键，选择属性 -> 选项-> 编辑选项 -> 快速编辑模式
+
 
 ## import ***.**  cannot be resolved
 解决方法：
@@ -76,15 +87,20 @@ project -> properties -> java build path -> libraries -> add extra jar
 
 主要添加：android 9 &&  android-support-v4 (这个在extra下） && 其他库
 
+
 ## R cannot be resolved
 原因：
 	引入的程序，无法解析layout下的View文件
 解决方法：
 	自己建一个工程，把相关文件添加进来就好了。（网上的方法试验了，都不太好使）
 
+
+
 ## 百度Api key & secret key
 public static final String API_KEY = "tdwReBfwGNjg0SRmQEziq3nR";
-public static final String SECRET_KEY = "**"; 这个找我要。
+public static final String SECRET_KEY = "MGwWG3ZetWtUEvHus4UUbuGq7gaLfP06"; 
+
+
 
 ## 给其他人权限在GitHub上提交代码
 解决方法：
@@ -92,7 +108,33 @@ public static final String SECRET_KEY = "**"; 这个找我要。
 最后我来确定是否同意代码提交。
 （或者建一个 SVN）
 
+
+## new DialogRecognitionListener(){} must override a superclass method
+原因：
+jdk版本问题。
+
+解决办法：
+项目属性---->javaCompiler中的complier compliance level 将1.5改为1.6。
+
+
+##  Conversion to Dalvik format failed with error 1
+原因：
+添加了不需要的核心包的原因
+
+办法：
+删掉那些不用的包
 #####################################################
 
 
 
+## 启动 其他APP的方法
+思路：
+1：获取手机中所有APP的名字，包的名字。存入HashMap中。
+	List<ResolveInfo> mApps = getPackageManager().queryIntentActivities(mainIntent, 0);
+2：用户输入需要开启的软件名字，点击Button
+3：找到名字对应的包名，打开相应的App
+	Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(AppPackageStr);  
+        startActivity(LaunchIntent); 
+
+
+## 

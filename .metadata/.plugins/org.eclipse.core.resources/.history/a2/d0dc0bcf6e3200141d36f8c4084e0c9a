@@ -1,0 +1,31 @@
+package thread.Test;
+
+import android.os.Message;
+
+public class Data {
+
+	private Thread thread ;
+	
+    thread = new Thread(new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			while (isRunning){
+				try {
+					//Thread.currentThread()
+					Message msg = new Message();
+					msg.obj = " Voice Class + ";
+					msg.what = Constraints.dataMsg;
+					Constraints.setTestString(msg.obj.toString());
+					
+					handler.sendMessage(msg);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
+		}
+	});
+	
+}

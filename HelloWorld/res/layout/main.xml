@@ -4,9 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearLayout1">
+        <EditText android:layout_weight="1" android:id="@+id/editText1" android:layout_height="wrap_content" android:layout_width="110dp"></EditText>
+        <Button android:text="Button" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/button1" android:layout_weight="0.38"></Button>
+    </LinearLayout>
+    <ListView android:layout_height="wrap_content" android:id="@+id/listView1" android:layout_width="match_parent"></ListView>
 </LinearLayout>

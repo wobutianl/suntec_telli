@@ -3,5 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="D:/jerryfive/File/VoiceTask/baiduVoice/Baidu-Voice-SDK-Android-1.6.0/libs/Baidu-SpeechRecognitionUI-SDK-Android-1.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/jerryfive/File/VoiceTask/baiduVoice/Baidu-Voice-SDK-Android-1.6.0/libs/galaxy.jar"/>
+	<classpathentry kind="lib" path="D:/jerryfive/File/VoiceTask/baiduVoice/Baidu-Voice-SDK-Android-1.6.0/libs/VoiceRecognition-1.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

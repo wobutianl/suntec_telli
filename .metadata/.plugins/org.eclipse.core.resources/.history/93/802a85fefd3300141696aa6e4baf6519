@@ -1,0 +1,85 @@
+package list.show;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class ShowListActivity extends Activity {
+    /** Called when the activity is first created. */
+	
+	
+	ListView list ;
+	Button sendBtn;
+	Button resBtn;  
+	EditText sendText;
+	EditText resText;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        list = (ListView)findViewById(R.id.listView1);
+        sendBtn = (Button)findViewById(R.id.sendBtn);
+        resBtn = (Button)findViewById(R.id.resBtn);
+        sendText = (EditText)findViewById(R.id.sendText);
+        resText = (EditText)findViewById(R.id.resText);
+        
+      //生成动态数组，加入数据  
+        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();  
+        for(int i=0;i<10;i++)  
+        {  
+            HashMap<String, Object> map = new HashMap<String, Object>();  
+            map.put("ItemImage", R.drawable.icon);//图像资源的ID  
+            map.put("ItemTitle", "Level "+i);  
+            map.put("ItemText", "Finished in 1 Min 54 Secs, 70 Moves! ");  
+            listItem.add(map);  
+        }  
+        //生成适配器的Item和动态数组对应的元素  
+        SimpleAdapter listItemAdapter = new SimpleAdapter(this,listItem,//数据源   
+            R.layout.receivelist,//ListItem的XML实现  
+            //动态数组与ImageItem对应的子项          
+            new String[] {"ItemImage","ItemTitle"},   
+            //ImageItem的XML文件里面的一个ImageView,两个TextView ID  
+            new int[] {R.id.imageView1,R.id.textView1}  
+        );  
+         
+        //添加并且显示  
+        list.setAdapter(listItemAdapter);  
+          
+        //添加点击  
+        list.setOnItemClickListener(new View.OnItemClickListener() {  
+  
+            @Override  
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,  
+                    long arg3) {  
+                setTitle("点击第"+arg2+"个项目");  
+            }  
+        });  
+          
+      //添加长按点击  
+        list.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {  
+              
+            @Override  
+            public void onCreateContextMenu(ContextMenu menu, View v,ContextMenuInfo menuInfo) {  
+                menu.setHeaderTitle("长按菜单-ContextMenu");     
+                menu.add(0, 0, 0, "弹出长按菜单0");  
+                menu.add(0, 1, 0, "弹出长按菜单1");     
+            }  
+        });   
+    }  
+      
+    //长按菜单响应函数  
+    @Override  
+    public boolean onContextItemSelected(MenuItem item) {  
+        setTitle("点击了长按菜单里面的第"+item.getItemId()+"个项目");   
+        return super.onContextItemSelected(item);  
+    }  
+}

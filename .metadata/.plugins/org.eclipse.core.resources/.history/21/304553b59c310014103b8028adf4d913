@@ -1,0 +1,12 @@
+package suntec_telli.voice;
+
+public class Constants {
+    /*
+     * 璇风櫥褰昲ttp://developer.baidu.com锛屾敞鍐屾垚涓虹櫨搴﹀紑鍙戣�锛屽垱寤哄簲鐢ㄥ苟寮��璇煶鎶�湳鏈嶅姟鍚庯紝
+     * 灏嗗搴旂殑ApiKey鍜孲ecretKey濉啓鍚庡啀娴嬭瘯
+     */
+    public static final String API_KEY = "tdwReBfwGNjg0SRmQEziq3nR";
+
+    public static final String SECRET_KEY = "";
+
+}

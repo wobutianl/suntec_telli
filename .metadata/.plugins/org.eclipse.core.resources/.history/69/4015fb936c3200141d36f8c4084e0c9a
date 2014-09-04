@@ -1,0 +1,11 @@
+package thread.Test;
+
+public class Constraints {
+
+		public static int dataMsg = 0;
+		public static int ConServerMsg = 1;
+		public static int ServerMsg = 2;
+		public static int ReceServerMsg = 3;
+		public static int VoiceMsg = 4;
+		public static int UIMsg = 5;
+}

@@ -8,16 +8,68 @@
 package suntec_telli.voice;
 
 public final class R {
+    public static final class array {
+        public static final int command_tips=0x7f050003;
+        public static final int dialog_theme=0x7f050002;
+        public static final int languages=0x7f050001;
+        public static final int prop_tpye=0x7f050000;
+    }
     public static final class attr {
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
     }
+    public static final class id {
+        public static final int more=0x7f060003;
+        public static final int recognition_text=0x7f060000;
+        public static final int setting=0x7f060002;
+        public static final int start_diolog=0x7f060001;
+    }
     public static final class layout {
         public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int hello=0x7f040000;
+        public static final int activity_desc_api=0x7f04001f;
+        public static final int activity_desc_external=0x7f040021;
+        public static final int activity_desc_nlu=0x7f040023;
+        public static final int activity_label_api=0x7f04001e;
+        public static final int activity_label_dialog_tips=0x7f04001d;
+        public static final int activity_label_external=0x7f040020;
+        public static final int activity_label_nlu=0x7f040022;
+        public static final int app_name=0x7f040000;
+        public static final int cancel=0x7f040003;
+        public static final int choose_dialog_theme=0x7f040014;
+        public static final int choose_language=0x7f040013;
+        public static final int choose_prop_type=0x7f040012;
+        public static final int dialog_show_help_onsilent=0x7f040028;
+        public static final int dialog_show_help_onsilent_summary=0x7f040029;
+        public static final int dialog_show_tip_onsilent=0x7f040026;
+        public static final int dialog_show_tip_onsilent_summary=0x7f040027;
+        public static final int dialog_show_tips_onstart=0x7f040024;
+        public static final int dialog_show_tips_onstart_summary=0x7f040025;
+        public static final int dialog_tips_sound=0x7f040017;
+        public static final int end_tune=0x7f040010;
+        public static final int error_occur=0x7f04000a;
+        public static final int error_start=0x7f04000b;
+        public static final int finished=0x7f040009;
+        public static final int in_recog=0x7f040008;
+        public static final int is_canceled=0x7f04000c;
+        public static final int more=0x7f04001b;
+        public static final int nlp=0x7f04001a;
+        public static final int play_end_sound=0x7f040016;
+        public static final int play_start_sound=0x7f040015;
+        public static final int please_speak=0x7f040001;
+        public static final int setting=0x7f040011;
+        public static final int show_vol=0x7f040018;
+        public static final int speaking=0x7f040002;
+        public static final int start=0x7f040004;
+        public static final int start_dialog=0x7f040005;
+        public static final int start_tune=0x7f04000f;
+        public static final int status=0x7f040006;
+        public static final int tofinish=0x7f040007;
+        public static final int try_again=0x7f04000d;
+        public static final int use_default_audio_source=0x7f040019;
+        public static final int view_html=0x7f04001c;
+        public static final int volume=0x7f04000e;
     }
 }

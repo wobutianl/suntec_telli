@@ -1,0 +1,138 @@
+package thread.Test;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import thread.Test.Constraints;
+import thread.Test.DataThread;
+
+public class ThreadTestActivity extends Activity {
+    
+	private String TAG = "chapter8_3";
+    private Button btnEnd;
+    private Button btnBeg;
+    private TextView labelTimer;
+    private Thread clockThread;
+    private boolean isRunning = true;
+    private Handler handler;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+        btnEnd = (Button) findViewById(R.id.button1);
+        btnBeg = (Button) findViewById(R.id.button2);
+        
+        btnEnd.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //isRunning = false;
+            }
+        });
+
+        btnEnd.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+               VoiceThread(handler, "abdc");
+            }
+        });
+        
+        handler = new Handler() {
+
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                case Constraints.dataMsg:
+                	ModelData data = (ModelData)msg.obj;
+                    labelTimer.setText("逝去了 " + data.getMessage() + " 秒");
+                    break;
+                case 1:
+                	DataThread.dataThread(handler, msg.obj);
+                	labelTimer.setText(Constraints.getTestString());
+                }
+            }
+
+        };
+
+        labelTimer = (TextView) findViewById(R.id.textView1);
+
+        /* 线程体是Clock对象本身，线程名字为"Clock" */
+        clockThread = new Thread(new Runnable() {
+            @Override
+
+            public void run() {
+                int timer = 0;
+                while (isRunning) {
+                    try {
+                        Thread.currentThread().sleep(1000);
+                        timer++;
+                        /* labelTimer.setText("逝去了 " + timer + " 秒"); */
+                        Message msg = new Message();
+                        msg.obj = timer;
+                        msg.what = 1;
+                        handler.sendMessage(msg);
+                        Log.d(TAG, "lost  time " + timer);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        
+
+        //clockThread.start(); /* 启动线程 */
+
+    }
+    
+	public void VoiceThread(final Handler handler, final Object obj){
+		Log.d("Voice", "Voice Thread");
+	    new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(isRunning){
+					try {
+						Log.d("voiceThread", "123456");
+						//Thread.currentThread()
+						
+						Message msg = new Message();
+						//msg.obj = obj;
+						AppendString(obj);
+						Log.d("voice ", " append end ");
+						msg.what = Constraints.dataMsg;
+						Log.d("voice 2 data", " data Thread begin");
+						//Constraints.setTestString(msg.obj.toString());
+						//AppendString(msg.obj.toString());
+						msg.obj = msg;
+						handler.sendMessage(msg);
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	    ).start();
+	}
+	private static ModelMsg msg = new ModelMsg();
+	private  void AppendString(Object obj){
+		
+		Log.d("voice ", " begin append");
+		msg.setMsgID(1);
+		msg.setMsgStr(" from nanjing to shanghai");
+		Log.d("voice ", " append");
+		isRunning = false;
+		//return msg;		
+	}
+}
