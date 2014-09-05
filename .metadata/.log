@@ -7112,3 +7112,27 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 4 2014-09-04 20:46:23.333
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2014-09-04 20:46:31.479 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_07
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-09-04 20:49:05.051
+!MESSAGE Failed to load properties file for project 'Thread'
+
+!ENTRY org.eclipse.ui 4 4 2014-09-04 21:51:34.078
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2014-09-05 10:23:49.234 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_07
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2014-09-05 21:46:28.355
+!MESSAGE Invalid preference page path: XML Syntax

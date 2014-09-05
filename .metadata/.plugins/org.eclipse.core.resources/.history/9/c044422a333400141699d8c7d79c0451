@@ -1,0 +1,26 @@
+package thread.test;
+
+import android.os.Handler;
+
+public class Handlers {
+	
+	private final static Handler mMainHandler, mChildHandler;
+
+	public Handler getmMainHandler() {
+		return mMainHandler;
+	}
+
+	public void setmMainHandler(Handler mMainHandler) {
+		this.mMainHandler = mMainHandler;
+	}
+
+	public Handler getmChildHandler() {
+		return mChildHandler;
+	}
+
+	public void setmChildHandler(Handler mChildHandler) {
+		this.mChildHandler = mChildHandler;
+	}
+
+	
+}

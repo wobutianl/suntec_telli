@@ -1,0 +1,23 @@
+package thread.Test;
+
+import java.io.Serializable;
+
+public class ModelMsg implements Serializable {
+
+	private int MsgID ;
+	private String MsgStr;
+	
+	public int getMsgID() {
+		return MsgID;
+	}
+	public void setMsgID(int msgID) {
+		MsgID = msgID;
+	}
+	public String getMsgStr() {
+		return MsgStr;
+	}
+	public void setMsgStr(String msgStr) {
+		MsgStr = msgStr;
+	}
+	
+}

@@ -1,0 +1,17 @@
+package thread.Model;
+
+public class T_URIMsg {
+
+	public String MSG_DID;
+	public String MSG_SID;
+	public String MSG_STT;
+	public String MSG_FLAG;
+	
+	T_URIMsg(){
+		this.MSG_DID = "Telli";
+		this.MSG_SID = "Telli";
+		this.MSG_STT = "Telli";
+		this.MSG_FLAG = "Telli";
+	}
+	
+}

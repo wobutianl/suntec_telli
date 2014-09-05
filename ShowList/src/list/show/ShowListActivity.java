@@ -31,8 +31,9 @@ public class ShowListActivity extends Activity {
 	EditText resText;
 	
 	SimpleAdapter listItemAdapter;  // ListView的适配器  
+	SimpleAdapter resAdapter;  // ListView的适配器  
 	ArrayList<HashMap<String, Object>> listItem ;  // ListView的数据源，这里是一个HashMap的列表  
-	 
+	ArrayList<HashMap<String, Object>> resItem ; 
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,15 +47,8 @@ public class ShowListActivity extends Activity {
         resText = (EditText)findViewById(R.id.resText);
         
       //生成动态数组，加入数据  
-        listItem = new ArrayList<HashMap<String, Object>>();  
-//        for(int i=0;i<10;i++)  
-//        {  
-//            HashMap<String, Object> map = new HashMap<String, Object>();  
-//            map.put("ItemImage", R.drawable.icon);//图像资源的ID  
-//            map.put("ItemTitle", "Level "+i);  
-//            map.put("ItemText", "Finished in 1 Min 54 Secs, 70 Moves! ");  
-//            listItem.add(map);  
-//        }  
+        listItem = new ArrayList<HashMap<String, Object>>();
+        
         //生成适配器的Item和动态数组对应的元素  
         listItemAdapter = new SimpleAdapter(this,listItem,//数据源   
             R.layout.receivelist,//ListItem的XML实现  
@@ -77,9 +71,7 @@ public class ShowListActivity extends Activity {
             }  
         });
         
-        
-          
-      //添加长按点击  
+        //添加长按点击  
         list.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {  
               
             @Override  
@@ -88,7 +80,22 @@ public class ShowListActivity extends Activity {
                 menu.add(0, 0, 0, "弹出长按菜单0");  
                 menu.add(0, 1, 0, "弹出长按菜单1");     
             }  
-        });   
+        }); 
+        
+        resItem = new ArrayList<HashMap<String, Object>>(); 
+	      //生成适配器的Item和动态数组对应的元素  
+	      resAdapter = new SimpleAdapter(this,resItem,//数据源   
+	          R.layout.receivelist,//ListItem的XML实现  
+	          //动态数组与ImageItem对应的子项          
+	          new String[] {"ItemImage","ItemTitle", "ItemText"},   
+	          //ImageItem的XML文件里面的一个ImageView,两个TextView ID  
+	          new int[] {R.id.ItemImage,R.id.ItemTitle,R.id.ItemText}  
+      );  
+       
+      //添加并且显示  
+      list.setAdapter(listItemAdapter);  
+          
+  
         
         sendBtn.setOnClickListener(sendlistener);//设置监听
     }  

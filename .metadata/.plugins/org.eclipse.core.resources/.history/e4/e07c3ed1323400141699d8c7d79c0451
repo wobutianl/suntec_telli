@@ -1,0 +1,9 @@
+package thread.test;
+
+import android.os.Handler;
+
+public class Handler {
+	
+	public Handler mMainHandler, mChildHandler;
+
+}

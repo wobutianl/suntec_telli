@@ -1,0 +1,119 @@
+package com.ThreadCommunication;
+
+import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Looper;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
+import android.util.Log; 
+import android.view.View.OnClickListener;
+
+import java.util.List;
+
+import android.os.Bundle;
+
+public class ThreadCommunicationActivity extends Activity {
+	 private static final String TAG = "MainThread";
+	    private Handler mMainHandler, mChildHandler;
+	    private TextView info;
+	    private Button msgBtn;
+	 
+	    @Override
+	    public void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.main);
+	 
+	        info = (TextView) findViewById(R.id.info);
+	        msgBtn = (Button) findViewById(R.id.msgBtn);;
+	 
+	        mMainHandler = new Handler() {
+	 
+	            @Override
+	            public void handleMessage(Message msg) {
+	                Log.i(TAG, "Got an incoming message from the child thread - "
+	                        + (String) msg.obj);
+	                // 接收子线程的消息
+	                info.setText((String) msg.obj);
+	            }
+	 
+	        };
+	 
+	        new ChildThread().start();
+	         
+	         
+	        msgBtn.setOnClickListener(new View.OnClickListener() {
+	 
+	            @Override
+	            public void onClick(View v) {
+	                 
+	                if (mChildHandler != null) {
+	                     
+	                    //发送消息给子线程
+	                    Message childMsg = mChildHandler.obtainMessage();
+	                    childMsg.obj = mMainHandler.getLooper().getThread().getName() + " says Hello";
+	                    mChildHandler.sendMessage(childMsg);
+	                     
+	                    Log.i(TAG, "Send a message to the child thread - " + (String)childMsg.obj);
+	 
+	 
+	                }
+	            }
+	        });
+	 
+	    }
+	 
+	    public void onDestroy() {
+
+	        mChildHandler.getLooper().quit();
+	    }
+	 
+	    class ChildThread extends Thread {
+	 
+	        private static final String CHILD_TAG = "ChildThread";
+	 
+	        public void run() {
+	            this.setName("ChildThread");
+	 
+	            //初始化消息循环队列，需要在Handler创建之前
+	            Looper.prepare();
+	 
+	            mChildHandler = new Handler() {
+	                @Override
+	                public void handleMessage(Message msg) {
+	                     Log.i(CHILD_TAG, "Got an incoming message from the main thread - " + (String)msg.obj);
+	 
+	 
+	                    try {
+	 
+	                        //在子线程中可以做一些耗时的工作
+	                        sleep(100);
+	 
+	                        Message toMain = mMainHandler.obtainMessage();
+	                        toMain.obj = "This is " + this.getLooper().getThread().getName() +
+	                                    ".  Did you send me \"" + (String)msg.obj + "\"?";
+	 
+	                        mMainHandler.sendMessage(toMain);
+	 
+	                        Log.i(CHILD_TAG, "Send a message to the main thread - " + (String)toMain.obj);
+	 
+	                    } catch (InterruptedException e) {
+	                        // TODO Auto-generated catch block
+	                        e.printStackTrace();
+	                    }
+	                }
+	 
+	            };
+	 
+	            Log.i(CHILD_TAG, "Child handler is bound to - "+ mChildHandler.getLooper().getThread().getName());
+	 
+	            //启动子线程消息循环队列
+	            Looper.loop();
+	        }
+	    }
+}

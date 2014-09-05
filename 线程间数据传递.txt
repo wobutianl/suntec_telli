@@ -1,0 +1,150 @@
+线程间数据传递：
+
+1：发生的情况，
+	A线程运行完，传数据给主线程。
+	但数据是自定义的复杂数据。
+
+2：说明：
+	如果是简单数据（int, string, list。。。）
+		可以用message->bundle->put**来实现
+	复杂数据考虑用序列化
+		有两种序列化：
+		Serializable  &&  parcelable
+		parcelable：android独有，复杂，但效率高（推荐）
+
+########################
+
+3：parcelable实现步骤：
+	1）implements Parcelable
+
+	2）重写writeToParcel方法，将你的对象序列化为一个Parcel对象，即：将类的数据写入外部提供的Parcel中，打包需要传递的数据到Parcel容器保存，以便从 Parcel容器获取数据
+
+	3）重写describeContents方法，内容接口描述，默认返回0就可以
+
+	4）实例化静态内部对象CREATOR实现接口		Parcelable.Creator
+
+	public static final Parcelable.Creator<T> CREATOR
+
+	注：其中public static final一个都不能少，内部对象CREATOR的名称也不能改变，必须全部大写。需重写本接口中的两个方法：createFromParcel(Parcel in) 实现从Parcel容器中读取传递数据值，封装成Parcelable对象返回逻辑层，newArray(int size) 创建一个类型为T，长度为size的数组，仅一句话即可（return new T[size]），供外部类反序列化本类数组使用。
+
+	简而言之：通过writeToParcel将你的对象映射成Parcel对象，再通过createFromParcel将Parcel对象映射成你的对象。也可以将Parcel看成是一个流，通过writeToParcel把对象写到流里面，在通过createFromParcel从流里读取对象，只不过这个过程需要你来实现，因此写的顺序和读的顺序必须一致。
+
+
+5：基础代码：
+
+public class MyParcelable implements Parcelable 
+{
+     private int mData;
+
+     public int describeContents() 
+     {
+         return 0;
+     }
+
+     public void writeToParcel(Parcel out, int flags) 
+     {
+         out.writeInt(mData);
+     }
+
+     public static final Parcelable.Creator<MyParcelable> CREATOR = new Parcelable.Creator<MyParcelable>() 
+     {
+         public MyParcelable createFromParcel(Parcel in) 
+         {
+             return new MyParcelable(in);
+         }
+
+         public MyParcelable[] newArray(int size) 
+         {
+             return new MyParcelable[size];
+         }
+     };
+     
+     private MyParcelable(Parcel in) 
+     {
+         mData = in.readInt();
+     }
+ }
+
+
+
+6：案例代码：
+
+public class Book implements Parcelable
+{
+    private String bookName;
+    private String author;
+    private int publishDate;
+    
+    public Book()
+    {
+        
+    }
+    
+    public String getBookName()
+    {
+        return bookName;
+    }
+    
+    public void setBookName(String bookName)
+    {
+        this.bookName = bookName;
+    }
+    
+    public String getAuthor()
+    {
+        return author;
+    }
+    
+    public void setAuthor(String author)
+    {
+        this.author = author;
+    }
+    
+    public int getPublishDate()
+    {
+        return publishDate;
+    }
+    
+    public void setPublishDate(int publishDate)
+    {
+        this.publishDate = publishDate;
+    }
+    
+    @Override
+    public int describeContents()
+    {
+        return 0;
+    }
+    
+    @Override
+    public void writeToParcel(Parcel out, int flags)
+    {
+        out.writeString(bookName);
+        out.writeString(author);
+        out.writeInt(publishDate);
+    }
+    
+    public static final Parcelable.Creator<Book> CREATOR = new Creator<Book>()
+    {
+        @Override
+        public Book[] newArray(int size)
+        {
+            return new Book[size];
+        }
+        
+        @Override
+        public Book createFromParcel(Parcel in)
+        {
+            return new Book(in);
+        }
+    };
+    
+    public Book(Parcel in)
+    {
+        bookName = in.readString();
+        author = in.readString();
+        publishDate = in.readInt();
+    }
+}
+
+

@@ -6,6 +6,7 @@ public class ModelData {
 	private int pid;
 	private int did ;
 	private String Message;
+	
 	public String getTags() {
 		return tags;
 	}

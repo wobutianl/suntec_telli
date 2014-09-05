@@ -1,0 +1,21 @@
+package thread.Test;
+
+public class ModelMsg {
+
+	private int MsgID ;
+	private String MsgStr;
+	
+	public int getMsgID() {
+		return MsgID;
+	}
+	public void setMsgID(int msgID) {
+		MsgID = msgID;
+	}
+	public String getMsgStr() {
+		return MsgStr;
+	}
+	public void setMsgStr(String msgStr) {
+		MsgStr = msgStr;
+	}
+	
+}

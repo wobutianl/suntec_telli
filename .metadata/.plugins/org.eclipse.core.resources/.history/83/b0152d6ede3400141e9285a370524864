@@ -1,0 +1,107 @@
+package thread.Test;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
+public class VoiceThread extends Thread {
+
+	private String TAG = "VoiceThread";
+	private static boolean isRunning = true;
+	private static ModelMsg mesg = new ModelMsg();
+	
+    Handler handler;
+    
+    public VoiceThread(Handler handler) {
+        super();
+        this.handler = handler;
+    }
+
+    @Override
+    public void run() {
+    	Looper.prepare();//1、初始化Looper
+
+        try {  // 模拟执行某项任务，下载等
+            Thread.sleep(5000);
+            //handler.obtainMessage();
+            
+            // 任务完成后通知activity更新UI
+            Message msg = prepareMessage("task completed!");
+            // message将被添加到主线程的MQ中
+            handler.sendMessage(msg);
+        } catch (InterruptedException e) {
+            Log.d(TAG, "interrupted!");
+        }
+        Looper.loop();
+    }
+
+    private Message prepareMessage(String str) {
+        Message result = handler.obtainMessage();
+        
+        ModelMsg mdata = new ModelMsg();
+        mdata.setMsgID(1);
+		mdata.setMsgStr(str );
+		
+        Bundle data = new Bundle();     
+        data.putParcelable("data", mdata);
+        
+        result.setData(data);
+        return result;
+    }
+    
+    private void doTask(){
+    	System.out.println(" data thread ");
+    }
+		
+	
+	public static void voiceThread(final Handler handler, final Object obj){
+		Log.d("Voice", "Voice Thread");
+	    new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(isRunning){
+					try {
+						Log.d("voiceThread", "123456");
+						//Thread.currentThread()
+						
+						Message mesg = new Message();
+						//msg.obj = obj;
+						AppendString(obj);
+						Log.d("voice ", " append end ");
+						mesg.what = Constraints.dataMsg;
+						Log.d("voice 2 data", " data Thread begin");
+						//Constraints.setTestString(msg.obj.toString());
+						//AppendString(msg.obj.toString());
+						//mesg.obj = msg;
+						//Log.d("voice ", mesg.getMsgStr());
+						handler.sendMessage(mesg);
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	    ).start();
+	}
+	
+	private static void AppendString(Object obj){
+		
+		Log.d("voice ", " begin append");
+		mesg.setMsgID(1);
+		mesg.setMsgStr(" from nanjing to shanghai");
+		Log.d("voice ", mesg.getMsgStr());
+		
+		isRunning = false;
+		//return msg;
+	}
+
+	public static  ModelMsg getMsg() {
+		return mesg;
+	}
+	
+}

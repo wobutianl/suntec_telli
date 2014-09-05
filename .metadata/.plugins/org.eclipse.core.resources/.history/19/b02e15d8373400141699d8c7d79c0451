@@ -1,0 +1,57 @@
+package thread.test;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
+class mChild extends Thread {
+
+	private static final String CHILD_TAG = "ChildThread";
+
+	public void run() {
+		this.setName("ChildThread");
+
+		// 初始化消息循环队列，需要在Handler创建之前
+		Looper.prepare();
+
+		mChildHandler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				Log.i(CHILD_TAG,
+						"Got an incoming message from the main thread - "
+								+ (String) msg.obj);
+
+				try {
+
+					// 在子线程中可以做一些耗时的工作
+					sleep(100);
+
+					Message toMain = mMainHandler.obtainMessage();
+					toMain.obj = "This is "
+							+ this.getLooper().getThread().getName()
+							+ ".  Did you send me \"" + (String) msg.obj
+							+ "\"?";
+
+					mMainHandler.sendMessage(toMain);
+
+					Log.i(CHILD_TAG, "Send a message to the main thread - "
+							+ (String) toMain.obj);
+
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		};
+
+		Log.i(CHILD_TAG, "Child handler is bound to - "
+				+ mChildHandler.getLooper().getThread().getName());
+
+		// 启动子线程消息循环队列
+		Looper.loop();
+	}
+}
+	
+

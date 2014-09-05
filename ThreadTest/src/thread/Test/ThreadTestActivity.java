@@ -10,43 +10,56 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import thread.Model.T_URIMsg;
 import thread.Test.Constraints;
 import thread.Test.DataThread;
 import thread.Test.VoiceThread;
+import thread.pSrc.URLMsg;
+import thread.pSrc.p_main;
 
 public class ThreadTestActivity extends Activity {
     
-	private String TAG = "chapter8_3";
+	private String TAG = "MainThread";
     private Button btnEnd;
     private Button btnBeg;
     private TextView labelTimer;
     private Thread clockThread;
     private boolean isRunning = true;
-    private Handler handler;
-    
+    private Handler handler ;
+    private URLMsg tMsg = new URLMsg();
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        Log.d(TAG , " conserver Thread begin ");
+        
         btnEnd = (Button) findViewById(R.id.button1);
         btnBeg = (Button) findViewById(R.id.button2);
         labelTimer = (TextView) findViewById(R.id.textView1);
+        
+        //new ConServer(handler, sHandler).start();
+        
         
         btnEnd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                //isRunning = false;
+                isRunning = false;
             }
         });
 
         btnEnd.setOnClickListener(new View.OnClickListener() {
-
+        
             @Override
             public void onClick(View v) {
-               VoiceThread.voiceThread(handler, "abdc");
+
+            	tMsg.Msg_Flag = "p_start";
+            	tMsg.Msg_DID = "0";
+            	new p_main(handler, tMsg).start();
+            	Log.d(TAG , " conserver Thread begin ");
+
             }
         });
         
@@ -56,19 +69,16 @@ public class ThreadTestActivity extends Activity {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                 case Constraints.dataMsg:
-                	ModelMsg mesg = VoiceThread.getMsg();
-                	DataThread.dataThread(handler, mesg);
-                	Log.d("data ", " data Thread End ");
+                	DataThread dataThread = new DataThread(handler);
+                	dataThread.start();
+                	Log.d(TAG , " data Thread End ");
                 	labelTimer.setText(Constraints.getTestString());
+                
                     break;
                 case 1:
-                	//DataThread.dataThread(handler, msg.obj);
                 	labelTimer.setText(Constraints.getTestString());
                 }
             }
-
         };
-
     }
-	
 }

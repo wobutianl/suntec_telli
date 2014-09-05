@@ -1,0 +1,75 @@
+package thread.test;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+import android.os.Handler;
+import android.os.Message;
+import android.os.Looper;
+
+import android.widget.TextView;
+import android.widget.Button;
+
+import android.view.View;
+
+import android.util.Log; 
+
+import thread.test.Handlers;
+
+public class ThreadActivity extends Activity {
+	 private static final String TAG = "MainThread";
+	    //private Handler mMainHandler, mChildHandler;
+	    private TextView info;
+	    private Button msgBtn;
+	 
+	    @Override
+	    public void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.main);
+	 
+	        info = (TextView) findViewById(R.id.info);
+	        msgBtn = (Button) findViewById(R.id.msgBtn);;
+	 
+	        mMainHandler = new Handler() {
+	 
+	            @Override
+	            public void handleMessage(Message msg) {
+	                Log.i(TAG, "Got an incoming message from the child thread - "
+	                        + (String) msg.obj);
+	                // 接收子线程的消息
+	                info.setText((String) msg.obj);
+	            }
+	 
+	        };
+	 
+	        //new ChildThread().start();
+	         
+	         
+	        msgBtn.setOnClickListener(new View.OnClickListener() {
+	 
+	            @Override
+	            public void onClick(View v) {
+	                 
+	                if (mChildHandler != null) {
+	                     
+	                    //发送消息给子线程
+	                    Message childMsg = mChildHandler.obtainMessage();
+	                    childMsg.obj = mMainHandler.getLooper().getThread().getName() + " says Hello";
+	                    mChildHandler.sendMessage(childMsg);
+	                     
+	                    Log.i(TAG, "Send a message to the child thread - " + (String)childMsg.obj);
+	 
+	 
+	                }
+	            }
+	        });
+	 
+	    }
+	 
+	    public void onDestroy() {
+
+	        mChildHandler.getLooper().quit();
+	    }
+	 
+	    
+}

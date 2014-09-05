@@ -1,0 +1,22 @@
+package thread.Model;
+
+public class T_URIMsg {
+
+	public String MSG_DID;
+	public String MSG_SID;
+	public String MSG_STT;
+	public String MSG_FLAG;
+	
+	
+	
+	public T_URIMsg(String flag ){
+		MSG_DID = "Telli";
+		MSG_SID = "Telli";
+		MSG_STT = "Telli";
+		MSG_FLAG = flag;
+	}
+	
+	
+	
+	
+}

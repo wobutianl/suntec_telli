@@ -1,0 +1,15 @@
+package thread.Model;
+
+public class T_URIMsg {
+
+	private String MSG_DID;
+	public String MSG_SID;
+	public String MSG_STT;
+	public String MSG_FLAG;
+	
+
+	
+	
+	
+	
+}
