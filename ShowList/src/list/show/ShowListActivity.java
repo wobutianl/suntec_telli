@@ -2,6 +2,7 @@ package list.show;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,145 +10,108 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View.OnCreateContextMenuListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
-import android.view.View;  
-import android.view.ContextMenu.ContextMenuInfo;  
-
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 
 public class ShowListActivity extends Activity {
-    /** Called when the activity is first created. */
-	
-	
-	ListView list ;  // ListView控件  
+	/** Called when the activity is first created. */
+
+	ListView list; // ListView控件
 	Button sendBtn;
-	Button resBtn;  
+	Button resBtn;
 	EditText sendText;
 	EditText resText;
-	
-	SimpleAdapter listItemAdapter;  // ListView的适配器  
-	SimpleAdapter resAdapter;  // ListView的适配器  
-	ArrayList<HashMap<String, Object>> listItem ;  // ListView的数据源，这里是一个HashMap的列表  
-	ArrayList<HashMap<String, Object>> resItem ; 
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        list = (ListView)findViewById(R.id.listView1);
-        sendBtn = (Button)findViewById(R.id.sendBtn);
-        resBtn = (Button)findViewById(R.id.resBtn);
-        sendText = (EditText)findViewById(R.id.sendText);
-        resText = (EditText)findViewById(R.id.resText);
-        
-      //生成动态数组，加入数据  
-        listItem = new ArrayList<HashMap<String, Object>>();
-        
-        //生成适配器的Item和动态数组对应的元素  
-        listItemAdapter = new SimpleAdapter(this,listItem,//数据源   
-            R.layout.receivelist,//ListItem的XML实现  
-            //动态数组与ImageItem对应的子项          
-            new String[] {"ItemImage","ItemTitle", "ItemText"},   
-            //ImageItem的XML文件里面的一个ImageView,两个TextView ID  
-            new int[] {R.id.ItemImage,R.id.ItemTitle,R.id.ItemText}  
-        );  
-         
-        //添加并且显示  
-        list.setAdapter(listItemAdapter);  
-          
-        //添加点击  
-        list.setOnItemClickListener(new OnItemClickListener() {  
-  
-            @Override  
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,  
-                    long arg3) {  
-                setTitle("点击第"+arg2+"个项目");  
-            }  
-        });
-        
-        //添加长按点击  
-        list.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {  
-              
-            @Override  
-            public void onCreateContextMenu(ContextMenu menu, View v,ContextMenuInfo menuInfo) {  
-                menu.setHeaderTitle("长按菜单-ContextMenu");     
-                menu.add(0, 0, 0, "弹出长按菜单0");  
-                menu.add(0, 1, 0, "弹出长按菜单1");     
-            }  
-        }); 
-        
-        resItem = new ArrayList<HashMap<String, Object>>(); 
-	      //生成适配器的Item和动态数组对应的元素  
-	      resAdapter = new SimpleAdapter(this,resItem,//数据源   
-	          R.layout.receivelist,//ListItem的XML实现  
-	          //动态数组与ImageItem对应的子项          
-	          new String[] {"ItemImage","ItemTitle", "ItemText"},   
-	          //ImageItem的XML文件里面的一个ImageView,两个TextView ID  
-	          new int[] {R.id.ItemImage,R.id.ItemTitle,R.id.ItemText}  
-      );  
-       
-      //添加并且显示  
-      list.setAdapter(listItemAdapter);  
-          
-  
-        
-        sendBtn.setOnClickListener(sendlistener);//设置监听
-    }  
-      
-    //长按菜单响应函数  
-    @Override  
-    public boolean onContextItemSelected(MenuItem item) {  
-        setTitle("点击了长按菜单里面的第"+item.getItemId()+"个项目");   
-        return super.onContextItemSelected(item);  
-    }  
-    
-    private void addItem(String str)  
-    {  
-	    HashMap<String, Object> map = new HashMap<String, Object>();  
-	    map.put("ItemImage", R.drawable.icon);  
-	    map.put("ItemTitle", "标题");  
-	    map.put("ItemText", str);  
-	    listItem.add(map);  
-	    Log.d("map",map.get("ItemText").toString());
-	    listItemAdapter.notifyDataSetChanged();  
-    }  
-      
-    private void deleteItem()  
-    {  
-	    int size = listItem.size();  
-	    if( size > 0 )  
-	    {  
-	    	listItem.remove(listItem.size() - 1);  
-		    listItemAdapter.notifyDataSetChanged();  
-	    }  
-    }  
-    
-    Button.OnClickListener sendlistener = new Button.OnClickListener(){//创建监听对象    
-        public void onClick(View v){    
-        	String sendStr = sendText.getText().toString();
-        	//Log.d("str",sendStr);
-        	if (sendStr != null){
-        		Log.d("str",sendStr);
-        		addItem(sendStr);
+	private String TAG = "Activity";
 
-        		sendText.setText("");
-        	}   
-        }    
-  
-    }; 
-    
-    public void Btn3OnClick(View view){    
-        //String strTmp="点击Button03";  
-        //Ev1.setText(strTmp);  
-    	String sendStr = sendText.getText().toString();
-    	if (sendStr != null){
-    		addItem(sendStr);
-    	}
-    }    
+	private Button sendButton = null ;
+	//private Button sendButton = null ;
+	private EditText contentEditText = null;
+	private ListView chatListView = null;
+	private List<ChatEntity> chatList = null;
+	private TwoAdapter chatAdapter = null;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.main);
+
+		contentEditText = (EditText) this.findViewById(R.id.sendText);
+		sendButton = (Button) this.findViewById(R.id.sendBtn);
+		
+		resBtn = (Button)this.findViewById(R.id.resBtn);
+		resText = (EditText)this.findViewById(R.id.resText);
+
+		chatListView = (ListView) this.findViewById(R.id.listView1);
+
+		chatList = new ArrayList<ChatEntity>();
+		final ChatEntity chatEntity = new ChatEntity();
+		for (int i = 0; i < 2; i++) {
+			//chatEntity = ;
+			if (i % 2 == 0) {
+				chatEntity.setComeMsg(false);
+				chatEntity.setContent("Hello");
+				chatEntity.setChatTime("2012-09-20 15:12:32");
+			} else {
+				chatEntity.setComeMsg(true);
+				chatEntity.setContent("Hello,nice to meet you!");
+				chatEntity.setChatTime("2012-09-20 15:13:32");
+			}
+			chatList.add(chatEntity);
+		}
+		
+		Log.d(TAG, " set Adapter ");
+		chatAdapter = new TwoAdapter(this, chatList);
+		chatListView.setAdapter(chatAdapter);
+
+		sendButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//chatEntity.setComeMsg(false);
+				if (!contentEditText.getText().toString().equals("")) {
+					// 发送消息
+					send(contentEditText, false);   // set Message to Adapter  The Main Point!!!!
+				} else {
+					Toast.makeText(ShowListActivity.this, "Content is empty",
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
+		resBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//chatEntity.setComeMsg(true);
+				if (!resText.getText().toString().equals("")) {
+					// 发送消息
+					send(resText , true);   // set Message to Adapter  The Main Point!!!!
+				} else {
+					Toast.makeText(ShowListActivity.this, "Content is empty",
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+	}
+
+	private void send(EditText editText, boolean isComeMsg) {   // !!!! the main point 
+		ChatEntity chatEntity = new ChatEntity();
+		chatEntity.setChatTime("2012-09-20 15:16:34");
+		chatEntity.setContent(editText.getText().toString());
+		chatEntity.setComeMsg(isComeMsg);
+		chatList.add(chatEntity);
+		chatAdapter.notifyDataSetChanged(); // refresh data
+		chatListView.setSelection(chatList.size() - 1);
+		editText.setText("");
+	}
 }

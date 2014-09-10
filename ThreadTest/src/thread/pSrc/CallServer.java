@@ -18,7 +18,6 @@ public class CallServer
         {
         	
             URL t_url = new URL(StrURL);
-            // 存在问题（无法读取）
             BufferedReader t_in = new BufferedReader(new InputStreamReader(t_url.openStream(),"utf-8"));
              
             Str_XML = t_in.readLine();

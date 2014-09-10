@@ -1,0 +1,29 @@
+package thread.VR;
+
+public class TTS {
+
+	speechSynthesizer = new SpeechSynthesizer(getApplicationContext(),
+            "holder", this);
+    speechSynthesizer.setApiKey(Constants.API_KEY, Constants.SECRET_KEY);
+    speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+    setVolumeControlStream(AudioManager.STREAM_MUSIC);
+    
+    System.out.println("initialize view successfully!");
+	
+	
+    private void setParams() {
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "1");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEED, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_ENCODE, "1");
+        speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_RATE, "4");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_LANGUAGE, "ZH");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_NUM_PRON, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_ENG_PRON, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PUNC, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_BACKGROUND, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_STYLE, "0");
+        // speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TERRITORY, "0");
+    }
+}

@@ -1,0 +1,116 @@
+package list.show;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View.OnCreateContextMenuListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+
+public class ShowListActivity extends Activity {
+	/** Called when the activity is first created. */
+
+	ListView list; // ListView控件
+	Button sendBtn;
+	Button resBtn;
+	EditText sendText;
+	EditText resText;
+	private String TAG = "Activity";
+
+	private Button sendButton = null ;
+	//private Button sendButton = null ;
+	private EditText contentEditText = null;
+	private ListView chatListView = null;
+	private List<ChatEntity> chatList = null;
+	private TwoAdapter chatAdapter = null;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.main);
+
+		contentEditText = (EditText) this.findViewById(R.id.sendText);
+		sendButton = (Button) this.findViewById(R.id.sendBtn);
+		
+		resBtn = (Button)this.findViewById(R.id.resBtn);
+		resText = (EditText)this.findViewById(R.id.resText);
+
+		chatListView = (ListView) this.findViewById(R.id.listView1);
+
+		chatList = new ArrayList<ChatEntity>();
+		final ChatEntity chatEntity = null;
+		for (int i = 0; i < 2; i++) {
+			chatEntity = new ChatEntity();
+			if (i % 2 == 0) {
+				chatEntity.setComeMsg(false);
+				chatEntity.setContent("Hello");
+				chatEntity.setChatTime("2012-09-20 15:12:32");
+			} else {
+				chatEntity.setComeMsg(true);
+				chatEntity.setContent("Hello,nice to meet you!");
+				chatEntity.setChatTime("2012-09-20 15:13:32");
+			}
+			chatList.add(chatEntity);
+		}
+		
+		Log.d(TAG, " set Adapter ");
+		chatAdapter = new TwoAdapter(this, chatList);
+		chatListView.setAdapter(chatAdapter);
+
+		sendButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (!contentEditText.getText().toString().equals("")) {
+					// 发送消息
+					send();   // set Message to Adapter  The Main Point!!!!
+				} else {
+					Toast.makeText(ShowListActivity.this, "Content is empty",
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
+		resBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				chatEntity.isComeMsg();
+				if (!resText.getText().toString().equals("")) {
+					// 发送消息
+					send();   // set Message to Adapter  The Main Point!!!!
+				} else {
+					Toast.makeText(ShowListActivity.this, "Content is empty",
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+	}
+
+	private void send() {   // !!!! the main point 
+		ChatEntity chatEntity = new ChatEntity();
+		chatEntity.setChatTime("2012-09-20 15:16:34");
+		chatEntity.setContent(contentEditText.getText().toString());
+		//chatEntity.setComeMsg(false);
+		chatList.add(chatEntity);
+		chatAdapter.notifyDataSetChanged(); // refresh data
+		chatListView.setSelection(chatList.size() - 1);
+		contentEditText.setText("");
+	}
+}

@@ -1,0 +1,198 @@
+
+package thread.VR;
+
+import com.baidu.voicerecognition.android.Candidate;
+import com.baidu.voicerecognition.android.DataUploader;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient.VoiceClientStatusChangeListener;
+import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
+
+import android.os.Handler;
+import android.os.Message;
+import android.os.Looper;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.util.Log;
+
+
+import java.util.List;
+
+import thread.Test.R;
+import thread.Test.ThreadTestActivity;
+
+/**
+ * 使用底层API方式识别Demo，开发者可以定义UI交互
+ * 
+ * @author yangliang02
+ */
+public class PSETTelliVoiceRecognitioner extends Thread {
+	protected static final String TAG = "recognition"; 
+
+
+    /** 正在识别中 */
+    private boolean isRecognition = false;
+
+    /** 音量更新间隔 */
+    private static final int POWER_UPDATE_INTERVAL = 100;
+
+    /** 识别回调接口 */
+    private PSETTelliVoiceRecogListener mListener = new PSETTelliVoiceRecogListener();
+    
+    private Message toClient;
+    
+    Handler mClientHandler, mVoiceRecognitionerHandler;
+    
+	public PSETTelliVoiceRecognitioner(Handler handle, Handler mVoiceRecognitionerHandler) {
+		// TODO Auto-generated constructor stub
+		this.mClientHandler = handle;
+		this.mVoiceRecognitionerHandler = mVoiceRecognitionerHandler;
+	}
+	
+		
+	public void run() {
+        this.setName("VoiceRecognitionerThread");
+        System.out.println("recogthread is running!");
+		
+        Looper.prepare();
+		
+		mVoiceRecognitionerHandler = new Handler() {
+			
+            @Override           
+            public void handleMessage(Message msg) {
+            	Log.d(TAG, " voice handle ");
+                switch(msg.what){
+				    case ThreadTestActivity.USER_START_SPEECH:
+				    	Log.d(TAG, " usr start speech ");
+				    	VoiceRecognitionConfig config = new VoiceRecognitionConfig();
+				    	config.setProp(Config.CURRENT_PROP);
+				        config.setLanguage(Config.getCurrentLanguage());
+				        //config.enableContacts(); // 启用通讯录
+				        config.enableVoicePower(Config.SHOW_VOL); // 音量反馈。
+				        if (Config.PLAY_START_SOUND) {
+				        	Log.d(TAG, " play start sound");
+				            config.enableBeginSoundEffect(R.raw.bdspeech_recognition_start); // 设置识别开始提示音
+				        }
+				        if (Config.PLAY_END_SOUND) {
+				            config.enableEndSoundEffect(R.raw.bdspeech_speech_end); // 设置识别结束提示音
+				        }
+				        config.setSampleRate(VoiceRecognitionConfig.SAMPLE_RATE_8K); // 设置采样率,需要与外部音频一致
+				    	
+						// 下面发起识别
+                        int code = ThreadTestActivity.mASREngine.startVoiceRecognition(mListener, config);
+                        if (code != VoiceRecognitionClient.START_WORK_RESULT_WORKING) {
+                            //向Client主线程报告错误
+                        } 
+                        break;
+					case ThreadTestActivity.USER_CANCEL_SPEECH:
+						// 取消识别过程
+						ThreadTestActivity.mASREngine.stopVoiceRecognition();
+                        break; 
+                    default:
+                        break;						
+				}
+            }
+
+        };
+		//准备接收消息
+		Looper.loop();
+		System.out.println("to the run() end!");
+	}	
+    /**
+     * 重写用于处理语音识别回调的监听器
+     */
+    class PSETTelliVoiceRecogListener implements VoiceClientStatusChangeListener {
+
+        @Override
+        public void onClientStatusChange(int status, Object obj) {
+        	toClient = mClientHandler.obtainMessage();
+            switch (status) {
+            // 语音识别实际开始，这是真正开始识别的时间点，需在界面提示用户说话。
+                case VoiceRecognitionClient.CLIENT_STATUS_START_RECORDING:
+                    isRecognition = true;
+					toClient.what = ThreadTestActivity.RECOGNITION_IS_READY;
+					mClientHandler.sendMessage(toClient);
+                    break;
+                case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_START: // 检测到语音起点
+                	System.out.println("engine detect the start of speech");
+                	toClient.what = ThreadTestActivity.RECOGNITION_SPEECH_START;
+					mClientHandler.sendMessage(toClient);
+					System.out.println("engine detect the start of speech,and notify client");
+					
+                    break;
+                // 已经检测到语音终点，等待网络返回
+                case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_END:
+                    toClient.what = ThreadTestActivity.RECOGNITION_SPEECH_END;
+					mClientHandler.sendMessage(toClient);
+					System.out.println("engine detect the end of speech,and notify client");
+                    break;
+                // 语音识别完成，显示obj中的结果
+                case VoiceRecognitionClient.CLIENT_STATUS_FINISH:
+                    isRecognition = false;
+					toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_FINISH;
+					toClient.obj = updateRecognitionResult(obj);
+					mClientHandler.sendMessage(toClient);
+					System.out.println("engine detect the finish of recognition,and notify client");
+                    break;
+                // 处理连续上屏
+                case VoiceRecognitionClient.CLIENT_STATUS_UPDATE_RESULTS:
+                    toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_PARTIALFINISH;
+					toClient.obj = updateRecognitionResult(obj);
+					mClientHandler.sendMessage(toClient);
+                    break;
+                // 用户取消
+                case VoiceRecognitionClient.CLIENT_STATUS_USER_CANCELED:
+                    toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_CANCELED;
+					mClientHandler.sendMessage(toClient);
+                    isRecognition = false;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        @Override
+        public void onError(int errorType, int errorCode) {
+            isRecognition = false;
+            
+            toClient = mClientHandler.obtainMessage();
+            toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_ERROR;
+			toClient.obj = Integer.toHexString(errorCode);
+			mClientHandler.sendMessage(toClient);
+        }
+
+        @Override
+        public void onNetworkStatusChange(int status, Object obj) {
+            // 这里不做任何操作不影响简单识别
+        }
+    }
+
+    /**
+     * 将识别结果返回，搜索模式结果类型为List<String>,输入模式结果类型为List<List<Candidate>>
+     * 
+     * @param result
+     */
+    private String updateRecognitionResult(Object result) {
+    	String retString = new String();
+        if (result != null && result instanceof List) {
+            List results = (List) result;
+            if (results.size() > 0) {
+                if (results.get(0) instanceof List) {
+                    List<List<Candidate>> sentences = (List<List<Candidate>>) result;
+                    StringBuffer sb = new StringBuffer();
+                    for (List<Candidate> candidates : sentences) {
+                        if (candidates != null && candidates.size() > 0) {
+                            sb.append(candidates.get(0).getWord());
+                        }
+                    }
+                    retString = (sb.toString());
+                } else {
+                	retString = (results.get(0).toString());
+                }
+            }
+        }
+        
+        return retString;
+    }
+
+}

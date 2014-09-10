@@ -137,4 +137,38 @@ jdk版本问题。
         startActivity(LaunchIntent); 
 
 
+## 调用TTS包一直出现：waiting for new data
+原因分析：
+1：代码
+2：权限
+3：库
+解决办法：
+1：修改mainfest 中的权限
+2：记得有一个动态库 和一个静态库（两个库）都要添加！！！
+
+## 线程 Handler无法传递的问题
+原因：
+1：使用了传值的方式传递handler
+解决：
+1：使用全局Public static 访问
+
+## 调用语音VR出现各种问题
+原因分析：
+1：权限
+2：添加ApiKey
+
+## Bundle, parcelable数据的 传递与识别
+1：打包：
+DataModel.setMsg_Flag("p_start");
+DataModel.setMsg_DID("1") ;
+
+Bundle bd = new Bundle();
+bd.putParcelable("toServer", DataModel);
+toServer.setData(bd);
+
+2:使用：
+Bundle bd = new Bundle();
+bd = msg.getData();
+l_msg = (L_XMLMsg) bd.getParcelable("data");
+
 ## 

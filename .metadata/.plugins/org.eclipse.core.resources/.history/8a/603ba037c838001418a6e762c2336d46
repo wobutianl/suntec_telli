@@ -1,0 +1,77 @@
+package thread.Test;
+
+import thread.pSrc.URLMsg;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
+public class ConServer extends Thread {
+	
+	private String TAG = "ConServerThread";
+	private static boolean isRunning = true;
+	private static ModelMsg mesg = new ModelMsg();
+	
+	URLMsg URImsg ;
+	
+    Handler mHandler;
+    //Handler sHandler;
+    
+    public ConServer(Handler mhandler, T_URIMsg URImsg) {
+        super();
+        this.mHandler = mhandler;
+        //this.sHandler = shandler;
+        this.URImsg = URImsg;
+    }
+
+    @Override
+    public void run() {
+    	//Looper.prepare();//1����ʼ��Looper
+
+        try {  // ģ��ִ��ĳ���������ص�
+//        	Looper.prepare();//1����ʼ��Looper
+//            sHandler = new Handler(){//2���� shandler��CustomThreadʵ���Looper����
+//                public void handleMessage (Message msg) {//3�����崦����Ϣ�ķ���
+//                    switch(msg.what) {
+//                    case 1:
+//                        Log.d(TAG, "Server started :" + (String) msg.obj);
+//                        //break;
+//                    //case 2:
+//                    }
+//                }
+//            };
+            //Looper.loop();//4������Ϣѭ��
+
+            
+            //mHandler.obtainMessage();
+        	Log.d(TAG , " conserver Thread begin ");
+            // ������ɺ�֪ͨactivity����UI
+            Message msg = prepareMessage("task completed!");
+            // message������ӵ����̵߳�MQ��
+            mHandler.sendMessage(msg);
+        } catch (Exception e) {
+            Log.d(TAG, "interrupted!");
+        }
+        //Looper.loop();
+    }
+
+    private Message prepareMessage(String str) {
+        Message result = mHandler.obtainMessage();
+        
+        ModelMsg mdata = new ModelMsg();
+        mdata.setMsgID(1);
+		mdata.setMsgStr( str );
+		
+        Bundle data = new Bundle();     
+        data.putParcelable("data", mdata);
+        Log.d(TAG , str);
+        result.setData(data);
+        return result;
+    }
+    
+    private void doTask(){
+    	System.out.println(" data thread ");
+    }
+
+}

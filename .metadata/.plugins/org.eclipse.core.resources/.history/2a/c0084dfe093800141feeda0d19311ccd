@@ -1,0 +1,32 @@
+/******main interface*****/
+
+public class p_main 
+{
+	public String GetXML(URLMsg UMsg)
+	{
+		String StrXML = "Telli";
+		String StrUML = "Telli";
+		
+		BlockURL TempURL = new BlockURL(UMsg);
+		StrUML = TempURL.GetStrURL();
+		
+		CallServer TempXML = new CallServer(StrUML);
+		StrXML = TempXML.GetStrXML();
+		
+		return StrXML;
+	}
+	public static void main(String args[])
+	{
+		URLMsg UMsg = new URLMsg();
+		UMsg.Msg_DID = "13";
+		UMsg.Msg_Flag = "p_vr";
+		UMsg.Msg_SID = "b215a3fa6434425b9c8f3a997fcc0009";
+		UMsg.Msg_STT = "南京天气如何";
+		
+		p_main sim = new p_main();
+		String temp = sim.GetXML(UMsg);
+		System.out.println(temp);
+        Decode pfd = new Decode();  
+        pfd.parseXml(temp); 
+	}
+}

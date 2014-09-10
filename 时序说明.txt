@@ -1,0 +1,45 @@
+打开语音助手
+
+1：ServerThread 	
+	传递开始数据 ->  开始
+	返回数据 ->  给DataThread ->  解析给MainThread
+	->  Display + TTS
+
+2：VR Thread
+	start()
+
+
+一次语音过程
+
+1：点击开始
+	VR.sendStartHandle
+	VR提示开始说话
+	VR开始识别
+	VR返回结果 vrStr
+
+	vrStr传给Server
+	Server返回结果XMLStr
+
+	XMLStr传给Data
+	Data返回L_MSG：parcelable
+
+	Mainthread根据结果启动相应操作
+
+
+
+每个类的flag
+
+Server：
+	ser_flag = p_start :启动  (&& DID = 0)
+	ser_flag = p_stop  :结束
+	ser_flag = p_vr    :对话中
+
+
+Data :Flag= TTS && Display
+	20:both null;              做什么处理
+	21:Tts null Display not ;
+	22:Display null  Tts not ;
+	23:neither null
+
+
+	

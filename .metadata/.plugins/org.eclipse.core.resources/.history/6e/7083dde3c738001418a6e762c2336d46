@@ -1,0 +1,122 @@
+/******main interface*****/
+package thread.pSrc;
+
+import thread.Model.T_URIMsg;
+import thread.Test.Constraints;
+import thread.Test.ModelMsg;
+import thread.Test.ThreadTestActivity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
+public class p_main extends Thread
+{
+	private String TAG = "p_main";
+
+	URLMsg urlMsg;
+//	Handler handler;
+    
+    public p_main( ) {
+        super();
+
+    }
+    
+    public void setStr(URLMsg urlMsg) {
+    	this.urlMsg = urlMsg;
+    }
+
+//    @Override
+//    public void run() {
+//
+//        try {  
+//        	Log.d(TAG , " conserver Thread begin ");
+//            String strXML = doTask(urlMsg);
+//            
+//            Message msg = prepareMessage(strXML);
+//            ThreadTestActivity.handler.sendMessage(msg);   
+//        } catch (Exception e) {
+//            Log.d(TAG, "interrupted!");
+//        }
+//    }
+    String strXML;
+    Message msg;
+    Bundle bd = new Bundle();
+    URLMsg p_msg = new URLMsg();
+	@Override
+	public void run() {
+		
+        Looper.prepare();
+		
+		ThreadTestActivity.mServerHandler = new Handler() {
+			
+            @Override           
+            public void handleMessage(Message msg) {
+                switch(msg.what){
+				    case 110:
+				    	// start
+				    	p_msg = bd.getParcelable("toServer");
+			            strXML = doTask(p_msg);
+			            
+			            msg = prepareMessage(strXML);
+			            ThreadTestActivity.handler.sendMessage(msg);  
+                        break;
+					case 111:
+						// vr
+						p_msg = bd.getParcelable("toServer");
+			            strXML = doTask(p_msg);
+			            
+			            msg = prepareMessage(strXML);
+			            ThreadTestActivity.handler.sendMessage(msg); 
+                        break; 
+					case 112:
+						// stop 
+						p_msg = bd.getParcelable("toServer");
+			            strXML = doTask(p_msg);
+			            
+			            msg = prepareMessage(strXML);
+			            ThreadTestActivity.handler.sendMessage(msg); 
+                    default:
+                        break;						
+				}
+            }
+        };
+		//准备接收消息
+		Looper.loop();
+		System.out.println("to the run() end!");
+	}	
+
+    private Message prepareMessage(String str) {
+        Message result = ThreadTestActivity.handler.obtainMessage();
+        result.obj = str;
+        result.what = Constraints.dataMsg;       
+        return result;
+    }
+    
+    private String doTask(URLMsg UMsg){
+    	System.out.println(" data thread ");
+    	
+    	String StrXML = "Telli";
+		String StrUML = "Telli";
+		
+		BlockURL TempURL = new BlockURL(UMsg);
+		StrUML = TempURL.GetStrURL();
+		Log.d(TAG , StrUML );
+		
+		CallServer TempXML = new CallServer(StrUML);
+		StrXML = TempXML.GetStrXML();
+		
+		Log.d(TAG , StrXML );
+		return StrXML;
+    }
+    
+    public URLMsg getUrlMsg() {
+		return urlMsg;
+	}
+
+	public void setUrlMsg(URLMsg urlMsg) {
+		this.urlMsg = urlMsg;
+	}
+
+}

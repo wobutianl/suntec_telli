@@ -1,0 +1,24 @@
+/****Used as a structure******/
+package thread.Data;
+public class URLMsg 
+{
+	public String Msg_DID;
+	public String Msg_STT;
+	public String Msg_Flag;
+	public String Msg_SID;
+	
+	public URLMsg()
+	{
+		Msg_DID = "Telli";
+		Msg_STT = "Telli";
+		Msg_Flag = "Telli";
+		Msg_SID = "Telli";
+	}
+	public void ShowMsg()
+	{
+		System.out.println(Msg_DID);
+		System.out.println(Msg_STT);
+		System.out.println(Msg_Flag);
+		System.out.println(Msg_SID);
+	}
+}

@@ -7,60 +7,216 @@ import android.os.Message;
 import android.test.IsolatedContext;
 import android.util.Log;
 
+import thread.Model.L_XMLMsg;
 import thread.Test.ModelMsg;
+import thread.VR.Config;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import com.baidu.voicerecognition.android.VoiceRecognitionClient;
+import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
 
 public class DataThread extends Thread {
 
 	private String TAG = "DataThread";
-	//private static Handler handler;
+
 	private static boolean isRunning = true;
-	//private ModelData mdata = new ModelData();  //model Msg
-	/*
-	 * handler ¾ä±ú
-	 * obj     ÉÏÒ»¸öÏß³Ì´«µİµÄÊı¾İ
-	 */
-	
-	//private static final String TAG = DataThread.class.getSimpleName();
-    Handler handler;
-    
-    public DataThread(Handler handler) {
-        super();
-        this.handler = handler;
-    }
+	private L_XMLMsg l_msg = new L_XMLMsg();
 
-    @Override
-    public void run() {
-    	Looper.prepare();//1¡¢³õÊ¼»¯Looper
+	String xmlStr;
 
-        try {  // Ä£ÄâÖ´ĞĞÄ³ÏîÈÎÎñ£¬ÏÂÔØµÈ
-            Thread.sleep(5000);
-            handler.obtainMessage();
-            
-            // ÈÎÎñÍê³ÉºóÍ¨Öªactivity¸üĞÂUI
-            Message msg = prepareMessage("task completed!");
-            // message½«±»Ìí¼Óµ½Ö÷Ïß³ÌµÄMQÖĞ
-            handler.sendMessage(msg);
-        } catch (InterruptedException e) {
-            Log.d(TAG, "interrupted!");
-        }
-        Looper.loop();
-    }
+	public DataThread() {
+		super();
+		// this.xmlStr = str;
+	}
 
-    private Message prepareMessage(String str) {
-        Message result = handler.obtainMessage();
-        ModelMsg mdata = new ModelMsg();
-        Bundle data = new Bundle();
-        mdata.setMsgID(1);
-		mdata.setMsgStr(str );
-        data.putParcelable("data", mdata);
-        
-        result.setData(data);
-        return result;
-    }
-    
-    private void doTask(){
-    	System.out.println(" data thread ");
-    }
-	
+//	public void setStr(String str) {
+//		this.xmlStr = str;
+//	}
+
+	// @Override
+	// public void run() {
+	// Looper.prepare();//
+	//
+	// try { //
+	// ThreadTestActivity.handler.obtainMessage();
+	//
+	// Message msg = prepareMessage(xmlStr);
+	// ThreadTestActivity.handler.sendMessage(msg);
+	// } catch (Exception e) {
+	//
+	// }
+	// Looper.loop();
+	// }
+//	Message msg;
+//
+//	@Override
+//	public void run() {
+//
+//		Looper.prepare();
+//
+//		ThreadTestActivity.mDataHandler = new Handler() {
+//
+//			@Override
+//			public void handleMessage(Message msg) {
+//				switch (msg.what) {
+//				case 210:
+//					// start
+//					ThreadTestActivity.handler.obtainMessage();
+//
+//					msg = prepareMessage(msg.obj.toString());
+//					ThreadTestActivity.handler.sendMessage(msg);
+//					break;
+//				// case 211:
+//				// // vr
+//				// ThreadTestActivity.handler.obtainMessage();
+//				//
+//				// msg = prepareMessage(msg.obj.toString());
+//				// ThreadTestActivity.handler.sendMessage(msg);
+//				// break;
+//				// case 212:
+//				// // stop
+//				// ThreadTestActivity.handler.obtainMessage();
+//				//
+//				// msg = prepareMessage(msg.obj.toString());
+//				// ThreadTestActivity.handler.sendMessage(msg);
+//				default:
+//					break;
+//				}
+//			}
+//		};
+//		// å‡†å¤‡æ¥æ”¶æ¶ˆæ¯
+//		Looper.loop();
+//		System.out.println("to the run() end!");
+//	}
+//
+//	private Message prepareMessage(String str) {
+//		Message result = ThreadTestActivity.handler.obtainMessage();
+//		l_msg = parseXml(str);
+//		Bundle data = new Bundle();
+//		// l_msg.writeToParcel(out, flags)
+//		data.putParcelable("data", l_msg);
+//		result.setData(data);
+//		result.what = Integer.parseInt(l_msg.getFlag());
+//		Log.d(TAG, l_msg.getTts().toString());
+//		return result;
+//	}
+
+	public L_XMLMsg parseXml(String objXml) {
+		// 1ã€å°†ä¼ å…¥çš„å­—ç¬¦ä¸²æµåŒ–
+		InputStream in = null;
+		try {
+			in = new ByteArrayInputStream(objXml.getBytes("UTF-8"));
+			SAXReader reader = new SAXReader();
+			// 2ã€å°†æµè½¬æˆdocumentå¯¹è±¡
+			Document document = reader.read(in);
+			Element rootElement = document.getRootElement(); // æ‹¿åˆ°æ ¹èŠ‚ç‚¹
+
+			Element did = rootElement.element("did");
+			String Did = did.getTextTrim();
+
+			Element sid = rootElement.element("sid");
+			String Sid = sid.getTextTrim();
+
+			System.out.println("did--->" + Did);
+			System.out.println("sid--->" + Sid);
+
+			l_msg.setDid(Did);
+			l_msg.setSid(Sid);
+
+			// //////è§£æå¤šæ¬¡é‡å¤çš„å¾ªç¯ ///////////
+			for (Iterator whereArray = rootElement.elementIterator(); whereArray
+					.hasNext();) {
+				Element type = (Element) whereArray.next();
+				String nodeName = type.getName();
+				if (!nodeName.equals("op")) { // å¦‚æœè¿™ä¸ªèŠ‚ç‚¹ä¸æ˜¯opå°±è·³å‡ºã€‚
+					continue;
+				}
+
+				Element hins = type.element("hints");
+				Element prompt = type.element("prompt");
+				Element appName = type.element("appName");
+				String Display = null;
+				String Tts;
+				String AppName;
+				String promptFlag;
+				String Type;
+
+				if (null != hins) {
+					Element content = hins.element("content");
+					if (null != content) {
+						Display = content.getTextTrim();
+						System.out.println("content-->" + Display);
+
+						l_msg.setDisplay(Display);
+					}
+				} else if (null != prompt) {
+					if (null != prompt.attributeValue("display")) {
+						Display = prompt.attributeValue("tts");
+						System.out.println("display-->" + Display);
+
+						l_msg.setDisplay(Display);
+					}
+					if (null == prompt.attributeValue("tts")) {
+						Tts = null;
+
+						l_msg.setTts(null);
+					} else {
+						Tts = prompt.attributeValue("tts");
+						System.out.println("tts-->" + Tts);
+
+						l_msg.setTts(Tts);
+					}
+					if (Display == null && Tts == null) {
+						promptFlag = "20";
+					} else if (Display != null && Tts == null) {
+						promptFlag = "21";
+					} else if (Display == null && Tts != null) {
+						promptFlag = "22";
+					} else {
+						promptFlag = "23";
+					}
+					System.out.println("promptFlag-->" + promptFlag);
+					l_msg.setFlag(promptFlag);
+				}
+				if (null != appName) {
+
+					AppName = appName.getTextTrim();
+					System.out.println("appName-->" + AppName);
+					l_msg.setAppName(AppName);
+				} else {
+					Type = type.attributeValue("type");
+					System.out.println("Type-->" + Type);
+					l_msg.setType(Type);
+				}
+			}
+		} catch (UnsupportedEncodingException e) {
+			System.out.println("æµæ“ä½œå¼‚å¸¸");
+			e.printStackTrace();
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Documentå¯¹è±¡æ“ä½œå¼‚å¸¸");
+			e.printStackTrace();
+		} finally {
+			try {
+				in.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("æµå…³é—­å¼‚å¸¸");
+				e.printStackTrace();
+			}
+		}
+		return l_msg;
+
+	}
 
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HelloWorldActivity.java&apos; to &apos;ThreadTest/src/thread.Test&apos;&#x0D;&#x0A;- Original project: &apos;startAPP&apos;&#x0D;&#x0A;- Destination element: &apos;ThreadTest/src/thread.Test&apos;&#x0D;&#x0A;- Original element: &apos;com.domain.helloWorld.HelloWorldActivity.java&apos;" description="Copy compilation unit" destination="=ThreadTest/src&lt;thread.Test" element1="/src&lt;com.domain.helloWorld{HelloWorldActivity.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1410335557216" units="1" version="1.0"/>
+</session>

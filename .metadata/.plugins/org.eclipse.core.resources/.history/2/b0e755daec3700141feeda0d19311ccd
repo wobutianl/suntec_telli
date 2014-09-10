@@ -1,0 +1,182 @@
+package thread.VR;
+
+
+import android.R;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Looper;
+
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+import android.view.View.OnClickListener;
+import android.view.View;
+import android.view.ViewGroup;
+import android.util.Log;
+
+//import com.baidu.tts.sample.R;
+import com.baidu.voicerecognition.android.Candidate;
+import com.baidu.voicerecognition.android.DataUploader;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient;
+import com.baidu.voicerecognition.android.VoiceRecognitionClient.VoiceClientStatusChangeListener;
+import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
+
+import java.util.List;
+
+import thread.VR.Config;
+
+
+public class PSETTelliActivity  implements OnClickListener{
+	    protected static final String CLIENT_TAG = "client";
+	    
+	    //璇嗗埆鍣ㄥ彂缁欏鎴风鐨勬秷鎭被鍨嬪畾涔�	    public static final int RECOGNITION_IS_READY = 0x1;
+
+	    public static final int RECOGNITION_IS_READY = 0x1;
+	    
+        public static final int RECOGNITION_SPEECH_START = 0x2;
+
+        public static final int RECOGNITION_SPEECH_END = 0x3;
+
+        public static final int RECOGNITION_RECOGNITION_FINISH = 0x4;
+        
+        public static final int RECOGNITION_RECOGNITION_PARTIALFINISH = 0x5;
+        
+        public static final int RECOGNITION_RECOGNITION_CANCELED = 0x6;
+        
+        public static final int RECOGNITION_RECOGNITION_ERROR = 0x7;
+        
+        //瀹㈡埛绔彂缁欒瘑鍒櫒鐨勬秷鎭被鍨嬪畾涔�        public static final int USER_START_SPEECH = 0x8;
+        
+        public static final int USER_CANCEL_SPEECH = 0x9;
+         
+        public static  VoiceRecognitionClient mASREngine;
+
+        
+	    static public Handler mClientHandler;
+	    static public Handler mVoiceRecognitionerHandler;
+	    private TextView info;
+		private EditText Result = null;
+	    private Button startBtn;
+		private Button cancelBtn;
+		
+	 
+
+	    protected  void begin(Context context) {
+	        
+	        mASREngine = VoiceRecognitionClient.getInstance(context);
+	        mASREngine.setTokenApis(Constants.API_KEY, Constants.SECRET_KEY);
+	        
+	        System.out.println("initialize view successfully!");
+			
+	        mClientHandler = new Handler() {
+	 
+//	            @Override
+	            public void handleMessage(Message msg) {
+	                switch(msg.what){
+				    case RECOGNITION_IS_READY:
+						// 鎻愮ず鐢ㄦ埛鍙互寮�璇磋瘽
+//                       info.setText(R.string.);
+                       System.out.println("receive notify that ASREngine is ready!");
+                        break;
+					case RECOGNITION_SPEECH_START:
+						// 鎻愮ず璇磋瘽涓�						info.setText(R.string.speaking);
+						System.out.println("receive notify that user is speaking!");
+                        break;
+					case RECOGNITION_SPEECH_END:
+						// 鎻愮ず璇嗗埆涓紝璇风瓑寰呯粨鏋�                        info.setText(R.string.in_recog);
+                        System.out.println("receive notify that speaking is end!");
+                        break;
+					case RECOGNITION_RECOGNITION_FINISH:
+						// 鎻愮ず璇嗗埆瀹屾垚锛屽苟鏄剧ず璇嗗埆缁撴灉
+//						info.setText(R.string.finished);
+						Result.setText((String)(msg.obj));
+                        break;
+					case RECOGNITION_RECOGNITION_PARTIALFINISH:
+					    // 鎻愮ず璇嗗埆涓紝骞舵樉绀鸿瘑鍒粨鏋�					    info.setText(R.string.in_recog);
+					    Result.setText((String)(msg.obj));
+                        break;
+				    case RECOGNITION_RECOGNITION_CANCELED:
+					    // 鎻愮ず鍙栨秷鎴愬姛锛岃閲嶆柊寮�
+//					    info.setText(R.string.finish.);
+					    //鍒锋柊鍙栨秷鎸夐敭鐘舵�
+                        break;
+                    default:
+                        break;						
+				    }
+	            }
+	 
+	        };
+	 
+        	new PSETTelliVoiceRecognitioner().start(); 
+	         
+			
+			System.out.println("onCreate is end!");
+	    }
+	    
+	    @Override
+	    public void onClick(View v) {
+	        switch (v.getId()) {
+	        case R.id.startBtn:
+	        	cancelBtn.setEnabled(true);
+	        	if (mVoiceRecognitionerHandler != null) {
+                    //閫氱煡瀛愮嚎绋嬪彂璧疯瘑鍒�                    Message toVoiceRecognitioner = mVoiceRecognitionerHandler.obtainMessage();
+                    toVoiceRecognitioner.what = USER_START_SPEECH;
+                    mVoiceRecognitionerHandler.sendMessage(toVoiceRecognitioner);
+                }
+	            break;
+	        case R.id.cancelBtn:
+	        	if (mVoiceRecognitionerHandler != null) {
+                    
+                    //閫氱煡瀛愮嚎绋嬪彇娑堣瘑鍒�                    Message toVoiceRecognitioner = mVoiceRecognitionerHandler.obtainMessage();
+                    toVoiceRecognitioner.what = USER_CANCEL_SPEECH;
+                    mVoiceRecognitionerHandler.sendMessage(toVoiceRecognitioner);
+                }
+	            break;
+	        default:
+	            break;
+	        }
+	    }
+	    
+	    public void onStart() {
+	    	super.onStart();
+	    	System.out.println("onStart");
+	    	
+	    }
+//	    
+	    public void onReStart() {
+	    	super.onRestart();
+	    	System.out.println("onReStart");
+	    }
+	    
+	    public void onResume() {
+	    	super.onResume(); 
+	    	System.out.println("onResume");
+	    }
+	    
+	    public void onPause() {
+	    	super.onPause(); 
+	    	System.out.println("onPause");
+	    }
+	    
+	    public void onStop() {
+	    	super.onStop();
+	    	System.out.println("onStop");
+	    }
+	    
+	    public void onDestroy() {
+
+	    	System.out.println("onDestroy");
+	    	super.onDestroy();
+	    }
+	    
+//	    public void onDestroy() {
+//
+//	        mVoiceRecognitionerHandler.getLooper().quit();
+//	    }
+	 
+	    
+	    
+}

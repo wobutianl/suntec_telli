@@ -20,6 +20,23 @@ public class URLMsg implements Parcelable
 		Msg_Flag = "Telli";
 		Msg_SID = "Telli";
 	}
+	
+//	public URLMsg(String str , String flag, String did, String sid)
+//	{
+//		Msg_DID = did;
+//		Msg_STT = str;
+//		Msg_Flag = flag;
+//		Msg_SID = sid;
+//	}
+//	
+//	public URLMsg(String str, String flag, String did)
+//	{
+//		Msg_DID = did;
+//		Msg_STT = str;
+//		Msg_Flag = flag;
+//		Msg_SID = "Telli";
+//	}
+	
 	public void ShowMsg()
 	{
 		System.out.println(Msg_DID);
@@ -28,6 +45,38 @@ public class URLMsg implements Parcelable
 		System.out.println(Msg_SID);
 	}
 	
+	public String getMsg_DID() {
+		return Msg_DID;
+	}
+
+	public void setMsg_DID(String msg_DID) {
+		Msg_DID = msg_DID;
+	}
+
+	public String getMsg_STT() {
+		return Msg_STT;
+	}
+
+	public void setMsg_STT(String msg_STT) {
+		Msg_STT = msg_STT;
+	}
+
+	public String getMsg_Flag() {
+		return Msg_Flag;
+	}
+
+	public void setMsg_Flag(String msg_Flag) {
+		Msg_Flag = msg_Flag;
+	}
+
+	public String getMsg_SID() {
+		return Msg_SID;
+	}
+
+	public void setMsg_SID(String msg_SID) {
+		Msg_SID = msg_SID;
+	}
+
 	@Override
 	public int describeContents() {
 		return 0;
