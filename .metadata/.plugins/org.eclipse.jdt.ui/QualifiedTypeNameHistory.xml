@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.view.View.OnCreateContextMenuListener"/>
-<fullyQualifiedTypeName name="android.view.ContextMenu"/>
 <fullyQualifiedTypeName name="android.widget.Adapter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="thread.test.Handlers"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="thread.pSrc.URLMsg"/>
 <fullyQualifiedTypeName name="thread.pSrc.p_main"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="thread.Test.UserFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
 </qualifiedTypeNameHistroy>

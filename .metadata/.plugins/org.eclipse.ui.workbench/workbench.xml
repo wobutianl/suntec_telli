@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
 <window height="984" maximized="true" width="640" x="640" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -23,7 +23,7 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,7 +31,7 @@
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1409209124974" focus="true" label="Workspace - Debug">
+<page aggregateWorkingSetId="Aggregate for window 1409209124974" focus="true" label="Workspace - Java">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -43,6 +43,14 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
 </presentation>
 </folder>
 </info>
@@ -51,25 +59,53 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/pSrc/p_main.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3033" selectionTopPixel="1301"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadTestActivity.java" partName="ThreadTestActivity.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/ThreadTestActivity.java" title="ThreadTestActivity.java" tooltip="ThreadTest/src/thread/Test/ThreadTestActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10367" selectionTopPixel="6032"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadTestActivity.java" partName="ThreadTestActivity.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/Test/ThreadTestActivity.java" title="ThreadTestActivity.java" tooltip="ThreadTest2/src/thread/Test/ThreadTestActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/Test/ThreadTestActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6268" selectionTopPixel="5624"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="URLMsg.java" partName="URLMsg.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/pSrc/URLMsg.java" title="URLMsg.java" tooltip="ThreadTest/src/thread/pSrc/URLMsg.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/pSrc/URLMsg.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="URLMsg.java" partName="URLMsg.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/pSrc/URLMsg.java" title="URLMsg.java" tooltip="ThreadTest2/src/thread/pSrc/URLMsg.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/pSrc/URLMsg.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="87" selectionOffset="358" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BlockURL.java" partName="BlockURL.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/pSrc/BlockURL.java" title="BlockURL.java" tooltip="ThreadTest/src/thread/pSrc/BlockURL.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/pSrc/BlockURL.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="1089" selectionTopPixel="28"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BlockURL.java" partName="BlockURL.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/pSrc/BlockURL.java" title="BlockURL.java" tooltip="ThreadTest2/src/thread/pSrc/BlockURL.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/pSrc/BlockURL.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="406" selectionTopPixel="171"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataThread.java" partName="DataThread.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Test/DataThread.java" title="DataThread.java" tooltip="ThreadTest/src/thread/Test/DataThread.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Test/DataThread.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="2817" selectionTopPixel="1483"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataThread.java" partName="DataThread.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/Test/DataThread.java" title="DataThread.java" tooltip="ThreadTest2/src/thread/Test/DataThread.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/Test/DataThread.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2340" selectionTopPixel="1007"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="L_XMLMsg.java" partName="L_XMLMsg.java" path="D:/jerryfive/Android-voice-task/ThreadTest/src/thread/Model/L_XMLMsg.java" title="L_XMLMsg.java" tooltip="ThreadTest/src/thread/Model/L_XMLMsg.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest/src/thread/Model/L_XMLMsg.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1991" selectionTopPixel="9"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="L_XMLMsg.java" partName="L_XMLMsg.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/Model/L_XMLMsg.java" title="L_XMLMsg.java" tooltip="ThreadTest2/src/thread/Model/L_XMLMsg.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/Model/L_XMLMsg.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2041" selectionTopPixel="1719"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorldActivity.java" partName="HelloWorldActivity.java" path="D:/jerryfive/Android-voice-task/startAPP/src/com/domain/helloWorld/HelloWorldActivity.java" title="HelloWorldActivity.java" tooltip="startAPP/src/com/domain/helloWorld/HelloWorldActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/startAPP/src/com/domain/helloWorld/HelloWorldActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1758" selectionTopPixel="665"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" partName="strings.xml" path="D:/working/Android-voice-task/ThreadTest/res/values/strings.xml" title="strings.xml" tooltip="telli/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/telli/res/values/strings.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Decode.java" partName="Decode.java" path="D:/working/Android-voice-task/ThreadTest/src/thread/Data/Decode.java" title="Decode.java" tooltip="telli/src/thread/Data/Decode.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/telli/src/thread/Data/Decode.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Decode.java" partName="Decode.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/Data/Decode.java" title="Decode.java" tooltip="ThreadTest2/src/thread/Data/Decode.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/Data/Decode.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="877" selectionTopPixel="228"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserFragment.java" partName="UserFragment.java" path="D:/jerryfive/Android-voice-task/ThreadTest2/src/thread/Test/UserFragment.java" title="UserFragment.java" tooltip="ThreadTest2/src/thread/Test/UserFragment.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/src/thread/Test/UserFragment.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="624" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="fragment.xml" partName="fragment.xml" path="D:/jerryfive/Android-voice-task/ThreadTest2/res/layout/fragment.xml" title="fragment.xml" tooltip="ThreadTest2/res/layout/fragment.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/res/layout/fragment.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="user_prompt_fragment.xml" partName="user_prompt_fragment.xml" path="D:/jerryfive/Android-voice-task/ThreadTest2/res/layout/user_prompt_fragment.xml" title="user_prompt_fragment.xml" tooltip="ThreadTest2/res/layout/user_prompt_fragment.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/res/layout/user_prompt_fragment.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="D:/jerryfive/Android-voice-task/ThreadTest2/res/layout/main.xml" title="main.xml" tooltip="ThreadTest2/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ThreadTest2/res/layout/main.xml"/>
 </editor>
 </editors>
 <views>
@@ -135,7 +171,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -184,7 +220,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.android.ide.eclipse.ddms.views.LogCatView" activePerspective="org.eclipse.debug.ui.DebugPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -277,7 +313,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18991332" ratioLeft="241" ratioRight="1028" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.672" ratioLeft="588" ratioRight="287" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.pde.runtime.LogView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -378,7 +414,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.6765714" ratioLeft="592" ratioRight="283" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.66514283" ratioLeft="582" ratioRight="293" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -425,165 +461,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/pSrc/p_main.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/pSrc/BlockURL.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;android.view(View.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;java.lang(Thread.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;java.lang.reflect(InvocationTargetException.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Test/DataThread.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/Model/L_XMLMsg.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest/src/thread/pSrc/URLMsg.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/startAPP/src/com/domain/helloWorld/HelloWorldActivity.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;java.util(ArrayList.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Test/ThreadTestActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Test/DataThread.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Model/L_XMLMsg.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/pSrc/BlockURL.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/pSrc/URLMsg.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/telli/res/values/strings.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/telli/src/thread/Data/Decode.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Data/Decode.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Test/fragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ThreadTest2/src/thread/Test/UserFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/ThreadTest2/res/layout/fragment.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/ThreadTest2/res/layout/user_prompt_fragment.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/ThreadTest2/res/layout/main.xml"/>
 </editors>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="9485" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="0">
+<position info="not_deleted" x="10763" y="0"/>
 </item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="9530" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="0">
+<position info="not_deleted" x="10818" y="0"/>
 </item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="8965" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="0">
+<position info="not_deleted" x="10297" y="8"/>
 </item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="7898" y="0"/>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2182" y="8"/>
 </item>
-<item historyLabel="View.class" index="3">
+<item historyLabel="ThreadTestActivity.java" index="0">
+<position info="not_deleted" x="10297" y="8"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2182" y="8"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="1641" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2058" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2101" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2125" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2194" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2249" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2293" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2346" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2417" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2346" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2058" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2101" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2125" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2194" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2249" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2293" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2458" y="0"/>
+</item>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="2058" y="0"/>
+</item>
+<item historyLabel="ArrayList.class" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Thread.class" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="HelloWorldActivity.java" index="1">
+<position info="not_deleted" x="1758" y="0"/>
 </item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="7898" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="0">
+<position info="not_deleted" x="10297" y="8"/>
 </item>
-<item historyLabel="InvocationTargetException.class" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="11495" y="0"/>
 </item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="7898" y="0"/>
+<item historyLabel="DataThread.java" index="4">
+<position info="not_deleted" x="2340" y="0"/>
 </item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1150" y="0"/>
+<item historyLabel="L_XMLMsg.java" index="5">
+<position info="not_deleted" x="2041" y="0"/>
 </item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1839" y="25"/>
+<item historyLabel="BlockURL.java" index="6">
+<position info="not_deleted" x="406" y="0"/>
 </item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1837" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="7898" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1837" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="9245" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1839" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1866" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="1911" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="2020" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="2064" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="3073" y="4"/>
-</item>
-<item historyLabel="BlockURL.java" index="2">
-<position info="not_deleted" x="1089" y="27"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="3073" y="4"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="9241" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="2699" y="0"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="5175" y="0"/>
-</item>
-<item historyLabel="L_XMLMsg.java" index="7">
-<position info="not_deleted" x="1991" y="0"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="5175" y="0"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="5175" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="9241" y="0"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="2774" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="8047" y="400"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="1348" y="1432"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="2817" y="6"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="2960" y="5"/>
-</item>
-<item historyLabel="DataThread.java" index="6">
-<position info="not_deleted" x="2817" y="6"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="2960" y="5"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6364" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6402" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6447" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6483" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6129" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="6525" y="0"/>
-</item>
-<item historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="11663" y="0"/>
-</item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="3033" y="0"/>
-</item>
-<item historyLabel="URLMsg.java" index="8">
+<item historyLabel="URLMsg.java" index="7">
 <position info="not_deleted" x="358" y="87"/>
 </item>
-<item historyLabel="p_main.java" index="0">
-<position info="not_deleted" x="3033" y="0"/>
+<item historyLabel="strings.xml" index="8"/>
+<item historyLabel="Decode.java" index="9">
+<position info="not_deleted" x="20" y="0"/>
 </item>
-<item active="true" historyLabel="ThreadTestActivity.java" index="1">
-<position info="not_deleted" x="11663" y="0"/>
+<item historyLabel="Decode.java" index="10">
+<position info="not_deleted" x="877" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="11495" y="0"/>
+</item>
+<item historyLabel="fragment.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="UserFragment.java" index="12">
+<position info="not_deleted" x="670" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="1181" y="18"/>
+</item>
+<item historyLabel="UserFragment.java" index="12">
+<position info="not_deleted" x="670" y="0"/>
+</item>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="4445" y="0"/>
+</item>
+<item historyLabel="fragment.xml" index="13"/>
+<item historyLabel="user_prompt_fragment.xml" index="14"/>
+<item historyLabel="fragment.xml" index="13"/>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="4382" y="0"/>
+</item>
+<item historyLabel="fragment.xml" index="13"/>
+<item historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="6260" y="0"/>
+</item>
+<item historyLabel="UserFragment.java" index="12">
+<position info="not_deleted" x="624" y="20"/>
+</item>
+<item historyLabel="main.xml" index="15"/>
+<item active="true" historyLabel="ThreadTestActivity.java" index="3">
+<position info="not_deleted" x="6260" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -602,6 +633,36 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="ThreadTest2/res/layout/main.xml">
+<persistable path="/ThreadTest2/res/layout/main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="user_prompt_fragment.xml" tooltip="ThreadTest2/res/layout/user_prompt_fragment.xml">
+<persistable path="/ThreadTest2/res/layout/user_prompt_fragment.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="fragment.xml" tooltip="ThreadTest2/res/layout/fragment.xml">
+<persistable path="/ThreadTest2/res/layout/fragment.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="fragment.java" tooltip="ThreadTest2/src/thread/Test/fragment.java">
+<persistable path="/ThreadTest2/src/thread/Test/fragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Decode.java" tooltip="ThreadTest2/src/thread/Data/Decode.java">
+<persistable path="/ThreadTest2/src/thread/Data/Decode.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Decode.java" tooltip="telli/src/thread/Data/Decode.java">
+<persistable path="/telli/src/thread/Data/Decode.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" tooltip="telli/res/values/strings.xml">
+<persistable path="/telli/res/values/strings.xml"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ArrayList.class" tooltip="java.util.ArrayList">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;java.util(ArrayList.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" tooltip="startAPP/res/values/strings.xml">
+<persistable path="/startAPP/res/values/strings.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorldActivity.java" tooltip="startAPP/src/com/domain/helloWorld/HelloWorldActivity.java">
+<persistable path="/startAPP/src/com/domain/helloWorld/HelloWorldActivity.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="L_XMLMsg.java" tooltip="ThreadTest/src/thread/Model/L_XMLMsg.java">
 <persistable path="/ThreadTest/src/thread/Model/L_XMLMsg.java"/>
 </file>
@@ -616,30 +677,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BlockURL.java" tooltip="ThreadTest/src/thread/pSrc/BlockURL.java">
 <persistable path="/ThreadTest/src/thread/pSrc/BlockURL.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CallServer.java" tooltip="ThreadTest/src/thread/pSrc/CallServer.java">
-<persistable path="/ThreadTest/src/thread/pSrc/CallServer.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="URLMsg.java" tooltip="ThreadTest/src/thread/pSrc/URLMsg.java">
-<persistable path="/ThreadTest/src/thread/pSrc/URLMsg.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadTestActivity.java" tooltip="ThreadTest/src/thread/Test/ThreadTestActivity.java">
-<persistable path="/ThreadTest/src/thread/Test/ThreadTestActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="p_main.java" tooltip="ThreadTest/src/thread/pSrc/p_main.java">
-<persistable path="/ThreadTest/src/thread/pSrc/p_main.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="MessageQueue.class" tooltip="android.os.MessageQueue">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;android.os(MessageQueue.class"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Instrumentation.class" tooltip="android.app.Instrumentation">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ShowList/C:\/Users\/zhuxiaolin\/Downloads\/android-sdk-windows\/platforms\/android-9\/android.jar&lt;android.app(Instrumentation.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelMsg.java" tooltip="ThreadTest/src/thread/Test/ModelMsg.java">
-<persistable path="/ThreadTest/src/thread/Test/ModelMsg.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ModelData.java" tooltip="ThreadTest/src/thread/Test/ModelData.java">
-<persistable path="/ThreadTest/src/thread/Test/ModelData.java"/>
 </file>
 </mruList>
 </workbench>
