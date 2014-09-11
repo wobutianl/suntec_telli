@@ -21,23 +21,20 @@ public final class R {
         public static final int icon1=0x7f020001;
     }
     public static final class id {
-        public static final int beginBtn=0x7f070006;
-        public static final int cancelBtn=0x7f070007;
-        public static final int cancelVoice=0x7f070010;
-        public static final int id=0x7f070009;
-        public static final int iv_user_image=0x7f07000b;
-        public static final int linearLayout1=0x7f070000;
-        public static final int linearLayout2=0x7f070002;
-        public static final int linearLayout4=0x7f070005;
-        public static final int listView1=0x7f070001;
-        public static final int name=0x7f070008;
-        public static final int progressBar1=0x7f07000f;
-        public static final int sendBtn=0x7f070004;
-        public static final int sendText=0x7f070003;
-        public static final int textView1=0x7f07000d;
-        public static final int tv_content=0x7f07000c;
-        public static final int tv_time=0x7f07000a;
-        public static final int voiceText=0x7f07000e;
+        public static final int autoCompleteTextView1=0x7f070002;
+        public static final int beginBtn=0x7f070001;
+        public static final int cancelVoice=0x7f07000d;
+        public static final int id=0x7f070005;
+        public static final int iv_user_image=0x7f070007;
+        public static final int linearLayout1=0x7f07000a;
+        public static final int listView1=0x7f070000;
+        public static final int name=0x7f070004;
+        public static final int progressBar1=0x7f07000c;
+        public static final int sendBtn=0x7f070003;
+        public static final int textView1=0x7f070009;
+        public static final int tv_content=0x7f070008;
+        public static final int tv_time=0x7f070006;
+        public static final int voiceText=0x7f07000b;
     }
     public static final class layout {
         public static final int main=0x7f030000;

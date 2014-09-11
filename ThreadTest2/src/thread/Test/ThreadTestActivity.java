@@ -11,6 +11,7 @@ import com.baidu.speechsynthesizer.SpeechSynthesizerListener;
 import com.baidu.speechsynthesizer.publicutility.SpeechError;
 import com.baidu.voicerecognition.android.VoiceRecognitionClient;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -26,6 +27,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -58,13 +61,10 @@ public class ThreadTestActivity extends Activity  implements
 
 	// ////// UI ////////////////
 	private Button sendButton = null;
-	// private Button sendButton = null ;
-	private EditText contentEditText = null;
+	private AutoCompleteTextView contentEditText = null;
 	private ListView chatListView = null;
 	private List<ChatEntity> chatList = null;
 	private TwoAdapter chatAdapter = null;
-	private Button resBtn;
-	private EditText resText;
 
 	private ChatEntity chatEntity = new ChatEntity();
 	
@@ -73,7 +73,6 @@ public class ThreadTestActivity extends Activity  implements
 	private boolean isRunning = true;
 	public static Handler handler, mVoiceRecognitionerHandler;
 	public static Handler mServerHandler;
-//	public static Handler mDataHandler;
 
 	// ////// VR ////////////
 	private Button btnBegin;
@@ -95,7 +94,9 @@ public class ThreadTestActivity extends Activity  implements
 
 	private String handleString;
 	private static String sid;
-
+	
+	private static ArrayList<String> apps = new ArrayList<String>();
+	private String autoStr;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -103,7 +104,6 @@ public class ThreadTestActivity extends Activity  implements
 
 		// ///// VR ////////////
 		btnBegin = (Button) findViewById(R.id.beginBtn);
-		btnCancel = (Button) findViewById(R.id.cancelBtn);
 
 		mASREngine = VoiceRecognitionClient.getInstance(this);
 		mASREngine.setTokenApis("plsB3YLqYtjNqPxsMRBpNywS",
@@ -118,23 +118,18 @@ public class ThreadTestActivity extends Activity  implements
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		setParams();
 		// /////// UI ///////////
-		contentEditText = (EditText) this.findViewById(R.id.sendText);
+		contentEditText = (AutoCompleteTextView) this.findViewById(R.id.autoCompleteTextView1);
 		sendButton = (Button) this.findViewById(R.id.sendBtn);
-
-//		resBtn = (Button) this.findViewById(R.id.resBtn);
-//		resText = (EditText) this.findViewById(R.id.resText);
 
 		chatListView = (ListView) this.findViewById(R.id.listView1);
 		chatList = new ArrayList<ChatEntity>();
 
 		chatAdapter = new TwoAdapter(this, chatList);
 		chatListView.setAdapter(chatAdapter);
-		
-//		mControlPanel = (UserFragment) (getSupportFragmentManager().findFragmentById(R.id.control_panel));
-
 
 		///////  start app //////////
 		getList();
+		
 		
 		// ///// main Handler /////////////////
 		handler = new Handler() {
@@ -147,49 +142,31 @@ public class ThreadTestActivity extends Activity  implements
 				case RECOGNITION_IS_READY:
 					// 提示用户可以开始说话 // 这个时候应该说出来
 					send(getString(R.string.please_speak), true);
-//					mControlPanel.SetPromptString(R.string.please_speak);
-//					System.out.println("receive notify that ASREngine is ready!");
 					break;
 				case RECOGNITION_SPEECH_START:
 					// 提示说话中 //这个时候应该fragement
 					send(getString(R.string.speaking), true);
-//					mControlPanel.SetPromptString(R.string.speaking);
-//					System.out.println("receive notify that user is speaking!");
 					break;
 				case RECOGNITION_SPEECH_END:
 					// 提示识别中，请等待结果 // 这个时候应该转圈圈
 					send(getString(R.string.in_recog), true);
-//					mControlPanel.SetPromptString(R.string.in_recog);
-//					System.out.println("receive notify that speaking is end!");
 					break;
 				case RECOGNITION_RECOGNITION_FINISH:
 					// 提示识别完成，并显示识别结果 // 这个时候应该显示结果，传给Server
-//					send(getString(R.string.finished), true);
-//					mControlPanel.SetPromptString(R.string.finished);
-//					mControlPanel.SetFragmentVisiblity(false);
-					
 					result = (String) (msg.obj);
 					send(result, false);
 					
 					serverVR(result, sid);
-					//URLMsg urlMsg = new URLMsg(result, "p_vr", "1");
-					//p_server.setStr(urlMsg);
 					break;
 				case RECOGNITION_RECOGNITION_PARTIALFINISH:
 					// 提示识别中，并显示识别结果
-//					mControlPanel.SetFragmentVisiblity(false);
-					//send(getString(R.string.in_recog), true);
-					//result = (String) (msg.obj);
 					//send(result, false);
 					break;
 				case RECOGNITION_RECOGNITION_CANCELED:
 					// 提示取消成功，请重新开始
 					send(getString(R.string.is_canceled), true);
-//					mControlPanel.SetPromptString(R.string.finished);
-//					mControlPanel.SetFragmentVisiblity(true);
 					// 刷新取消按键状态
 					btnCancel.setEnabled(false);
-//					setParams();
 					ret = speechSynthesizer.speak(getString(R.string.is_canceled));
 					if (ret != 0) {
 						// 显示错误信息
@@ -200,14 +177,13 @@ public class ThreadTestActivity extends Activity  implements
 				case Constraints.dataMsg:
 					Log.d(TAG, " datamsg ");
 					String xmlString = msg.obj.toString();
-					send(xmlString , true);
-
+					
 					l_msg = dataThread.parseXml(xmlString);
+					
 					if (l_msg.getSid() != null){
 						sid = l_msg.getSid();
 					}
 					if (l_msg.getTts() != null){
-//						setParams();
 						ret = speechSynthesizer.speak(l_msg.getTts());
 						if (ret != 0) {
 							// 显示错误信息
@@ -234,14 +210,12 @@ public class ThreadTestActivity extends Activity  implements
 
 		// ////// 开启软件 启动VR， VR 开始轮询信息获取 ///////////////
 		vr.start();
-
+		
 		// / 触发VR 开始 和 取消的操作
 		btnBegin.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// mControlPanel.SetFragmentVisiblity(true);
-				// mControlPanel.SetPromptString(R.string.in_start);
 
 				final AlertDialog dlg = new AlertDialog.Builder(ThreadTestActivity.this).create();
 				dlg.show();
@@ -266,7 +240,6 @@ public class ThreadTestActivity extends Activity  implements
 					}
 				});
 				 		        
-				//btnCancel.setEnabled(true);
 				if (mVoiceRecognitionerHandler != null) {
 					// 通知子线程发起识别
 					Log.d(TAG, " voice reco begin ");
@@ -281,41 +254,48 @@ public class ThreadTestActivity extends Activity  implements
 
 		});
 
-		btnCancel.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
-				if (mVoiceRecognitionerHandler != null) {
-					// 通知子线程发起识别
-					
-					Message toVoiceRecognitioner = mVoiceRecognitionerHandler
-							.obtainMessage();
-					toVoiceRecognitioner.what = USER_CANCEL_SPEECH;
-					mVoiceRecognitionerHandler
-							.sendMessage(toVoiceRecognitioner);
-				}
-			}
-		});
-
+		
+		
+		for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
+			String appName = i.next();		
+			String packageName = hashmap.get(appName).toString();
+			System.out.println(appName);
+			apps.add(appName);
+			// sum += value;
+		}
+		
+		autoStr = contentEditText.getText().toString();
+		ArrayAdapter<String> av = new ArrayAdapter<String>(ThreadTestActivity.this,
+				android.R.layout.simple_dropdown_item_1line, apps);
+		contentEditText.setAdapter(av);
+		
 		sendButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.d(TAG," fragment ");
-//				mControlPanel.SetFragmentVisiblity(true);
-//				mControlPanel.SetPromptString(R.string.please_speak);
-				String str = contentEditText.getText().toString();
+				
+				for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
+					String appName = i.next();
+					
+					String packageName = hashmap.get(appName).toString();
+					if (appName.startsWith(autoStr) || appName.startsWith(autoStr)){
+						System.out.println("aaaa");
+						System.out.println(appName);
+						System.out.println(packageName);
+					}
+					
+					// sum += value;
+				}
 				//serverVR(str, sid);
 				//startApp(str);
 			}
-		});
+		});		
 		serverStart();
-
 	}
 
 	// ///// Server start ////////
-	// private static int server_start_flag = 0;
 	private static int server_flag = 1;
 
 	private void serverStart() {

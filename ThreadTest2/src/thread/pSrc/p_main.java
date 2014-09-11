@@ -24,19 +24,6 @@ public class p_main extends Thread
     	this.urlMsg = urlMsg;
     }
 
-//    @Override
-//    public void run() {
-//
-//        try {  
-//        	Log.d(TAG , " conserver Thread begin ");
-//            String strXML = doTask(urlMsg);
-//            
-//            Message msg = prepareMessage(strXML);
-//            ThreadTestActivity.handler.sendMessage(msg);   
-//        } catch (Exception e) {
-//            Log.d(TAG, "interrupted!");
-//        }
-//    }
     private static String strXML;
     private static Message msg;
     private static Bundle bd = new Bundle();

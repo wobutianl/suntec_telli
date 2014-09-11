@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.widget.Adapter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="thread.test.Handlers"/>
 <fullyQualifiedTypeName name="thread.test.ThreadActivity"/>
@@ -23,7 +22,6 @@
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="list.show.ChartEntity"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="android.view.Window"/>
 <fullyQualifiedTypeName name="java.lang.ThreadDeath"/>
 <fullyQualifiedTypeName name="list.show.TwoAdapter"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
@@ -51,7 +49,6 @@
 <fullyQualifiedTypeName name="com.baidu.speechsynthesizer.publicutility.SpeechError"/>
 <fullyQualifiedTypeName name="thread.VR.PSETTelliVoiceRecognitioner"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
-<fullyQualifiedTypeName name="thread.Test.ThreadTestActivity"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="thread.Model.T_URIMsg"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="thread.Test.UserFragment"/>
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.view.Window"/>
+<fullyQualifiedTypeName name="thread.Test.ThreadTestActivity"/>
 </qualifiedTypeNameHistroy>
