@@ -21,22 +21,6 @@ public class URLMsg implements Parcelable
 		Msg_SID = "Telli";
 	}
 	
-//	public URLMsg(String str , String flag, String did, String sid)
-//	{
-//		Msg_DID = did;
-//		Msg_STT = str;
-//		Msg_Flag = flag;
-//		Msg_SID = sid;
-//	}
-//	
-//	public URLMsg(String str, String flag, String did)
-//	{
-//		Msg_DID = did;
-//		Msg_STT = str;
-//		Msg_Flag = flag;
-//		Msg_SID = "Telli";
-//	}
-	
 	public void ShowMsg()
 	{
 		System.out.println(Msg_DID);

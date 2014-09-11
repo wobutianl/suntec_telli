@@ -29,87 +29,11 @@ public class DataThread extends Thread {
 
 	private String TAG = "DataThread";
 
-	private static boolean isRunning = true;
 	private L_XMLMsg l_msg = new L_XMLMsg();
-
-	String xmlStr;
 
 	public DataThread() {
 		super();
-		// this.xmlStr = str;
 	}
-
-//	public void setStr(String str) {
-//		this.xmlStr = str;
-//	}
-
-	// @Override
-	// public void run() {
-	// Looper.prepare();//
-	//
-	// try { //
-	// ThreadTestActivity.handler.obtainMessage();
-	//
-	// Message msg = prepareMessage(xmlStr);
-	// ThreadTestActivity.handler.sendMessage(msg);
-	// } catch (Exception e) {
-	//
-	// }
-	// Looper.loop();
-	// }
-//	Message msg;
-//
-//	@Override
-//	public void run() {
-//
-//		Looper.prepare();
-//
-//		ThreadTestActivity.mDataHandler = new Handler() {
-//
-//			@Override
-//			public void handleMessage(Message msg) {
-//				switch (msg.what) {
-//				case 210:
-//					// start
-//					ThreadTestActivity.handler.obtainMessage();
-//
-//					msg = prepareMessage(msg.obj.toString());
-//					ThreadTestActivity.handler.sendMessage(msg);
-//					break;
-//				// case 211:
-//				// // vr
-//				// ThreadTestActivity.handler.obtainMessage();
-//				//
-//				// msg = prepareMessage(msg.obj.toString());
-//				// ThreadTestActivity.handler.sendMessage(msg);
-//				// break;
-//				// case 212:
-//				// // stop
-//				// ThreadTestActivity.handler.obtainMessage();
-//				//
-//				// msg = prepareMessage(msg.obj.toString());
-//				// ThreadTestActivity.handler.sendMessage(msg);
-//				default:
-//					break;
-//				}
-//			}
-//		};
-//		// 准备接收消息
-//		Looper.loop();
-//		System.out.println("to the run() end!");
-//	}
-//
-//	private Message prepareMessage(String str) {
-//		Message result = ThreadTestActivity.handler.obtainMessage();
-//		l_msg = parseXml(str);
-//		Bundle data = new Bundle();
-//		// l_msg.writeToParcel(out, flags)
-//		data.putParcelable("data", l_msg);
-//		result.setData(data);
-//		result.what = Integer.parseInt(l_msg.getFlag());
-//		Log.d(TAG, l_msg.getTts().toString());
-//		return result;
-//	}
 
 	public L_XMLMsg parseXml(String objXml) {
 		// 1、将传入的字符串流化
@@ -127,8 +51,8 @@ public class DataThread extends Thread {
 			Element sid = rootElement.element("sid");
 			String Sid = sid.getTextTrim();
 
-			System.out.println("did--->" + Did);
-			System.out.println("sid--->" + Sid);
+//			System.out.println("did--->" + Did);
+//			System.out.println("sid--->" + Sid);
 
 			l_msg.setDid(Did);
 			l_msg.setSid(Sid);
@@ -148,54 +72,52 @@ public class DataThread extends Thread {
 				String Display = null;
 				String Tts;
 				String AppName;
-				String promptFlag;
+//				String promptFlag;
 				String Type;
 
 				if (null != hins) {
 					Element content = hins.element("content");
 					if (null != content) {
 						Display = content.getTextTrim();
-						System.out.println("content-->" + Display);
+//						System.out.println("content-->" + Display);
 
 						l_msg.setDisplay(Display);
 					}
 				} else if (null != prompt) {
 					if (null != prompt.attributeValue("display")) {
-						Display = prompt.attributeValue("tts");
-						System.out.println("display-->" + Display);
+//						Display = prompt.attributeValue("tts");
 
 						l_msg.setDisplay(Display);
 					}
 					if (null == prompt.attributeValue("tts")) {
 						Tts = null;
-
 						l_msg.setTts(null);
 					} else {
 						Tts = prompt.attributeValue("tts");
-						System.out.println("tts-->" + Tts);
+//						System.out.println("tts-->" + Tts);
 
 						l_msg.setTts(Tts);
 					}
-					if (Display == null && Tts == null) {
-						promptFlag = "20";
-					} else if (Display != null && Tts == null) {
-						promptFlag = "21";
-					} else if (Display == null && Tts != null) {
-						promptFlag = "22";
-					} else {
-						promptFlag = "23";
-					}
-					System.out.println("promptFlag-->" + promptFlag);
-					l_msg.setFlag(promptFlag);
+//					if (Display == null && Tts == null) {
+//						promptFlag = "20";
+//					} else if (Display != null && Tts == null) {
+//						promptFlag = "21";
+//					} else if (Display == null && Tts != null) {
+//						promptFlag = "22";
+//					} else {
+//						promptFlag = "23";
+//					}
+//					System.out.println("promptFlag-->" + promptFlag);
+//					l_msg.setFlag(promptFlag);
 				}
 				if (null != appName) {
 
 					AppName = appName.getTextTrim();
-					System.out.println("appName-->" + AppName);
+//					System.out.println("appName-->" + AppName);
 					l_msg.setAppName(AppName);
 				} else {
 					Type = type.attributeValue("type");
-					System.out.println("Type-->" + Type);
+//					System.out.println("Type-->" + Type);
 					l_msg.setType(Type);
 				}
 			}
@@ -216,7 +138,6 @@ public class DataThread extends Thread {
 			}
 		}
 		return l_msg;
-
 	}
 
 }

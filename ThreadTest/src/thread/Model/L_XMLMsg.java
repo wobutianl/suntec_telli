@@ -13,7 +13,7 @@ public class L_XMLMsg implements Parcelable {
 	
 	private String tts;
 	private String type;
-	private String flag;
+//	private String flag;
 	
 	private String appName;
 	
@@ -61,13 +61,13 @@ public class L_XMLMsg implements Parcelable {
 		this.type = type;
 	}
 
-	public String getFlag() {
-		return flag;
-	}
-
-	public void setFlag(String flag) {
-		this.flag = flag;
-	}
+//	public String getFlag() {
+//		return flag;
+//	}
+//
+//	public void setFlag(String flag) {
+//		this.flag = flag;
+//	}
 	
 	public String getAppName() {
 		return appName;
@@ -89,7 +89,7 @@ public class L_XMLMsg implements Parcelable {
 		out.writeString(display);
 		
 		out.writeString(tts);
-		out.writeString(flag);
+//		out.writeString(flag);
 		out.writeString(type);
 		
 		out.writeString(appName);
@@ -113,7 +113,7 @@ public class L_XMLMsg implements Parcelable {
 		display = in.readString();
 		
 		tts = in.readString();
-		flag = in.readString();
+//		flag = in.readString();
 		type = in.readString();
 		
 		appName = in.readString();

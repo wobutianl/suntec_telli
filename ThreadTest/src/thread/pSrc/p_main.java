@@ -56,24 +56,21 @@ public class p_main extends Thread
 				    	bd = msg.getData();
 				    	p_msg = bd.getParcelable("toServer");
 				    	
-				    	Log.d(TAG, p_msg.Msg_Flag);
+//				    	Log.d(TAG, p_msg.Msg_Flag);
 			            strXML = doTask(p_msg);
 			            
 			            msg = prepareMessage(strXML);
-			            Log.d(TAG, strXML);
+//			            Log.d(TAG, strXML);
 			            ThreadTestActivity.handler.sendMessage(msg);  
                         break;
 					case 111:
 						// vr
-						// Log.d("111", strXML);
 						bd = msg.getData();
 						p_msg = bd.getParcelable("toServer");
 			            strXML = doTask(p_msg);
-			            Log.d("111", strXML);
-			            Log.d("111", p_msg.getMsg_STT());
+//			            Log.d("111", p_msg.getMsg_STT());
 			            
 			            msg = prepareMessage(strXML);
-			            Log.d(TAG, strXML);
 			            ThreadTestActivity.handler.sendMessage(msg); 
                         break; 
 					case 112:
@@ -83,7 +80,7 @@ public class p_main extends Thread
 			            strXML = doTask(p_msg);
 			            
 			            msg = prepareMessage(strXML);
-			            Log.d(TAG, strXML);
+//			            Log.d(TAG, strXML);
 			            ThreadTestActivity.handler.sendMessage(msg); 
                     default:
                         break;						

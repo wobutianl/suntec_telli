@@ -111,7 +111,7 @@ public class ThreadTestActivity extends Activity implements
 				"NzMCBcGSTRovw3C7RPCiDcbWquNB7xl5");
 		speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
+		setParams();
 		// /////// UI ///////////
 		contentEditText = (EditText) this.findViewById(R.id.sendText);
 		sendButton = (Button) this.findViewById(R.id.sendBtn);
@@ -125,6 +125,9 @@ public class ThreadTestActivity extends Activity implements
 		chatAdapter = new TwoAdapter(this, chatList);
 		chatListView.setAdapter(chatAdapter);
 
+		///////  start app //////////
+		getList();
+		
 		// ///// main Handler /////////////////
 		handler = new Handler() {
 			int ret;
@@ -136,21 +139,21 @@ public class ThreadTestActivity extends Activity implements
 				case RECOGNITION_IS_READY:
 					// 提示用户可以开始说话 // 这个时候应该说出来
 					send(getString(R.string.please_speak), true);
-					System.out.println("receive notify that ASREngine is ready!");
+//					System.out.println("receive notify that ASREngine is ready!");
 					break;
 				case RECOGNITION_SPEECH_START:
 					// 提示说话中 //这个时候应该fragement
-					send(getString(R.string.speaking), true);
-					System.out.println("receive notify that user is speaking!");
+//					send(getString(R.string.speaking), true);
+//					System.out.println("receive notify that user is speaking!");
 					break;
 				case RECOGNITION_SPEECH_END:
 					// 提示识别中，请等待结果 // 这个时候应该转圈圈
-					send(getString(R.string.in_recog), true);
-					System.out.println("receive notify that speaking is end!");
+//					send(getString(R.string.in_recog), true);
+//					System.out.println("receive notify that speaking is end!");
 					break;
 				case RECOGNITION_RECOGNITION_FINISH:
 					// 提示识别完成，并显示识别结果 // 这个时候应该显示结果，传给Server
-					send(getString(R.string.finished), true);
+//					send(getString(R.string.finished), true);
 					result = (String) (msg.obj);
 					send(result, false);
 					
@@ -160,16 +163,16 @@ public class ThreadTestActivity extends Activity implements
 					break;
 				case RECOGNITION_RECOGNITION_PARTIALFINISH:
 					// 提示识别中，并显示识别结果
-					send(getString(R.string.in_recog), true);
-					result = (String) (msg.obj);
-					send(result, false);
+					//send(getString(R.string.in_recog), true);
+					//result = (String) (msg.obj);
+					//send(result, false);
 					break;
 				case RECOGNITION_RECOGNITION_CANCELED:
 					// 提示取消成功，请重新开始
 					send(getString(R.string.is_canceled), true);
 					// 刷新取消按键状态
 					btnCancel.setEnabled(false);
-					setParams();
+//					setParams();
 					ret = speechSynthesizer.speak(getString(R.string.is_canceled));
 					if (ret != 0) {
 						// 显示错误信息
@@ -187,7 +190,7 @@ public class ThreadTestActivity extends Activity implements
 						sid = l_msg.getSid();
 					}
 					if (l_msg.getTts() != null){
-						setParams();
+//						setParams();
 						ret = speechSynthesizer.speak(l_msg.getTts());
 						if (ret != 0) {
 							// 显示错误信息
@@ -202,74 +205,8 @@ public class ThreadTestActivity extends Activity implements
 					else{
 						Log.d(TAG, "ddd");
 					}
-//					dataThread.setStr(xmlString);
-//					dataThread.start();
 					break;
-					
-//				case 20: // both null
-//					bd = msg.getData();
-//					
-//					l_msg = (L_XMLMsg) bd.getParcelable("data");
-//					Log.d(TAG, l_msg.getDisplay());
-//					sid = l_msg.getSid();
-//					
-//					// send(l_msg.getDisplay() , true);
-//					//
-//					// setParams();
-//					Log.d(TAG, l_msg.getTts());
-//					// ret = speechSynthesizer.speak(l_msg.getTts());
-//					// if (ret != 0) {
-//					// //显示错误信息
-//					// }
-//					break;
-//				case 21: // TTS null
-//					bd = msg.getData();
-//
-//					l_msg = (L_XMLMsg) bd.getParcelable("data");
-//					Log.d(TAG, l_msg.getDisplay());
-//					send(l_msg.getDisplay(), true);
-//					sid = l_msg.getSid();
-//					
-//					// setParams();
-//					Log.d(TAG, l_msg.getTts());
-//					// ret = speechSynthesizer.speak(l_msg.getTts());
-//					// if (ret != 0) {
-//					// //显示错误信息
-//					// }
-//					break;
-//				case 22: // Display null
-//					bd = msg.getData();
-//
-//					l_msg = (L_XMLMsg) bd.getParcelable("data");
-//					Log.d(TAG, l_msg.getDisplay());
-//					send(l_msg.getDisplay(), true);
-//					sid = l_msg.getSid();
-//					
-//					setParams();
-//					Log.d(TAG, l_msg.getTts());
-//					ret = speechSynthesizer.speak(l_msg.getTts());
-//					if (ret != 0) {
-//						// 显示错误信息
-//					}
-//					Log.d(TAG, " begin TTS end ");
-//					break;
-//				case 23: // have both
-//					bd = msg.getData();
-//
-//					l_msg = (L_XMLMsg) bd.getParcelable("data");
-//					Log.d(TAG, l_msg.getDisplay());
-//					send(l_msg.getDisplay(), true);
-//					sid = l_msg.getSid();
-//					
-//					setParams();
-//					Log.d(TAG, l_msg.getTts());
-//					ret = speechSynthesizer.speak(l_msg.getTts());
-//					if (ret != 0) {
-//						// 显示错误信息
-//					}
-//					break;
 				default:
-					dataThread.stop();
 					break;
 				}
 			}
@@ -290,7 +227,7 @@ public class ThreadTestActivity extends Activity implements
 				btnCancel.setEnabled(true);
 				if (mVoiceRecognitionerHandler != null) {
 					// 通知子线程发起识别
-					Log.d(TAG, " voice reco begin");
+					Log.d(TAG, " voice reco begin ");
 					Message toVoiceRecognitioner = mVoiceRecognitionerHandler
 							.obtainMessage();
 					toVoiceRecognitioner.what = USER_START_SPEECH;
@@ -323,7 +260,8 @@ public class ThreadTestActivity extends Activity implements
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String str = contentEditText.getText().toString();
-				serverVR(str, sid);
+				//serverVR(str, sid);
+				startApp(str);
 			}
 		});
 		serverStart();
@@ -404,7 +342,6 @@ public class ThreadTestActivity extends Activity implements
 		chatList.add(chatEntity);
 		chatAdapter.notifyDataSetChanged(); // refresh data
 		chatListView.setSelection(chatList.size() - 1);
-		// editText.setText("");
 	}
 
 	// /////// start APP ///////////
@@ -416,13 +353,14 @@ public class ThreadTestActivity extends Activity implements
 	public void startApp(String Appname) {
 		// TODO Auto-generated method stub
 		Log.d("package", Appname);
-		for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
-			String key = i.next();
-			String value = hashmap.get(key).toString();
-			System.out.println(key);
-			System.out.println(value);
-			// sum += value;
-		}
+//		getList();
+//		for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
+//			String key = i.next();
+//			String value = hashmap.get(key).toString();
+//			System.out.println(key);
+//			System.out.println(value);
+//			// sum += value;
+//		}
 		String PacStr = hashmap.get(Appname).toString();
 		Log.d("package name", PacStr);
 		if (Appname != null) {
@@ -431,7 +369,10 @@ public class ThreadTestActivity extends Activity implements
 	}
 
 	private void getList() {
-		mApps = getPackageManager().queryIntentActivities(this.getIntent(), 0);
+		//list.clear();
+		Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+		mApps = getPackageManager().queryIntentActivities(mainIntent, 0);
 		for (int i = 0; i < mApps.size(); i++) {
 			info = mApps.get(i);
 			String appLabel = info.loadLabel(getPackageManager()).toString();
@@ -456,13 +397,6 @@ public class ThreadTestActivity extends Activity implements
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_ENCODE, "1");
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_RATE, "4");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_LANGUAGE, "ZH");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_NUM_PRON, "0");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_ENG_PRON, "0");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PUNC, "0");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_BACKGROUND, "0");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_STYLE, "0");
-		// speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TERRITORY, "0");
 	}
 
 	@Override

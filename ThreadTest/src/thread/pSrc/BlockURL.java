@@ -43,7 +43,7 @@ public class BlockURL
 	}
 	public String GetStrURL()
 	{
-		System.out.println(StrURL);
+//		System.out.println(StrURL);
 		return StrURL;
 		
 	}
