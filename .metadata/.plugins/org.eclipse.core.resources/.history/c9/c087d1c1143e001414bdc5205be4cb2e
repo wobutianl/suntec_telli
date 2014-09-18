@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:weightSum="1"
+	android:background="@drawable/background"
+	android:id="@+id/screen">
+
+	<ListView 
+		android:focusableInTouchMode="true"
+        android:focusable="true"
+		android:id="@+id/listView1" 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:cacheColorHint=”#00000000″
+		android:layout_above="@+id/autoCompleteTextView1"></ListView>
+
+	<Button android:layout_width="match_parent" android:text="开始"
+		android:layout_height="45dp" android:id="@+id/beginBtn"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"></Button>
+	<!--不让它一来就获得焦点-->
+	<AutoCompleteTextView 
+		android:id="@+id/autoCompleteTextView1"
+		android:text="" android:layout_width="wrap_content"
+		android:completionHint="输入补全提示标题"
+		android:completionThreshold="1"
+		android:layout_height="wrap_content" android:layout_above="@+id/beginBtn"
+		android:layout_alignParentLeft="true" android:layout_toLeftOf="@+id/sendBtn">
+		<requestFocus></requestFocus>
+	</AutoCompleteTextView>
+	<Button android:layout_width="wrap_content" android:text="发送"
+		android:layout_height="wrap_content" android:id="@+id/sendBtn"
+		android:layout_alignTop="@+id/autoCompleteTextView1"
+		android:layout_alignParentRight="true"></Button>
+</RelativeLayout>

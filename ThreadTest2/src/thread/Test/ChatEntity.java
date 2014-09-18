@@ -1,11 +1,17 @@
 package thread.Test;
 
+/**
+ * @brief an chat Class for chat list View 
+ * 
+ * @author zhuxiaolin
+ *
+ */
 public class ChatEntity {
 
-	private int userImage;
-	private String content;
-	private String chatTime;
-	private boolean isComeMsg;
+	private int userImage; ///< image for ListView
+	private String content;///<  chat content
+	private String chatTime;///<  the chat time
+	private boolean isComeMsg;///<  is come msg or receive message
 
 	public int getUserImage() {
 		return userImage;

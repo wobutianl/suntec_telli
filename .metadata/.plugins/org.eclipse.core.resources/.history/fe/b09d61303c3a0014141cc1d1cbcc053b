@@ -1,0 +1,47 @@
+package thread.Test;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+
+public class SelfDlg extends Dialog  implements OnClickListener{
+
+	private Button  quitBtn,stopBtn,cancelBtn;
+	private LeaveMeetingDialogListener listener;
+
+	public interface LeaveMeetingDialogListener{
+		public void onClick(View view);
+	}
+
+	public SelfDlg(Context context,int theme,LeaveMeetingDialogListener listener) {
+		super(context,theme);
+		this.listener = listener;
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.voice_dialog);
+		initViews();
+	}
+
+	private void initViews(){
+		quitBtn = (Button)findViewById(R.id.quit_btn);
+		stopBtn = (Button)findViewById(R.id.stop_btn);
+		cancelBtn = (Button)findViewById(R.id.cancel_btn);
+
+		quitBtn.setOnClickListener(this);
+		stopBtn.setOnClickListener(this);
+		cancelBtn.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		listener.onClick(v);
+	}
+
+}

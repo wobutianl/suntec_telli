@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:weightSum="1"
+	android:background="@drawable/background"
+	android:id="@+id/screen"
+	>
+
+	<ListView 
+		android:id="@+id/listView1" 
+		android:layout_width="match_parent"
+		android:cacheColorHint="#00000000"
+		android:descendantFocusability="blocksDescendants"
+		android:layout_above="@+id/autoCompleteTextView1" 
+		android:layout_height="280dp" 
+		android:layout_weight="0.99">
+		</ListView>
+		
+	<!--不让它一来就获得焦点-->
+	<LinearLayout android:layout_width="match_parent"
+	android:layout_height="wrap_content" android:id="@+id/linearLayout1">
+	<AutoCompleteTextView android:layout_weight="1"
+		android:id="@+id/autoCompleteTextView1" android:completionThreshold="1"
+		android:layout_width="wrap_content" android:completionHint="输入补全提示标题"
+		android:layout_height="wrap_content"></AutoCompleteTextView>
+	<Button android:id="@+id/sendBtn" android:layout_width="wrap_content"
+		android:text="发送" android:layout_height="wrap_content"
+		android:layout_weight="0.15"></Button>
+	</LinearLayout>
+	<Button android:id="@+id/beginBtn" android:layout_width="match_parent"
+		android:text="开始" android:layout_height="45dp"></Button>
+</LinearLayout>

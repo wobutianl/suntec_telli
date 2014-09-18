@@ -1,0 +1,84 @@
+目的：
+	用户语音输入，打电话给***，自动识别，并拨号。
+
+实现步骤：
+1：获取电话中的通信录，存入HashMap中
+2：将HashMap中的数据存入到 autoComplete 的字符串数组中
+3：实现拨号功能
+
+具体代码：
+
+1：获取电话号码	/**
+	private static HashMap<String, String> mContacts = new HashMap<String, String>();
+
+	/**
+	 * 得到手机通讯录联系人信息
+	 */
+	public static void getAllCallRecords(Context context) { 
+//		HashMap<String,String> temp = new HashMap<String, String>(); 
+        Cursor c = context.getContentResolver().query( 
+                ContactsContract.Contacts.CONTENT_URI, 
+                null, 
+                null, 
+                null, 
+                ContactsContract.Contacts.DISPLAY_NAME 
+                        + " COLLATE LOCALIZED ASC"); 
+        if (c.moveToFirst()) { 
+            do { 
+                // 获得联系人的ID号 
+                String contactId = c.getString(c 
+                        .getColumnIndex(ContactsContract.Contacts._ID)); 
+                // 获得联系人姓名 
+                String name = c 
+                        .getString(c 
+                                .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)); 
+                // 查看该联系人有多少个电话号码。如果没有这返回值为0 
+                int phoneCount = c 
+                        .getInt(c 
+                                .getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)); 
+                String number=null; 
+                if (phoneCount > 0) { 
+                    // 获得联系人的电话号码 
+                    Cursor phones = context.getContentResolver().query( 
+                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI, 
+                            null, 
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID 
+                                    + " = " + contactId, null, null); 
+                    if (phones.moveToFirst()) { 
+                        number = phones 
+                                .getString(phones 
+                                .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
+                        } 
+                    phones.close(); 
+                } 
+                mContacts.put(name, number); 
+            } while (c.moveToNext()); 
+        } 
+        c.close();  
+    }
+/*
+* 存入到autoComplete数组中。
+*/
+
+	
+		for (Iterator<String> i = mContacts.keySet().iterator(); i.hasNext();) {
+			String contact = i.next();
+			apps.add("打电话给" + contact);
+		}
+
+3：拨号功能
+	 * dial phone num by name
+	 * 
+	 * @param phoneName
+	 *            : the phone name
+	 */
+	private void dialPhone(String phoneName) {
+		// 调用系统方法拨打电话
+		if (mContacts.containsKey(phoneName)) {
+			Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
+					+ mContacts.get(phoneName)));
+			startActivity(dialIntent);
+		} else {
+			send("电话号码中没有" + phoneName, false);
+		}
+	}

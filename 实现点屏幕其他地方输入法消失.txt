@@ -1,0 +1,62 @@
+目的：
+	点击EditView，输入法会弹出，但要按返回键才能消失，怎么通过点击其他地方让输入法消失？
+
+实现方法：
+1：让EditText失去焦点
+2：设定View的Click事件
+3：点击View，让输入法消失
+
+具体代码：
+1：XML 代码。
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/screen">
+    <TextView
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="please"
+        android:layout_gravity="center" />
+</LinearLayout>
+这两句android:focusableInTouchMode="true"；android:focusableInTouchMode="true"；目的是不让EditText一来就得到焦点。用不用主要看个人思路啦。
+
+其次，java代码：
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+
+public class EditTextActivity extends Activity implements OnClickListener{
+    EditText edit;
+    LinearLayout screen;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        screen= (LinearLayout) findViewById(R.id.screen);
+        edit = (EditText) findViewById(R.id.edit);
+        screen.setOnClickListener(this);
+    }
+
+        @Override
+        public void onClick(View v) {
+                if (v.getId() == R.id.screen) {
+                        InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);  
+                        edit.setCursorVisible(false);//失去光标
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+        }
+}

@@ -8,3 +8,8 @@
 1410335522528	Rename Java project 'HelloWorld'
 1410404266794	Rename Java project 'ThreadTest'
 1410404310488	Rename Java project 'ThreadTest'
+1410504915019	Delete resource 'ThreadTest2/src/thread/Test/SelfDlg.java'
+1410514211982	Delete resource 'ThreadTest3/src/thread/Data'
+1410514364501	Delete resource 'ThreadTest3/res/layout/user_prompt_fragment.xml'
+1410514419695	Delete resource 'ThreadTest3/src/thread/VR/Constants2.java'
+1410514446309	Delete resource 'ThreadTest3/src/thread/Test/UserFragment.java'

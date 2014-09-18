@@ -1,0 +1,41 @@
+功能介绍：
+1：当别人输入软件名字时，完成自动匹配功能
+
+
+实现方法：
+1：读取手机中的所有软件名，包名，存入hashmap 中
+2：将Hashmap中的数据添加到ArrayList中。
+3：给autocompleteView 添加一个Adapter
+
+具体代码：
+1：hashmap
+	private void getList() {
+		//list.clear();
+		Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+		mApps = getPackageManager().queryIntentActivities(mainIntent, 0);
+		for (int i = 0; i < mApps.size(); i++) {
+			info = mApps.get(i);
+			String appLabel = info.loadLabel(getPackageManager()).toString();
+			String packagename = info.activityInfo.packageName;
+			String appname = info.activityInfo.name;
+			hashmap.put(appLabel.toLowerCase(), packagename);
+		}
+	}
+
+2：ArrayList添加元素
+
+private static ArrayList<String> apps = new ArrayList<String>();
+for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
+			String appName = i.next();		
+			String packageName = hashmap.get(appName).toString();
+			System.out.println(appName);
+			apps.add(appName);
+			// sum += value;
+		}
+
+3：添加Adapter
+autoStr = contentEditText.getText().toString();
+ArrayAdapter<String> av = new ArrayAdapter<String>(ThreadTestActivity.this,			android.R.layout.simple_dropdown_item_1line, apps);
+		contentEditText.setAdapter(av);
+

@@ -1,393 +1,722 @@
+/**
+ * @file ThreadTestActivity
+ * 
+ * @brief APP main Activity 
+ * 
+ * manager the VR, TTS , Data , ConServer module 
+ * make voice question to an answer
+ * 
+ * @author zhuxiaolin
+ *
+ */
 package thread.Test;
 
-import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.baidu.speechsynthesizer.SpeechSynthesizer;
 import com.baidu.speechsynthesizer.SpeechSynthesizerListener;
 import com.baidu.speechsynthesizer.publicutility.SpeechError;
 import com.baidu.voicerecognition.android.VoiceRecognitionClient;
 
+import android.R.bool;
 import android.R.integer;
+import android.R.layout;
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
+import android.database.Cursor;
 import android.media.AudioManager;
+import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Parcelable;
-import android.provider.SyncStateContract.Constants;
-import android.support.v4.app.FragmentActivity;
+import android.os.PowerManager;
+import android.provider.ContactsContract;
+import android.text.format.Time;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import thread.Model.L_XMLMsg;
-import thread.Test.DataThread;
+import thread.Data.DataThread;
 import thread.VR.PSETTelliVoiceRecognitioner;
 import thread.pSrc.URLMsg;
 import thread.pSrc.p_main;
 
-public class ThreadTestActivity extends Activity  implements
+/**
+ * @brief Main activity
+ * 
+ *        control every module
+ * 
+ * @author zhuxiaolin
+ * 
+ */
+public class ThreadTestActivity extends Activity implements OnClickListener,
 		SpeechSynthesizerListener {
 
-	// ///////////////////////////////////////////
-	public static final int RECOGNITION_IS_READY = 0x1;
-	public static final int RECOGNITION_SPEECH_START = 0x2;
-	public static final int RECOGNITION_SPEECH_END = 0x3;
-	public static final int RECOGNITION_RECOGNITION_FINISH = 0x4;
-	public static final int RECOGNITION_RECOGNITION_PARTIALFINISH = 0x5;
-	public static final int RECOGNITION_RECOGNITION_CANCELED = 0x6;
-	public static final int RECOGNITION_RECOGNITION_ERROR = 0x7;
-	public static final int USER_START_SPEECH = 0x8;
-	public static final int USER_CANCEL_SPEECH = 0x9;
-	public static VoiceRecognitionClient mASREngine;
-	// ////////////////////////////////////////////////////////////
+	// ///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<///<
 
 	private String TAG = "MainThread";
-
-	// ////// UI ////////////////
-	private Button sendButton = null;
-	private AutoCompleteTextView contentEditText = null;
-	private ListView chatListView = null;
+	private boolean isRecognition = false; ///< VR ing
+	
+	// ///<///< UI ///<///<///<///<///</
+	private Button sendButton = null; ///< text input button
+	private AutoCompleteTextView contentEditText = null; ///< autoCompleteView
+	private ListView chatListView = null; ///< chat list
 	private List<ChatEntity> chatList = null;
-	private TwoAdapter chatAdapter = null;
+	private TwoAdapter chatAdapter = null; ///< two adapter for listView
 
-	private ChatEntity chatEntity = new ChatEntity();
+	private Button cancelBtn; ///< cancel vr button
+
+	private static final int POWER_UPDATE_INTERVAL = 100; ///< voice interval
+
+	// 定义提示对话框
+	private RoundProgressBar mVolumeBar;  ///< self progress bar 
+	private Dialog dialog;
+	private TextView dialogstatus;
+	private ProgressBar mWaitBar;
+	private TextView volumetextview;
+
+	// ///<///< VR ///<///<///<///<
+	private Button btnBegin; ///< begin VR button
+	private PSETTelliVoiceRecognitioner vr = new PSETTelliVoiceRecognitioner(); ///< VR class
+	private static String result; ///< VR转换后的结果
+
+	///<///</ TTS ///<///<///<///<
+	private SpeechSynthesizer speechSynthesizer; ///< tts
+	private static int ret; ///< ret for TTS
+
+	///<///<// ConServer ///<///<///<///</
+	private URLMsg tMsg = new URLMsg(); ///< vr result --- server --> URL
+	private p_main p_server = new p_main(); ///< Server Thread
+	private static String sid; ///< the unique sid for one dialog
+
+	///<///< Data ///<///<///<///<
+	private DataThread dataThread = new DataThread(); ///< data phrase
+	private L_XMLMsg l_msg; ///< Linbing XML ---data ---> stract
+	private static String XmlString; ///< XML string for data phrase
+
+	///<///< APP ///</
+	private static ArrayList<String> apps = new ArrayList<String>(); ///< all app name
+	private static String autoStr; ///< autoCompleteString
+
+	private RelativeLayout screen;
 	
-	 private UserFragment mControlPanel;
-	
-	private boolean isRunning = true;
-	public static Handler handler, mVoiceRecognitionerHandler;
-	public static Handler mServerHandler;
+	/**
+	 * 音量更新任务
+	 */
+	private Runnable mUpdateVolume = new Runnable() {
+		public void run() {
+			if (isRecognition) {
+				long vol = Constraints.mASREngine.getCurrentDBLevelMeter();
+				volumeChange((int) vol);
+				Constraints.handler.removeCallbacks(mUpdateVolume);
+				Constraints.handler.postDelayed(mUpdateVolume,
+						POWER_UPDATE_INTERVAL);
+			}
+		}
+	};
 
-	// ////// VR ////////////
-	private Button btnBegin;
-	private Button btnCancel;
-	private PSETTelliVoiceRecognitioner vr = new PSETTelliVoiceRecognitioner();
-
-	// ///// TTS ////////////
-	private SpeechSynthesizer speechSynthesizer;
-	private String result;
-
-	// ////// ConServer /////////////
-	private URLMsg tMsg = new URLMsg();
-	private p_main p_server = new p_main();
-	private Bundle bd; // bundle
-
-	// //// Data ////////////
-	private DataThread dataThread = new DataThread();
-	private L_XMLMsg l_msg;
-
-	private String handleString;
-	private static String sid;
-	
-	private static ArrayList<String> apps = new ArrayList<String>();
-	private String autoStr;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		// ///// VR ////////////
+		// ///<// VR ///<///<///<///<
 		btnBegin = (Button) findViewById(R.id.beginBtn);
+		btnBegin.setOnClickListener(ThreadTestActivity.this);
 
-		mASREngine = VoiceRecognitionClient.getInstance(this);
-		mASREngine.setTokenApis("plsB3YLqYtjNqPxsMRBpNywS",
-				"NzMCBcGSTRovw3C7RPCiDcbWquNB7xl5");
+		Constraints.mASREngine = VoiceRecognitionClient.getInstance(this);
+		Constraints.mASREngine.setTokenApis(Constraints.API_KEY,
+				Constraints.SECRET_KEY);
 
-		// /////// TTS //////////
+		// ///<///</ TTS ///<///<///</
 		speechSynthesizer = new SpeechSynthesizer(getApplicationContext(),
 				"holder", this);
-		speechSynthesizer.setApiKey("plsB3YLqYtjNqPxsMRBpNywS",
-				"NzMCBcGSTRovw3C7RPCiDcbWquNB7xl5");
+		speechSynthesizer
+				.setApiKey(Constraints.API_KEY, Constraints.SECRET_KEY);
 		speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		setParams();
-		// /////// UI ///////////
-		contentEditText = (AutoCompleteTextView) this.findViewById(R.id.autoCompleteTextView1);
-		sendButton = (Button) this.findViewById(R.id.sendBtn);
+		setParams(); // TTS　parameter
 
-		chatListView = (ListView) this.findViewById(R.id.listView1);
-		chatList = new ArrayList<ChatEntity>();
+		// ///<///</ UI ///<///<///<//
+		contentEditText = (AutoCompleteTextView) this
+				.findViewById(R.id.autoCompleteTextView1);
+		sendButton = (Button) this.findViewById(R.id.sendBtn); ///< 文字input button
+		sendButton.setOnClickListener(ThreadTestActivity.this);
+
+		chatListView = (ListView) this.findViewById(R.id.listView1); ///< chat List View 
+		chatList = new ArrayList<ChatEntity>(); // 最好用成气泡的，可以不要图标。
 
 		chatAdapter = new TwoAdapter(this, chatList);
 		chatListView.setAdapter(chatAdapter);
-
-		///////  start app //////////
-		getList();
 		
-		
-		// ///// main Handler /////////////////
-		handler = new Handler() {
-			int ret;
+		screen= (RelativeLayout) findViewById(R.id.screen);
+        screen.setOnClickListener(this);
 
+		///</ dialog ///<///<
+		///< 创建对话框
+		dialog = new Dialog(ThreadTestActivity.this, R.style.MyDialog);
+		dialog.setContentView(R.layout.dialog);
+		dialog.setTitle("Custom Dialog");
+		cancelBtn = (Button) dialog.findViewById(R.id.dialog_button_cancel);
+		cancelBtn.setOnClickListener(ThreadTestActivity.this);
+
+		mVolumeBar = (RoundProgressBar) dialog.findViewById(R.id.volumeProgressbar);
+		dialogstatus = (TextView) dialog
+				.findViewById(R.id.dialog_status_TextView);
+		mWaitBar = (ProgressBar) dialog.findViewById(R.id.waitProgressbar);
+		volumetextview = (TextView) dialog.findViewById(R.id.volumeTextView);
+		
+		// ///<// start app ///<///<///</
+		getList(); // get App name
+		getAllCallRecords(this);
+
+		// ///<// main Handler ///<///<///<///<///<//
+		Constraints.handler = new Handler() {
 			@Override
 			public void handleMessage(Message msg) {
 				switch (msg.what) {
-				// ///// VR handler ///////////////
-				case RECOGNITION_IS_READY:
+				// ///<// VR handler ///<///<///<///<///<
+				case Constraints.RECOGNITION_IS_READY:
 					// 提示用户可以开始说话 // 这个时候应该说出来
-					send(getString(R.string.please_speak), true);
+//					send(getString(R.string.please_speak), true);
+					dialog.show();
+					dialogstatus.setText(R.string.please_speak);
+					isRecognition = true;
+					SetVolumeBarVisiblity(true);
+					Constraints.handler.removeCallbacks(mUpdateVolume);
+					Constraints.handler.postDelayed(mUpdateVolume,
+							POWER_UPDATE_INTERVAL);
 					break;
-				case RECOGNITION_SPEECH_START:
-					// 提示说话中 //这个时候应该fragement
-					send(getString(R.string.speaking), true);
+				case Constraints.RECOGNITION_SPEECH_START:
+					// 提示说话中 //这个时候应该 Dialog
+					dialogstatus.setText(R.string.speaking);
+//					send(getString(R.string.speaking), true);
 					break;
-				case RECOGNITION_SPEECH_END:
-					// 提示识别中，请等待结果 // 这个时候应该转圈圈
-					send(getString(R.string.in_recog), true);
+				case Constraints.RECOGNITION_SPEECH_END:
+					// 提示识别中，请等待结果 // 这个时候应该转圈圈 (或者用户自己决定结束）
+					dialogstatus.setText(R.string.in_recog);
+					isRecognition = false;
+					SetVolumeBarVisiblity(false);
+					SetWaitBarVisiblity(true);
+//					send(getString(R.string.in_recog), true);
 					break;
-				case RECOGNITION_RECOGNITION_FINISH:
+				case Constraints.RECOGNITION_RECOGNITION_FINISH:
 					// 提示识别完成，并显示识别结果 // 这个时候应该显示结果，传给Server
+					dialogstatus.setText(R.string.finished);
+					SetWaitBarVisiblity(false);
+					dialog.dismiss();
 					result = (String) (msg.obj);
 					send(result, false);
-					
-					serverVR(result, sid);
+					if (equalApp(result)) {
+					} 
+					else {
+						XmlString = serverVR(p_server, result, sid);
+						dataPhrase(XmlString);
+					}
 					break;
-				case RECOGNITION_RECOGNITION_PARTIALFINISH:
-					// 提示识别中，并显示识别结果
-					//send(result, false);
+				case Constraints.RECOGNITION_RECOGNITION_PARTIALFINISH:
+					// 提示识别中，并显示识别结果 (部分结束）
+					// send(result, false);
 					break;
-				case RECOGNITION_RECOGNITION_CANCELED:
+				case Constraints.RECOGNITION_RECOGNITION_CANCELED:
 					// 提示取消成功，请重新开始
-					send(getString(R.string.is_canceled), true);
+					SetWaitBarVisiblity(false);
+					dialog.dismiss();
 					// 刷新取消按键状态
-					btnCancel.setEnabled(false);
-					ret = speechSynthesizer.speak(getString(R.string.is_canceled));
+//					cancelBtn.setEnabled(false);
+					send(getString(R.string.is_canceled), true);
+					ret = speechSynthesizer
+							.speak(getString(R.string.is_canceled));
 					if (ret != 0) {
 						// 显示错误信息
-					}
-					break;
-
-				// ///////// Data /////////////////
-				case Constraints.dataMsg:
-					Log.d(TAG, " datamsg ");
-					String xmlString = msg.obj.toString();
-					
-					l_msg = dataThread.parseXml(xmlString);
-					
-					if (l_msg.getSid() != null){
-						sid = l_msg.getSid();
-					}
-					if (l_msg.getTts() != null){
-						ret = speechSynthesizer.speak(l_msg.getTts());
-						if (ret != 0) {
-							// 显示错误信息
-						}
-					}
-					if (l_msg.getDisplay() != null){
-						send(l_msg.getDisplay(), true);
-					}
-					if (l_msg.getAppName() != null){
-						startApp(l_msg.getAppName());
-					}
-					else{
-						Log.d(TAG, "ddd");
 					}
 					break;
 				default:
 					break;
 				}
 			}
-
 		};
-		// /////// 软件开启调用 Server Start 返回结果Display显示////////
-		p_server.start();
-
-		// ////// 开启软件 启动VR， VR 开始轮询信息获取 ///////////////
-		vr.start();
-		
-		// / 触发VR 开始 和 取消的操作
-		btnBegin.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
-				final AlertDialog dlg = new AlertDialog.Builder(ThreadTestActivity.this).create();
-				dlg.show();
-				Window window = dlg.getWindow();
-				// *** 主要就是在这里实现这种效果的.
-				// 设置窗口的内容页面,shrew_exit_dialog.xml文件中定义view内容
-				window.setContentView(R.layout.voice_dialog);
-				// 为确认按钮添加事件,执行退出应用操作
-				Button cancel = (Button) window.findViewById(R.id.cancelVoice);
-				cancel.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						if (mVoiceRecognitionerHandler != null) {
-							// 通知子线程发起识别					
-							Message toVoiceRecognitioner = mVoiceRecognitionerHandler
-									.obtainMessage();
-							toVoiceRecognitioner.what = USER_CANCEL_SPEECH;
-							mVoiceRecognitionerHandler
-									.sendMessage(toVoiceRecognitioner);
-							
-							dlg.dismiss();
-						}
-					}
-				});
-				 		        
-				if (mVoiceRecognitionerHandler != null) {
-					// 通知子线程发起识别
-					Log.d(TAG, " voice reco begin ");
-					Message toVoiceRecognitioner = mVoiceRecognitionerHandler
-							.obtainMessage();
-					toVoiceRecognitioner.what = USER_START_SPEECH;
-					mVoiceRecognitionerHandler
-							.sendMessage(toVoiceRecognitioner);
-					Log.d(TAG, " voice reco end");
-				}
-			}
-
-		});
-
-		
 		
 		for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
-			String appName = i.next();		
-			String packageName = hashmap.get(appName).toString();
-			System.out.println(appName);
+			String appName = i.next();
 			apps.add(appName);
-			// sum += value;
+			apps.add("打开" + appName);
+		}
+		for (Iterator<String> i = mContacts.keySet().iterator(); i.hasNext();) {
+			String contact = i.next();
+			apps.add("打电话给" + contact);
 		}
 		
-		autoStr = contentEditText.getText().toString();
-		ArrayAdapter<String> av = new ArrayAdapter<String>(ThreadTestActivity.this,
+		ArrayAdapter<String> appAdapter = new ArrayAdapter<String>(
+				ThreadTestActivity.this,
 				android.R.layout.simple_dropdown_item_1line, apps);
-		contentEditText.setAdapter(av);
-		
-		sendButton.setOnClickListener(new View.OnClickListener() {
+		contentEditText.setAdapter(appAdapter);
 
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Log.d(TAG," fragment ");
-				
-				for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
-					String appName = i.next();
-					
-					String packageName = hashmap.get(appName).toString();
-					if (appName.startsWith(autoStr) || appName.startsWith(autoStr)){
-						System.out.println("aaaa");
-						System.out.println(appName);
-						System.out.println(packageName);
-					}
-					
-					// sum += value;
-				}
-				//serverVR(str, sid);
-				//startApp(str);
+		///< discharge is connected to network
+		if(isConnectedNet()){ // has network
+			//执行相关操作  
+			vr.start();  ///< VR begin
+			XmlString = serverStart(p_server); ///< 打开软件就和Server交互
+			if (XmlString != null) {
+				dataPhrase(XmlString);
 			}
-		});		
-		serverStart();
+		}
+		chatListView.setOnItemClickListener(new ItemClick());
 	}
+	
+	 /*
+     * item上的OnClick事件
+     */
+    public final class ItemClick implements OnItemClickListener {
 
-	// ///// Server start ////////
-	private static int server_flag = 1;
+        public void onItemClick(AdapterView<?> parent, View arg1, int position, long id) {
+            
+            
+//            ListView lview=(ListView)parent;
+//            testTable t=(testTable)lview.getItemAtPosition(position);            
+            Toast.makeText(getApplicationContext(), "click", 1).show();
+        }
 
-	private void serverStart() {
-		if (mServerHandler != null) {
-			// 通知子线程发起识别
-			Log.d(TAG, " server send start ");
-			Message toServer = mServerHandler.obtainMessage();
-			toServer.what = 110;
-			
-			tMsg.setMsg_Flag("p_start");
-			tMsg.setMsg_DID("0") ;
-			
-			Bundle bd = new Bundle();
-			bd.putParcelable("toServer", tMsg);
-			toServer.setData(bd);
-			mServerHandler.sendMessage(toServer);
+    }
+	
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.screen: 
+			InputMethodManager imm = (InputMethodManager) this
+					.getSystemService(Context.INPUT_METHOD_SERVICE);
+			contentEditText.setCursorVisible(false);// 失去光标
+			imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+			break;
+		// / begin VR
+		case R.id.beginBtn:			
+			if(isConnectedNet()){
+//				dialog.show();
+				if (Constraints.mVoiceRecognitionerHandler != null) {
+					// 通知子线程发起识别
+					Message toVoiceRecognitioner = Constraints.mVoiceRecognitionerHandler
+							.obtainMessage();
+					toVoiceRecognitioner.what = Constraints.USER_START_SPEECH;
+					Constraints.mVoiceRecognitionerHandler
+							.sendMessage(toVoiceRecognitioner);
+				}
+			}
+			break;
+		// / end the VR
+		case R.id.dialog_button_cancel:
+			if (Constraints.mVoiceRecognitionerHandler != null) {
+				// 通知子线程取消识别
+				Message toVoiceRecognitioner = Constraints.mVoiceRecognitionerHandler
+						.obtainMessage();
+				toVoiceRecognitioner.what = Constraints.USER_CANCEL_SPEECH;
+				Constraints.mVoiceRecognitionerHandler
+						.sendMessage(toVoiceRecognitioner);
+			}
+			break;
+		// / text input Button
+		case R.id.sendBtn:
+			autoStr = contentEditText.getText().toString();
+			Log.d(TAG, "打开" + autoStr);
+			if(!autoStr.isEmpty()){
+			if (equalApp(autoStr)) {
+				contentEditText.setText("");
+			} else {
+				send(autoStr, false);
+				if(isConnectedNet()){ // has network
+					//执行相关操作  
+					XmlString = serverVR(p_server, autoStr, sid);
+					dataPhrase(XmlString);
+				}
+				contentEditText.setText("");
+			}
+			}
+			else{
+				send("请输入内容。",true);
+			}
+		default:
+			break;
 		}
 	}
 
-	private void serverEnd(String sid) {
-		if (mServerHandler != null) {
-			// 通知子线程发起识别
-			Log.d(TAG, " server send start ");
-			Message toServer = mServerHandler.obtainMessage();
-			toServer.what = 112;
-			
-			tMsg.setMsg_Flag("p_stop");
-			server_flag = server_flag + 1;
-			tMsg.setMsg_SID(sid);
-			tMsg.setMsg_DID(String.valueOf(server_flag)) ;
-			
-			Bundle bd = new Bundle();
-			bd.putParcelable("toServer", tMsg);
-			toServer.setData(bd);
-			mServerHandler.sendMessage(toServer);
-			
-			server_flag = 1;
+	/**
+	 * is connected to network
+	 */
+	private boolean isConnectedNet(){
+		ConnectivityManager con=(ConnectivityManager)getSystemService(Activity.CONNECTIVITY_SERVICE);  
+		boolean wifi=con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();  
+		boolean internet=con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();  
+		if(wifi|internet){  
+		    //执行相关操作  
+			return true;
+		}else{  
+			send("亲，网络连了么？",true);  
+		    return false;
+		} 
+	}
+	
+	/**
+	 * connect volume and progress
+	 * 
+	 * @param power
+	 *            volume num
+	 */
+	public void volumeChange(int power) {
+		mVolumeBar.setProgress(power);
+	}
+
+	/**
+	 * set the status of waiter bar
+	 */
+	public void SetWaitBarVisiblity(boolean flag) {
+		if (true == flag) {
+			mWaitBar.setVisibility(View.VISIBLE);
+		} else {
+			mWaitBar.setVisibility(View.GONE);
 		}
 	}
 
-	private void serverVR(String str, String sid) {
-		if (mServerHandler != null) {
-			// 通知子线程发起识别
-			Log.d(TAG, " server send start ");
-			Message toServer = mServerHandler.obtainMessage();
-			toServer.what = 111;
-			
-			server_flag = server_flag + 1;
-			tMsg.setMsg_Flag("p_vr");
-			tMsg.setMsg_STT(str);
-			tMsg.setMsg_SID(sid);
-			Log.d(TAG, sid );
-			Log.d("str", str);
-			tMsg.setMsg_DID(String.valueOf(server_flag)) ;
-			
-			Bundle bd = new Bundle();
-			bd.putParcelable("toServer", tMsg);
-			toServer.setData(bd);
-			mServerHandler.sendMessage(toServer);
+	/**
+	 * set volume bar visible
+	 * 
+	 * @param flag
+	 */
+	public void SetVolumeBarVisiblity(boolean flag) {
+		if (true == flag) {
+			volumetextview.setVisibility(View.VISIBLE);
+			mVolumeBar.setVisibility(View.VISIBLE);
+		} else {
+			volumetextview.setVisibility(View.GONE);
+			mVolumeBar.setVisibility(View.GONE);
 		}
 	}
 
+	/**
+	 * charge the result is equal to the set String like appname and phoneName
+	 * 
+	 * @param Result
+	 *            : vr result
+	 * @return true, false
+	 */
+	private boolean equalApp(String Result) {
+		int app_flag = 0;
+		if(Result.endsWith("。")){
+			Result = Result.substring(0, Result.length() -1);
+		}
+		for (Iterator<String> i = hashmap.keySet().iterator(); i.hasNext();) {
+			String appName = i.next();
+//			System.out.println("打开" + appName);
+			if (Result.equals(appName)) {
+				send("打开" + appName, false);
+				startApp(appName);
+				app_flag = 1;
+				return true;
+			} 
+			else if (Result.startsWith("打开")) {
+				if (Result.equals("打开" + appName)) {
+					send("打开" + appName, false);
+					startApp(appName);
+					app_flag = 1;
+					return true;
+				} 
+			}
+		}
+		int phone_flag = 0;
+		for (Iterator<String> i = mContacts.keySet().iterator(); i.hasNext();) {
+			String phoneName = i.next();
+//			System.out.println("打电话给" + phoneName);
+			if (Result.equals(phoneName)) {
+				send("打电话给" + phoneName, false);
+				dialPhone(phoneName);
+				phone_flag = 1;
+				return true;
+			} else if (Result.startsWith("打电话")) {
+				if (Result.equals("打电话给" + phoneName)) {
+					send("打电话给" + phoneName, false);
+					dialPhone(phoneName);
+					phone_flag = 1;
+					return true;
+				} 
+			}
+		}
+//		if (app_flag == 0) {
+//			send(Result.substring(2, Result.length())
+//					+ "软件不存在，请重新输入。", false);
+//			app_flag = 1;
+//		}
+//		if (phone_flag == 0) {
+//			send(Result.substring(4, Result.length())
+//					+ "联系人不存在，请重新输入。", false);
+//			phone_flag = 1;
+//		}
+		return false;
+	}
 
-	// //// List View UI ///////////////
+	/**
+	 * dial phone num by name
+	 * 
+	 * @param phoneName
+	 *            : the phone name
+	 */
+	private void dialPhone(String phoneName) {
+		// 调用系统方法拨打电话
+		if (mContacts.containsKey(phoneName)) {
+			Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
+					+ mContacts.get(phoneName)));
+			startActivity(dialIntent);
+		} else {
+			send("电话号码中没有" + phoneName, false);
+		}
+	}
+
+	private static HashMap<String, String> mContacts = new HashMap<String, String>();
+
+	/**
+	 * 得到手机通讯录联系人信息
+	 * 
+	 * @param Context : thread context
+	 */
+	public static void getAllCallRecords(Context context) { 
+//		HashMap<String,String> temp = new HashMap<String, String>(); 
+        Cursor c = context.getContentResolver().query( 
+                ContactsContract.Contacts.CONTENT_URI, 
+                null, 
+                null, 
+                null, 
+                ContactsContract.Contacts.DISPLAY_NAME 
+                        + " COLLATE LOCALIZED ASC"); 
+        if (c.moveToFirst()) { 
+            do { 
+                // 获得联系人的ID号 
+                String contactId = c.getString(c 
+                        .getColumnIndex(ContactsContract.Contacts._ID)); 
+                // 获得联系人姓名 
+                String name = c 
+                        .getString(c 
+                                .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)); 
+                // 查看该联系人有多少个电话号码。如果没有这返回值为0 
+                int phoneCount = c 
+                        .getInt(c 
+                                .getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)); 
+                String number=null; 
+                if (phoneCount > 0) { 
+                    // 获得联系人的电话号码 
+                    Cursor phones = context.getContentResolver().query( 
+                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI, 
+                            null, 
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID 
+                                    + " = " + contactId, null, null); 
+                    if (phones.moveToFirst()) { 
+                        number = phones 
+                                .getString(phones 
+                                .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
+                        } 
+                    phones.close(); 
+                } 
+                mContacts.put(name, number); 
+            } while (c.moveToNext()); 
+        } 
+        c.close();  
+    }
+	
+	private static int server_flag = 0; ///< the server flag for did increase
+
+	/**
+	 * begin a ConServer (dialog)
+	 * 
+	 * @param pMain
+	 *            : a Conserver Class
+	 * @return
+	 */
+	private String serverStart(p_main pMain) {
+		// 通知子线程发起识别
+		Log.d(TAG, " server start ");
+		tMsg.setMsg_Flag("p_start");
+		tMsg.setMsg_DID("0");
+
+		String xmlString = pMain.doTask(tMsg);
+		return xmlString;
+	}
+
+	/**
+	 * end a Conserver
+	 * 
+	 * @param pMain
+	 *            : a conserver class
+	 * @param sid
+	 *            : a unique id for a dialog
+	 * @return
+	 */
+	private String serverEnd(p_main pMain, String sid) {
+		tMsg.setMsg_Flag("p_stop");
+		server_flag = server_flag + 1;
+		tMsg.setMsg_SID(sid); 
+		tMsg.setMsg_DID(String.valueOf(server_flag));
+
+		String xmlString = pMain.doTask(tMsg);
+		server_flag = 0;
+		return xmlString;
+	}
+
+	/**
+	 * conserver
+	 * 
+	 * @param pMain
+	 *            a conserver class
+	 * @param str
+	 *            : a question
+	 * @param sid
+	 *            : id
+	 * @return a XML answer from server
+	 */
+	private String serverVR(p_main pMain, String str, String sid) {
+		// 通知子线程发起识别
+		Log.d(TAG, " server vr ");
+		server_flag = server_flag + 1;
+		tMsg.setMsg_Flag("p_vr");
+		tMsg.setMsg_STT(str);
+		tMsg.setMsg_SID(sid);
+		tMsg.setMsg_DID(String.valueOf(server_flag));
+		String xmlString = pMain.doTask(tMsg);
+		return xmlString;
+	}
+
+	/**
+	 * phrase XML Data
+	 * 
+	 * @param xmlString
+	 *            :a XML data From Conserver
+	 */
+	private void dataPhrase(String xmlString) {
+		l_msg = dataThread.parseXml(xmlString);
+		if (l_msg.getSid() != null) {
+			sid = l_msg.getSid();
+			Log.d(TAG, sid);
+		}
+		if (l_msg.getTts() != null || l_msg.getDisplay() != null) { // 两者有一不为空
+			if (l_msg.getDisplay() == null) { // 当显示为空
+				send(l_msg.getTts(), true);
+				ret = speechSynthesizer.speak(l_msg.getTts());
+				if (ret != 0) {
+					// 显示错误信息
+				}
+			} else if (l_msg.getTts() == null) { // 当TTS为空
+				send(l_msg.getDisplay(), true);
+			} else {
+				send(l_msg.getDisplay(), true);
+				ret = speechSynthesizer.speak(l_msg.getTts());
+				if (ret != 0) {
+					// 显示错误信息
+				}
+			}
+		} else {
+			Log.d(TAG, "data from Data model is null");
+		}
+		if (l_msg.getAppName() != null) {
+			startApp(l_msg.getAppName());
+			Log.d(TAG, "end server ");
+			serverEnd(p_server, sid);
+			serverStart(p_server);
+		}
+		if(l_msg.getType() == "stop"){
+			serverStart(p_server);
+		}
+	}
+
+	private static long  startTime, EndTime;
+	/**
+	 * send message to Chat ListView
+	 * 
+	 * @param str
+	 *            :message
+	 * @param isComeMsg
+	 *            :diacharge the message
+	 */
 	private void send(String str, boolean isComeMsg) { // !!!! the main point
 		ChatEntity chatEntity = new ChatEntity();
-		chatEntity.setChatTime("2012-09-20 15:16:34");
+		// get current data
+		SimpleDateFormat sDateFormat = new SimpleDateFormat(
+				"yyyy-MM-dd   HH:mm:ss");
+		String date = sDateFormat.format(new java.util.Date());
+
+		chatEntity.setChatTime(date);
 		chatEntity.setContent(str);
 		chatEntity.setComeMsg(isComeMsg);
 		chatList.add(chatEntity);
 		chatAdapter.notifyDataSetChanged(); // refresh data
 		chatListView.setSelection(chatList.size() - 1);
+//		if(isComeMsg == true){
+//			startTime  = System.currentTimeMillis();
+////			Toast.makeText(this, String.valueOf(startTime), Toast.LENGTH_LONG).show();
+//		}
+//		if(isComeMsg == false){
+//			EndTime = System.currentTimeMillis();
+////			Toast.makeText(this, String.valueOf(EndTime), Toast.LENGTH_LONG).show();
+//		}
+//		if(EndTime - startTime >= 300000){
+////			serverEnd(p_server, sid);
+////			serverStart(p_server);
+//			
+////			onRestart();
+////			PowerManager pManager=(PowerManager) getSystemService(Context.POWER_SERVICE);  
+////            pManager.reboot("重启");  
+////		    Intent i = getBaseContext().getPackageManager()  
+////		            .getLaunchIntentForPackage(getBaseContext().getPackageName());  
+////		    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  
+////		    startActivity(i);  
+////			Toast.makeText(this, String.valueOf("start again"), Toast.LENGTH_LONG).show();
+//		}
 	}
 
-	// /////// start APP ///////////
+	///////// start APP /////
 
-	private List<ResolveInfo> mApps;
-	private static HashMap hashmap = new HashMap();
-	private ResolveInfo info;
+	private List<ResolveInfo> mApps; ///< list of app
+	private static HashMap hashmap = new HashMap(); ///< a hashmap for appName and packageName
+	private ResolveInfo info;     ///< ResolveInfo 可以获取到每个Activity的信息
 
-	// 应该还要一个Map，对应 中文名字。
+	/**
+	 * Start a App with it's name
+	 * 
+	 * @param Appname
+	 *            : an app name
+	 */
 	public void startApp(String Appname) {
 		// TODO Auto-generated method stub
 		String PacStr = hashmap.get(Appname).toString();
-//		Log.d("package name", PacStr);
+		// Log.d("package name", PacStr);
 		if (Appname != null) {
 			startOtherApp(PacStr);
 		}
 	}
 
+	/**
+	 * get all the APP Name list
+	 */
 	private void getList() {
-		//list.clear();
+		// list.clear();
 		Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
 		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 		mApps = getPackageManager().queryIntentActivities(mainIntent, 0);
@@ -400,6 +729,11 @@ public class ThreadTestActivity extends Activity  implements
 		}
 	}
 
+	/**
+	 * start an app by package Name
+	 * 
+	 * @param AppPackageStr
+	 */
 	private void startOtherApp(String AppPackageStr) {
 		Log.d("app", "begin app");
 		Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(
@@ -407,7 +741,9 @@ public class ThreadTestActivity extends Activity  implements
 		startActivity(LaunchIntent);
 	}
 
-	// /////// TTS ////////////
+	/**
+	 * TTS set
+	 */
 	private void setParams() {
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "1");
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "5");
@@ -415,6 +751,26 @@ public class ThreadTestActivity extends Activity  implements
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_ENCODE, "1");
 		speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_RATE, "4");
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	 
+	    if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE) {
+	        //横向
+	        setContentView(R.layout.main);
+	    } else {
+	        //竖向
+	        setContentView(R.layout.main);
+	    }
+	}
+	
+	@Override
+	protected void onRestart() {
+	    super.onRestart();  // Always call the superclass method first
+	      
+	    // Activity being restarted from stopped state   
 	}
 
 	@Override
@@ -472,5 +828,47 @@ public class ThreadTestActivity extends Activity  implements
 		// TODO Auto-generated method stub
 
 	}
+	
+	private void displayToast(String string){
+		Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+	}
+	
+    /** 
+     * 菜单、返回键响应 
+     */  
+    @Override  
+    public boolean onKeyDown(int keyCode, KeyEvent event) {  
+        // TODO Auto-generated method stub  
+        if(keyCode == KeyEvent.KEYCODE_BACK)  
+           {    
+               exitBy2Click();      //调用双击退出函数  
+           }  
+        return false;  
+    }  
+    /** 
+     * 双击退出函数 
+     */  
+    private static Boolean isExit = false;  
+      
+    private void exitBy2Click() {  
+        Timer tExit = null;  
+        if (isExit == false) {  
+            isExit = true; // 准备退出  
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();  
+            tExit = new Timer();  
+            tExit.schedule(new TimerTask() {  
+                @Override  
+                public void run() {  
+                    isExit = false; // 取消退出  
+                }  
+            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务  
+      
+        } else {  
+        	
+        	Constraints.mASREngine.releaseInstance();
+            finish();  
+            System.exit(0);  
+        }  
+    }  
 
 }

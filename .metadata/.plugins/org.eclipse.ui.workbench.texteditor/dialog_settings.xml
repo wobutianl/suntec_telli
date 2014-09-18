@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="xmlStr" key="selection"/>
+		<item value="///&lt;" key="selection"/>
 		<list key="findhistory">
+			<item value="///"/>
+			<item value="serverEnd"/>
+			<item value="mVolumeBar"/>
+			<item value="server vr"/>
+			<item value="new LinearLayout(this);"/>
+			<item value="p_server"/>
+			<item value="serverVR"/>
 			<item value="xmlstr"/>
-			<item value="PSETTelliActivity"/>
-			<item value="mClientHandler"/>
-			<item value="toVoiceRecognitioner"/>
-			<item value="RECOGNITION_SPEECH_START"/>
-			<item value="send"/>
-			<item value="Chart"/>
-			<item value="chart"/>
 		</list>
 		<list key="replacehistory">
+			<item value="///&lt;"/>
 			<item value="ThreadTestActivity"/>
 			<item value="handler"/>
 			<item value="Chat"/>

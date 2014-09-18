@@ -11,21 +11,21 @@ public class BlockURL
 	{
 		StrURL = "http://navicloud.pset.suntec.net:8080/api/dialog-svn/3.0/ch-trunk-autonavi/dialog/";
 		
-		if("p_start" == UMsg.getMsg_Flag() && "0" == UMsg.getMsg_DID())		//did type uid
+		if("p_start" == UMsg.Msg_Flag)		//did type uid
 		{
 			StrURL += "msg?did=0&type=start&uid=test";
 		}
-		if("p_stop" == UMsg.getMsg_Flag())								//did type uid sid
+		else if("p_stop" == UMsg.Msg_Flag)								//did type uid sid
 		{
 			StrURL += "msg?did=";
-			StrURL += UMsg.getMsg_DID();
+			StrURL += UMsg.Msg_DID;
 			StrURL += "&type=stop&uid=test&sid=";
-			StrURL += UMsg.getMsg_SID();
+			StrURL += UMsg.Msg_SID;
 		}
-		if("p_vr" == UMsg.getMsg_Flag())								//q did type sid
+		else if("p_vr" == UMsg.Msg_Flag)								//q did type sid
 		{
 			StrURL += "rsp?q=";
-			String qtext = UMsg.getMsg_STT();
+			String qtext = UMsg.Msg_STT;
 			try
 			{
 				qtext = URLEncoder.encode(qtext, "utf-8");
@@ -36,14 +36,18 @@ public class BlockURL
 	         }
 			StrURL += qtext;
 			StrURL += "&did=";
-			StrURL += UMsg.getMsg_DID();
+			StrURL += UMsg.Msg_DID;
 			StrURL += "&type=vr&sid=";
-			StrURL += UMsg.getMsg_SID();
+			StrURL += UMsg.Msg_SID;
+		}
+		else
+		{
+			StrURL = "Telli";
 		}
 	}
 	public String GetStrURL()
 	{
-//		System.out.println(StrURL);
+		System.out.println(StrURL);
 		return StrURL;
 		
 	}

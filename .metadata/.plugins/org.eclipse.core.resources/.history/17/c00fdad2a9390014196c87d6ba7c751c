@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent" android:weightSum="1">
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:orientation="vertical" android:layout_gravity="center"
+		android:layout_width="221dp" android:weightSum="1"
+		android:layout_height="wrap_content"
+		
+		android:background="@drawable/voiceback">
+
+		<TextView android:id="@+id/voiceText" 
+			android:text="请说话"
+			android:layout_width="match_parent" 
+			android:layout_height="32dp"
+			android:textSize="28dp" 
+			android:gravity="center"
+			android:textColor="yellow"
+			android:layout_gravity="center_horizontal"></TextView>
+
+		<ProgressBar android:layout_width="wrap_content"
+			android:id="@+id/progressBar1" 
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_gravity="center" 
+			android:layout_height="wrap_content"></ProgressBar>
+
+		<Button android:text="取消" 
+			android:id="@+id/cancelVoice"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+
+</LinearLayout>

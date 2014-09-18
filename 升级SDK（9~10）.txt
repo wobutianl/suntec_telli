@@ -1,0 +1,12 @@
+目的：
+1：Genymotion 模拟器只有 SDK 10以上的版本，
+2：Genymotion 速度很快，可以提高效率。
+
+步骤：
+1：修改project -> property -> build path -> add extend jars -> sdk 10 
+2：程序.default.properties ->  target 10
+3：运行程序，提示错误
+4：修改project -> property -> build path -> add extend jars -> 删掉android.jar
+
+
+问题：

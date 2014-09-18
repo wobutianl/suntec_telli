@@ -17,6 +17,7 @@ import android.util.Log;
 
 import java.util.List;
 
+import thread.Test.Constraints;
 import thread.Test.R;
 import thread.Test.ThreadTestActivity;
 
@@ -52,12 +53,12 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 		
         Looper.prepare();
 		
-		ThreadTestActivity.mVoiceRecognitionerHandler = new Handler() {
+        Constraints.mVoiceRecognitionerHandler = new Handler() {
 			
             @Override           
             public void handleMessage(Message msg) {
                 switch(msg.what){
-				    case ThreadTestActivity.USER_START_SPEECH:
+				    case Constraints.USER_START_SPEECH:
 				    	VoiceRecognitionConfig config = new VoiceRecognitionConfig();
 				    	config.setProp(Config.CURRENT_PROP);
 				        config.setLanguage(Config.getCurrentLanguage());
@@ -72,15 +73,15 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 				        config.setSampleRate(VoiceRecognitionConfig.SAMPLE_RATE_8K); // 设置采样率,需要与外部音频一致
 				    	
 						// 下面发起识别
-                        int code = ThreadTestActivity.mASREngine.startVoiceRecognition(mListener, config);
+                        int code = Constraints.mASREngine.startVoiceRecognition(mListener, config);
                         
                         if (code != VoiceRecognitionClient.START_WORK_RESULT_WORKING) {
                             //向Client主线程报告错误
                         } 
                         break;
-					case ThreadTestActivity.USER_CANCEL_SPEECH:
+					case Constraints.USER_CANCEL_SPEECH:
 						// 取消识别过程
-						ThreadTestActivity.mASREngine.stopVoiceRecognition();
+						Constraints.mASREngine.stopVoiceRecognition();
                         break; 
                     default:
                         break;						
@@ -99,45 +100,45 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 
         @Override
         public void onClientStatusChange(int status, Object obj) {
-        	toClient = ThreadTestActivity.handler.obtainMessage();
+        	toClient = Constraints.handler.obtainMessage();
             switch (status) {
             // 语音识别实际开始，这是真正开始识别的时间点，需在界面提示用户说话。
                 case VoiceRecognitionClient.CLIENT_STATUS_START_RECORDING:
                     isRecognition = true;
-					toClient.what = ThreadTestActivity.RECOGNITION_IS_READY;
-					ThreadTestActivity.handler.sendMessage(toClient);
+					toClient.what = Constraints.RECOGNITION_IS_READY;
+					Constraints.handler.sendMessage(toClient);
                     break;
                 case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_START: // 检测到语音起点
                 	System.out.println("engine detect the start of speech");
-                	toClient.what = ThreadTestActivity.RECOGNITION_SPEECH_START;
-                	ThreadTestActivity.handler.sendMessage(toClient);
+                	toClient.what = Constraints.RECOGNITION_SPEECH_START;
+                	Constraints.handler.sendMessage(toClient);
 					System.out.println("engine detect the start of speech,and notify client");
 					
                     break;
                 // 已经检测到语音终点，等待网络返回
                 case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_END:
-                    toClient.what = ThreadTestActivity.RECOGNITION_SPEECH_END;
-                    ThreadTestActivity.handler.sendMessage(toClient);
+                    toClient.what = Constraints.RECOGNITION_SPEECH_END;
+                    Constraints.handler.sendMessage(toClient);
 					System.out.println("engine detect the end of speech,and notify client");
                     break;
                 // 语音识别完成，显示obj中的结果
                 case VoiceRecognitionClient.CLIENT_STATUS_FINISH:
                     isRecognition = false;
-					toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_FINISH;
+					toClient.what = Constraints.RECOGNITION_RECOGNITION_FINISH;
 					toClient.obj = updateRecognitionResult(obj);
-					ThreadTestActivity.handler.sendMessage(toClient);
+					Constraints.handler.sendMessage(toClient);
 					System.out.println("engine detect the finish of recognition,and notify client");
                     break;
                 // 处理连续上屏
                 case VoiceRecognitionClient.CLIENT_STATUS_UPDATE_RESULTS:
-                    toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_PARTIALFINISH;
+                    toClient.what = Constraints.RECOGNITION_RECOGNITION_PARTIALFINISH;
 					toClient.obj = updateRecognitionResult(obj);
-					ThreadTestActivity.handler.sendMessage(toClient);
+					Constraints.handler.sendMessage(toClient);
                     break;
                 // 用户取消
                 case VoiceRecognitionClient.CLIENT_STATUS_USER_CANCELED:
-                    toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_CANCELED;
-                    ThreadTestActivity.handler.sendMessage(toClient);
+                    toClient.what = Constraints.RECOGNITION_RECOGNITION_CANCELED;
+                    Constraints.handler.sendMessage(toClient);
                     isRecognition = false;
                     break;
                 default:
@@ -150,10 +151,10 @@ public class PSETTelliVoiceRecognitioner extends Thread {
         public void onError(int errorType, int errorCode) {
             isRecognition = false;
             
-            toClient = ThreadTestActivity.handler.obtainMessage();
-            toClient.what = ThreadTestActivity.RECOGNITION_RECOGNITION_ERROR;
+            toClient = Constraints.handler.obtainMessage();
+            toClient.what = Constraints.RECOGNITION_RECOGNITION_ERROR;
 			toClient.obj = Integer.toHexString(errorCode);
-			ThreadTestActivity.handler.sendMessage(toClient);
+			Constraints.handler.sendMessage(toClient);
         }
 
         @Override

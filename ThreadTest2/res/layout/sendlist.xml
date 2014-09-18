@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"  
     android:orientation="vertical"  
     android:paddingBottom="5dp"  
-    android:layout_height="wrap_content" >  
+    android:layout_height="wrap_content" 
+    >  
   
     <TextView  
             android:id="@+id/tv_time"  
@@ -16,12 +17,14 @@
             android:paddingLeft="4dp"  
             android:paddingRight="4dp"  
             android:textColor="#ffffff"  
-            android:textSize="12sp" />  
+            android:textSize="12sp" 
+            android:focusable="false"/>  
       
     <RelativeLayout  
         android:layout_width="fill_parent"  
         android:layout_height="wrap_content"  
-        android:layout_marginTop="5dp" >  
+        android:layout_marginTop="5dp"
+         >  
   
         <ImageView  
             android:id="@+id/iv_user_image"  
@@ -29,7 +32,7 @@
             android:layout_height="50dp"  
             android:layout_alignParentRight="true"  
             android:layout_alignParentTop="true"  
-            android:background="@drawable/icon"  
+            android:background="@drawable/sendmessage"  
             android:focusable="false" />  
   
         <TextView  
@@ -44,7 +47,9 @@
             android:focusable="true"  
             android:lineSpacingExtra="2dp"  
               
-            android:textSize="14sp" />  
-          
+            android:textSize="14sp"
+            android:textColor="#000033" 
+            android:background="@drawable/outgoing"
+            ></TextView>          
     </RelativeLayout>  
 </LinearLayout>  

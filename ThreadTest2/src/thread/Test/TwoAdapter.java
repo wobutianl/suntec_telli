@@ -6,9 +6,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TwoAdapter extends BaseAdapter {
@@ -42,7 +45,6 @@ public class TwoAdapter extends BaseAdapter {
 
 	@Override
 	public int getItemViewType(int position) {
-		// ���}��view�����ͣ���ע}��ͬ�ı�4�ֱ��ʾ���Ե�����
 		ChatEntity entity = chatList.get(position);
 		if (entity.isComeMsg()) {
 			return COME_MSG;
@@ -53,7 +55,6 @@ public class TwoAdapter extends BaseAdapter {
 
 	@Override
 	public int getViewTypeCount() {
-		// ����Ĭ�Ϸ���1�����ϣ��listview��item����һ��ľͷ���1������������}�ַ�񣬷���2
 		return 2;
 	}
 
@@ -86,6 +87,19 @@ public class TwoAdapter extends BaseAdapter {
 		return convertView;
 	}
 
+	void onItemClick(AdapterView<?>parent, View view, int position, long id){
+	    if(id<0) {
+	        // 点击的是headerView或者footerView
+	        return;
+	    }
+	    int realPosition=(int)id;
+	    Toast.makeText(parent.getContext(),  
+				" list click ", Toast.LENGTH_SHORT).show();  
+		Toast.makeText(parent.getContext(), " list click ", Toast.LENGTH_SHORT).show();
+//	    T item=getItem(realPosition);
+	    // 响应代码
+	}
+	
 	private class ChatHolder {
 		private TextView timeTextView;
 		private ImageView userImageView;

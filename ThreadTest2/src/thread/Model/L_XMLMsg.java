@@ -1,21 +1,28 @@
+/**
+ * @file l_xmlMsg
+ * 
+ * @brief a message module parsed from xml 
+ * 
+ * an data module which parsed from xml
+ */
+
 package thread.Model;
+/**
+ *  
+ * @brief a message module parsed from xml 
+ * 
+ * @author linbing
+ */
+public class L_XMLMsg  {
 
-import thread.Test.ModelMsg;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.Parcelable.Creator;
-
-public class L_XMLMsg implements Parcelable {
-
-	private String did;
-	private String sid;
-	private String display;
+	private String did;   ///< an did 
+	private String sid;		///< an ID for each dialog 
+	private String display;	///< string for UI display
 	
-	private String tts;
-	private String type;
-//	private String flag;
+	private String tts;	///< string for TTS 
+	private String type;	///< start or vr or stop 
 	
-	private String appName;
+	private String appName;	///< the name of App Name
 	
 	public L_XMLMsg() {
 		// TODO Auto-generated constructor stub
@@ -61,14 +68,6 @@ public class L_XMLMsg implements Parcelable {
 		this.type = type;
 	}
 
-//	public String getFlag() {
-//		return flag;
-//	}
-//
-//	public void setFlag(String flag) {
-//		this.flag = flag;
-//	}
-	
 	public String getAppName() {
 		return appName;
 	}
@@ -77,45 +76,4 @@ public class L_XMLMsg implements Parcelable {
 		this.appName = appName;
 	}
 
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel out, int flags) {
-		out.writeString(did);
-		out.writeString(sid);
-		out.writeString(display);
-		
-		out.writeString(tts);
-//		out.writeString(flag);
-		out.writeString(type);
-		
-		out.writeString(appName);
-	}
-
-	public static final Parcelable.Creator<L_XMLMsg> CREATOR = new Creator<L_XMLMsg>() {
-		@Override
-		public L_XMLMsg[] newArray(int size) {
-			return new L_XMLMsg[size];
-		}
-
-		@Override
-		public L_XMLMsg createFromParcel(Parcel in) {
-			return new L_XMLMsg(in);
-		}
-	};
-
-	public L_XMLMsg(Parcel in) {
-		did = in.readString();
-		sid = in.readString();
-		display = in.readString();
-		
-		tts = in.readString();
-//		flag = in.readString();
-		type = in.readString();
-		
-		appName = in.readString();
-	}
 }

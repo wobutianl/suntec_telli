@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;thread.Model.L_XMLMsg.content&apos; in &apos;thread.Model.L_XMLMsg&apos;&#x0D;&#x0A;- Original project: &apos;ThreadTest3&apos;&#x0D;&#x0A;- Original element: &apos;thread.Model.L_XMLMsg.content&apos;&#x0D;&#x0A;- Getter method name: &apos;getContent&apos;&#x0D;&#x0A;- Setter method name: &apos;setContent&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;content&apos;" flags="589830" getter="getContent" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;thread.Model{L_XMLMsg.java[L_XMLMsg^content" insertion="12" setter="setContent" stamp="1410939565458" version="1.0" visibility="1"/>
+</session>

@@ -16,18 +16,17 @@ public class CallServer
     	
         try
         {
-        	
             URL t_url = new URL(StrURL);
             BufferedReader t_in = new BufferedReader(new InputStreamReader(t_url.openStream(),"utf-8"));
              
             Str_XML = t_in.readLine();
             
-            Log.d("call server", Str_XML);
+//            Log.d("call server", Str_XML);
             t_in.close();
         }
         catch(Exception e)
         {
-            System.out.println(e);
+            System.out.println(" get URL wrong ");
         }
     }
     public String GetStrXML()

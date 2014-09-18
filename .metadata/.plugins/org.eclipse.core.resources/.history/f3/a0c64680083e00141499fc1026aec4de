@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@drawable/dialog_bg"
+    android:layout_alignParentBottom="true"
+    >
+    
+   <TextView 
+    android:id="@+id/dialog_status_TextView" 
+    android:textColor="#ffffffff" 
+    android:textSize="15sp"
+    android:text="@string/in_start" 
+    android:layout_height="wrap_content" 
+    android:layout_width="wrap_content">
+    </TextView>
+   
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dip"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingBottom="30dip"
+        android:layout_alignParentBottom="true">
+   
+        <TextView
+        android:id="@+id/volumeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dialog_button_cancel"
+        android:layout_below="@+id/dialog_status_TextView"
+        android:text="@string/volume"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+        </TextView>
+        
+    <ProgressBar
+        android:id="@+id/volumeProgressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/volumeTextView"
+        android:layout_below="@+id/volumeTextView"
+        android:visibility="visible"
+        android:max="100" >
+        </ProgressBar>
+    
+    <ProgressBar 
+        android:id="@+id/waitProgressbar"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        style="?android:attr/progressBarStyleLarge"  
+        android:max="100" 
+        android:visibility="gone" 
+        android:layout_centerVertical="true" 
+        android:layout_centerHorizontal="true">
+        </ProgressBar>
+    </RelativeLayout>  
+    <Button 
+    android:text="取消" 
+    android:id="@+id/dialog_button_cancel" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
+    </Button>
+</LinearLayout>
+

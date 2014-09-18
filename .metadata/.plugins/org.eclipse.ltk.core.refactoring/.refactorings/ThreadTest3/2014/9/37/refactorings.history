@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ThreadTest3/src/thread/VR/Constants.java&apos; to &apos;Constants2.java&apos;" description="Rename resource &apos;Constants.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/thread/VR/Constants.java" name="Constants2.java" stamp="1410514406919" updateReferences="true"/>
+</session>
