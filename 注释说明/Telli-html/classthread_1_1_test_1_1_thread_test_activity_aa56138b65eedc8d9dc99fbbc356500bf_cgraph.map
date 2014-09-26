@@ -1,0 +1,22 @@
+<map id="thread.Test.ThreadTestActivity.onCreate" name="thread.Test.ThreadTestActivity.onCreate">
+<area shape="rect" id="node2" href="$classthread_1_1_test_1_1_thread_test_activity.html#a24804ceebe63d2de73012ff5116b164e" title="thread.Test.ThreadTestActivity.set\lParams" alt="" coords="286,5,505,47"/>
+<area shape="rect" id="node3" href="$classthread_1_1_test_1_1_thread_test_activity.html#a54c52e35a101e1f8099c222c6b6f9072" title="thread.Test.ThreadTestActivity.getList" alt="" coords="275,71,515,98"/>
+<area shape="rect" id="node4" href="$classthread_1_1_test_1_1_thread_test_activity.html#a8c419d52b43da246124356ac8dd0130c" title="thread.Test.ThreadTestActivity.get\lAllCallRecords" alt="" coords="286,123,505,164"/>
+<area shape="rect" id="node5" href="$classthread_1_1_test_1_1_thread_test_activity.html#ad4c4250ef10d93ece39b466b806d6433" title="thread.Test.ThreadTestActivity.\lSetVolumeBarVisiblity" alt="" coords="295,188,496,229"/>
+<area shape="rect" id="node6" href="$classthread_1_1_test_1_1_thread_test_activity.html#adfd9405776fb70b0892555e7f331d9cc" title="thread.Test.ThreadTestActivity.\lSetWaitBarVisiblity" alt="" coords="295,253,496,295"/>
+<area shape="rect" id="node7" href="$classthread_1_1_test_1_1_thread_test_activity.html#a9a160e8d31fa45885302b6d7adf62a3e" title="thread.Test.ThreadTestActivity.send" alt="" coords="877,427,1107,454"/>
+<area shape="rect" id="node8" href="$classthread_1_1_test_1_1_thread_test_activity.html#aca96e753ff1b8b5c0c9a3ce2176e48a1" title="thread.Test.ThreadTestActivity.equalApp" alt="" coords="268,461,523,487"/>
+<area shape="rect" id="node12" href="$classthread_1_1_test_1_1_thread_test_activity.html#a3e6ddc78320c002e9bb4b0f170f39531" title="thread.Test.ThreadTestActivity.serverVR" alt="" coords="269,806,522,833"/>
+<area shape="rect" id="node13" href="$classthread_1_1_test_1_1_thread_test_activity.html#ac81d03493369754f98ca14b924d2effd" title="thread.Test.ThreadTestActivity.data\lPhrase" alt="" coords="282,689,509,731"/>
+<area shape="rect" id="node19" href="$classthread_1_1_test_1_1_thread_test_activity.html#a7257539b24858c534338c25a747e07dc" title="thread.Test.ThreadTestActivity.server\lStart" alt="" coords="583,981,817,1023"/>
+<area shape="rect" id="node21" href="$classthread_1_1_test_1_1_thread_test_activity.html#a0f1ca346577a4a9ede7f617dc038650d" title="thread.Test.ThreadTestActivity.is\lConnectedNet" alt="" coords="290,319,501,360"/>
+<area shape="rect" id="node9" href="$classthread_1_1_test_1_1_thread_test_activity.html#a50a4e0c3b5f3bae6b4c5a0dec6c7fee3" title="thread.Test.ThreadTestActivity.startApp" alt="" coords="575,545,825,571"/>
+<area shape="rect" id="node11" href="$classthread_1_1_test_1_1_thread_test_activity.html#ae15d8b1b61ea65826fc734379ee3c074" title="thread.Test.ThreadTestActivity.dial\lPhone" alt="" coords="589,479,811,520"/>
+<area shape="rect" id="node10" href="$classthread_1_1_test_1_1_thread_test_activity.html#af8348aef43647c5278bbf58d689feb94" title="thread.Test.ThreadTestActivity.start\lOtherApp" alt="" coords="879,537,1105,579"/>
+<area shape="rect" id="node14" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#a2cdd9a71e6cf17cb6ed70778aae78cf8" title="thread.Model.L_XMLMsg.getSid" alt="" coords="597,646,803,673"/>
+<area shape="rect" id="node15" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#afbc1646851db48ce1071dc6f8786e958" title="thread.Model.L_XMLMsg.getTts" alt="" coords="597,697,803,723"/>
+<area shape="rect" id="node16" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#a511dfbd859a77ecdd33b48556b71ec52" title="thread.Model.L_XMLMsg.get\lDisplay" alt="" coords="607,748,793,789"/>
+<area shape="rect" id="node17" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#afb3ff5ce6fcf45f7faf8a090d4d03f04" title="thread.Model.L_XMLMsg.get\lAppName" alt="" coords="607,813,793,855"/>
+<area shape="rect" id="node18" href="$classthread_1_1_test_1_1_thread_test_activity.html#ae9e590ddaeb3a4887148b657bcbac10e" title="thread.Test.ThreadTestActivity.serverEnd" alt="" coords="571,879,829,906"/>
+<area shape="rect" id="node20" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#abe74914659fba49ac694964fbd5fa4ff" title="thread.Model.L_XMLMsg.getType" alt="" coords="593,930,807,957"/>
+</map>

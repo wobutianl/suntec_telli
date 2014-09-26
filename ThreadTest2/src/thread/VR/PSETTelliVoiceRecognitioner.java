@@ -1,4 +1,11 @@
-
+/**
+ * @file PSETTelliVoiceRecognitioner.java
+ * 
+ * @brief Source File of Voice Recognition. 
+ * 
+ *    In the file, we use the Voice Recognition SDK of BaiDu. In addition, we define a independent thread 
+ * to do the recognition work.
+ */
 package thread.VR;
 
 import com.baidu.voicerecognition.android.Candidate;
@@ -10,6 +17,7 @@ import com.baidu.voicerecognition.android.VoiceRecognitionConfig;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Looper;
+import android.support.v4.app.FragmentActivity;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.util.Log;
@@ -22,47 +30,47 @@ import thread.Test.R;
 import thread.Test.ThreadTestActivity;
 
 /**
- * 使用底层API方式识别Demo，开发者可以定义UI交互
- * 
- * @author yangliang02
- */
-public class PSETTelliVoiceRecognitioner extends Thread {
-	protected static final String TAG = "recognition"; 
+ * @brief Class of Voice Recognition Thread.     
+ *
+ *The class implements three functions:
+ *(1)configure the Voice Recognition Engine and then start it.
+ *(2)implement the VoiceRecognitionListener.
+ *(3)Communicate with the MainThread.
+ */ 
+public class PSETTelliVoiceRecognitioner extends Thread { 
+    private boolean isRecognition = false;    ///< recognition flag 
 
+    private static final int POWER_UPDATE_INTERVAL = 100;    ///< interval of refresh volume
 
-    /** 正在识别中 */
-    private boolean isRecognition = false;
-
-    /** 音量更新间隔 */
-    private static final int POWER_UPDATE_INTERVAL = 100;
-
-    /** 识别回调接口 */
-    private PSETTelliVoiceRecogListener mListener = new PSETTelliVoiceRecogListener();
+    private PSETTelliVoiceRecogListener mListener = new PSETTelliVoiceRecogListener();    ///< recognition listener 
     
-    private Message toClient;
-        
-	public PSETTelliVoiceRecognitioner() {
-		// TODO Auto-generated constructor stub
-
-	}
+    private Message toClient;    ///< message for communication with mainthread 
 	
-		
+	
+    /**
+    * @brief run function of the thread
+    *
+    *the function configure the recognition engine and start it
+    *
+    * @param none            
+    *
+    * @return none     
+    */ 
 	public void run() {
         this.setName("VoiceRecognitionerThread");
         System.out.println("recogthread is running!");
 		
         Looper.prepare();
 		
-        Constraints.mVoiceRecognitionerHandler = new Handler() {
-			
-            @Override           
+		Constraints.mVoiceRecognitionerHandler = new Handler() {
+            @Override
             public void handleMessage(Message msg) {
                 switch(msg.what){
 				    case Constraints.USER_START_SPEECH:
 				    	VoiceRecognitionConfig config = new VoiceRecognitionConfig();
 				    	config.setProp(Config.CURRENT_PROP);
 				        config.setLanguage(Config.getCurrentLanguage());
-				        //config.enableContacts(); // 启用通讯录
+				        config.enableContacts(); // 启用通讯录
 				        config.enableVoicePower(Config.SHOW_VOL); // 音量反馈。
 				        if (Config.PLAY_START_SOUND) {
 				            config.enableBeginSoundEffect(R.raw.bdspeech_recognition_start); // 设置识别开始提示音
@@ -74,7 +82,6 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 				    	
 						// 下面发起识别
                         int code = Constraints.mASREngine.startVoiceRecognition(mListener, config);
-                        
                         if (code != VoiceRecognitionClient.START_WORK_RESULT_WORKING) {
                             //向Client主线程报告错误
                         } 
@@ -83,6 +90,10 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 						// 取消识别过程
 						Constraints.mASREngine.stopVoiceRecognition();
                         break; 
+					case Constraints.USER_FINISH_SPEECH:
+						// 说话完成
+						Constraints.mASREngine.speakFinish();
+                        break;
                     default:
                         break;						
 				}
@@ -92,13 +103,25 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 		//准备接收消息
 		Looper.loop();
 		System.out.println("to the run() end!");
-	}	
-    /**
-     * 重写用于处理语音识别回调的监听器
-     */
+	}
+	
+	/**
+	 * @brief Inner class of recognition class.     
+	 *
+	 *The class implement the recognition listener and communicate with the main thread.
+	 */ 
     class PSETTelliVoiceRecogListener implements VoiceClientStatusChangeListener {
 
-        @Override
+    	/**
+    	* @brief listen the status of recognition engine and communicate with mainthread
+    	*
+    	*
+    	*
+    	* @param status status of recognition engine      
+    	* @param object carry the recognition result    
+    	*
+    	* @return none     
+    	*/
         public void onClientStatusChange(int status, Object obj) {
         	toClient = Constraints.handler.obtainMessage();
             switch (status) {
@@ -147,7 +170,16 @@ public class PSETTelliVoiceRecognitioner extends Thread {
 
         }
 
-        @Override
+        /**
+    	* @brief receive the error returned by recognition engine and notify the mainthread
+    	*
+    	*
+    	*
+    	* @param errorType type of error      
+    	* @param errorCode code of error    
+    	*
+    	* @return none     
+    	*/
         public void onError(int errorType, int errorCode) {
             isRecognition = false;
             
@@ -164,10 +196,14 @@ public class PSETTelliVoiceRecognitioner extends Thread {
     }
 
     /**
-     * 将识别结果返回，搜索模式结果类型为List<String>,输入模式结果类型为List<List<Candidate>>
-     * 
-     * @param result
-     */
+    * @brief return the recognition result
+    *
+    *
+    *
+    * @param result recognition result     
+    *
+    * @return String result of recognition     
+    */
     private String updateRecognitionResult(Object result) {
     	String retString = new String();
         if (result != null && result instanceof List) {

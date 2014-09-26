@@ -99,37 +99,41 @@ containing a value of this type.
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int bar_bg=0x7f020001;
-        public static final int dialog_bg=0x7f020002;
-        public static final int getmessage=0x7f020003;
-        public static final int icon=0x7f020004;
-        public static final int icon1=0x7f020005;
-        public static final int icon2=0x7f020006;
-        public static final int icon3=0x7f020007;
-        public static final int incoming=0x7f020008;
-        public static final int listviewback=0x7f020009;
-        public static final int outgoing=0x7f02000a;
-        public static final int sendmessage=0x7f02000b;
-        public static final int voiceback=0x7f02000c;
+        public static final int beginvoice=0x7f020002;
+        public static final int beginvoice2=0x7f020003;
+        public static final int dialog_bg=0x7f020004;
+        public static final int getmessage=0x7f020005;
+        public static final int icon=0x7f020006;
+        public static final int icon1=0x7f020007;
+        public static final int icon2=0x7f020008;
+        public static final int icon3=0x7f020009;
+        public static final int incoming=0x7f02000a;
+        public static final int listviewback=0x7f02000b;
+        public static final int outgoing=0x7f02000c;
+        public static final int sendmessage=0x7f02000d;
+        public static final int voiceback=0x7f02000e;
+        public static final int voicebegin=0x7f02000f;
     }
     public static final class id {
         public static final int FILL=0x7f050001;
         public static final int STROKE=0x7f050000;
-        public static final int autoCompleteTextView1=0x7f050009;
-        public static final int beginBtn=0x7f05000a;
-        public static final int cancelVoice=0x7f050013;
+        public static final int autoCompleteTextView1=0x7f05000a;
+        public static final int beginBtn=0x7f05000b;
+        public static final int cancelVoice=0x7f050014;
         public static final int dialog_button_cancel=0x7f050004;
+        public static final int dialog_button_finish=0x7f050007;
         public static final int dialog_status_TextView=0x7f050002;
-        public static final int iv_user_image=0x7f05000d;
-        public static final int linearLayout1=0x7f05000f;
-        public static final int linearLayout2=0x7f050012;
-        public static final int listView1=0x7f050008;
-        public static final int progressBar1=0x7f050011;
-        public static final int screen=0x7f050007;
-        public static final int sendBtn=0x7f05000b;
-        public static final int sureVoice=0x7f050014;
-        public static final int tv_content=0x7f05000e;
-        public static final int tv_time=0x7f05000c;
-        public static final int voiceText=0x7f050010;
+        public static final int iv_user_image=0x7f05000e;
+        public static final int linearLayout1=0x7f050010;
+        public static final int linearLayout2=0x7f050013;
+        public static final int listView1=0x7f050009;
+        public static final int progressBar1=0x7f050012;
+        public static final int screen=0x7f050008;
+        public static final int sendBtn=0x7f05000c;
+        public static final int sureVoice=0x7f050015;
+        public static final int tv_content=0x7f05000f;
+        public static final int tv_time=0x7f05000d;
+        public static final int voiceText=0x7f050011;
         public static final int volumeProgressbar=0x7f050005;
         public static final int volumeTextView=0x7f050003;
         public static final int waitProgressbar=0x7f050006;
@@ -194,6 +198,17 @@ containing a value of this type.
         public static final int volume=0x7f07000e;
     }
     public static final class style {
+        /** 
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+         */
+        public static final int AppBaseTheme=0x7f090001;
+        /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+         */
+        public static final int AppTheme=0x7f090002;
         public static final int MyDialog=0x7f090000;
     }
     public static final class styleable {

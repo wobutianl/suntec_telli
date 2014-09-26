@@ -20,6 +20,7 @@ public class Constraints {
 		public static final int RECOGNITION_RECOGNITION_ERROR = 0x7;
 		public static final int USER_START_SPEECH = 0x8;
 		public static final int USER_CANCEL_SPEECH = 0x9;
+		public static final int USER_FINISH_SPEECH = 0x10;
 		public static VoiceRecognitionClient mASREngine;
 		
 		////  handler
@@ -28,4 +29,5 @@ public class Constraints {
 		///  baidu API Key
 	    public static final String API_KEY = "plsB3YLqYtjNqPxsMRBpNywS";
 	    public static final String SECRET_KEY = "NzMCBcGSTRovw3C7RPCiDcbWquNB7xl5";
+		
 }

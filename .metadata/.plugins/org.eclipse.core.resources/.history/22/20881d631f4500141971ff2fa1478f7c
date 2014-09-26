@@ -1,0 +1,35 @@
+package msg.GTD;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
+
+public class GtdDB {
+	public static final String DB_DBNAME="gtd_db";  
+    
+    public static final String DB_TABLENAME="sms_content";  
+      
+    public static final int VERSION = 1;  
+      
+    public static SQLiteDatabase dbInstance;   
+      
+    private DBHelper myDBHelper;  
+      
+
+    private Context context;  
+      
+    public GtdDB(Context context) {  
+        this.context = context;  
+    }  
+  
+}

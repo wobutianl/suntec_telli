@@ -1,0 +1,9 @@
+digraph "F:/Doxygen/src/thread/Test" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_a767846670212779434890fbb57d97e9 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="thread" fontname="Helvetica", fontsize="10", URL="dir_a767846670212779434890fbb57d97e9.html"]
+  dir_7b278dffefe397c60b42f93c50b62b2a [shape=box, label="Test", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7b278dffefe397c60b42f93c50b62b2a.html"];
+  }
+}

@@ -1,0 +1,19 @@
+import java.util.regex.Pattern;
+
+
+public class GtdTest {
+	private static String sms = "今天，10点到12点，淮海中路，逛街";
+	
+	public static void splitSms(String str){
+		Pattern pattern = Pattern.compile("[,，]");
+		String[] strs = pattern.split("Java Hello World  Java,Hello,,World|Sun");
+		for (int i=0;i<strs.length;i++) {
+		    System.out.println(strs[i]);
+		} 
+	}
+	
+    public static void main(String[] args) {  
+    	splitSms(sms);
+        System.out.println("1000");  
+    }  
+}

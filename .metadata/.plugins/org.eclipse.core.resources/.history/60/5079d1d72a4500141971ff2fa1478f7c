@@ -1,0 +1,239 @@
+package msg.GTD;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+
+import msg.GTD.DBHelper.SqlInterface;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
+import android.sax.EndTextElementListener;
+import android.util.Log;
+
+public class GtdTable {
+		// 表名
+		public static final String TABLE_NAME = "GTDTable";
+		// ID 
+		private static final String SMS_ID = "smsID";
+		// start time
+		private static final String START_TIME = "startTime";
+		// end time
+		private static final String END_TIME = "endTime";
+		
+		// GTD Place
+		private static final String PLACE = "place";
+		// GTD content
+		private static final String CONTENT = "content";
+		// GTD status(finish, canceled, delay, todo)
+		private static final String GTDSTATUS = "gtdStatus";
+		// GTD type (home, work, finish)
+		private static final String GTDTYPE = "gtdType";
+		// 时间
+		public static final String ITEM_WRITTEN_MILLSECECOND = "MyDayRecordTableWrittenTime";
+
+		// 创建语句
+		private final String CREATE_SQL = "CREATE TABLE IF NOT EXISTS "
+				+ TABLE_NAME + " ( " + SMS_ID
+				+ " integer primary key autoincrement, " + START_TIME
+				+ " varchar , " + END_TIME 
+				+ " varchar , " + PLACE
+				+ " varchar , " + CONTENT
+				+ " varchar not null , " + GTDSTATUS
+				+ " varchar not null , " + GTDTYPE
+				+ " varchar not null , " +ITEM_WRITTEN_MILLSECECOND
+				+ " bigint not null  ) ";
+
+		/**
+		 * 封装sql操作
+		 * 
+		 * @author apple
+		 * 
+		 */
+		public class ExeSql implements SqlInterface {
+			// sqlhelper
+			DBHelper helper = null;
+
+			/**
+			 * 构造方法
+			 * 
+			 * @param cxt
+			 */
+			public ExeSql(Context context) {
+				helper = new DBHelper(context);
+				// 如果表不存在
+				if (!helper.isTableExits(TABLE_NAME)) {
+					// 创建表
+					helper.createTable(CREATE_SQL);
+				}
+			}
+
+			@Override
+			public long addData(ObjectMap<String, Object> om) {
+				try {
+					ContentValues values = new ContentValues();
+					Log.d("SQL_ADD",
+							GtdTable.TABLE_NAME + " ~~ " + om.toString());
+					values.put(GtdTable.START_TIME,
+							om.getStringValue(GtdTable.START_TIME));
+					values.put(GtdTable.END_TIME,
+							om.getStringValue(GtdTable.END_TIME));
+					values.put(GtdTable.PLACE,
+							om.getStringValue(GtdTable.PLACE));
+					values.put(	GtdTable.CONTENT,
+							om.getStringValue(GtdTable.CONTENT));
+					values.put(GtdTable.GTDSTATUS,
+							om.getStringValue(GtdTable.GTDSTATUS));
+					values.put(	GtdTable.GTDTYPE,
+							om.getStringValue(GtdTable.GTDTYPE));
+					values.put(
+							GtdTable.ITEM_WRITTEN_MILLSECECOND,
+							om.getStringValue(GtdTable.ITEM_WRITTEN_MILLSECECOND));
+					return helper.save(GtdTable.TABLE_NAME, values);
+				} catch (Exception e) {
+					Log.d("addData Exception", e.toString());
+					e.printStackTrace();
+					return -1;
+				}
+			}
+
+			/**
+			 * data follow by recordTime
+			 */
+			@Override
+			public List<ObjectMap<String,Object>> retrieveData(ObjectMap<String, Object> om) {
+				StringBuilder bd = new StringBuilder();
+				bd.append("select * from ").append(GtdTable.TABLE_NAME)
+						.append(" order by ")
+						.append(GtdTable.ITEM_WRITTEN_MILLSECECOND)
+						.append(" desc");
+				Log.d("SQL_RETRIEVE", bd.toString());
+
+				Cursor cursor = helper.find(bd.toString(), null);
+				List<ObjectMap<String,Object>> list = new ArrayList<ObjectMap<String,Object>>(cursor.getCount());
+
+				while (cursor.moveToNext()) {
+					ObjectMap<String, Object> _om = new ObjectMap<String, Object>();
+					_om.put(GtdTable.START_TIME,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.START_TIME)));
+					_om.put(GtdTable.END_TIME,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(GtdTable.PLACE,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(	GtdTable.CONTENT,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(GtdTable.GTDSTATUS,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(	GtdTable.GTDTYPE,
+							cursor.getString(cursor
+									.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(
+							GtdTable.ITEM_WRITTEN_MILLSECECOND,
+							cursor.getLong(cursor
+									.getColumnIndex(GtdTable.ITEM_WRITTEN_MILLSECECOND)));
+					
+					_om.put(GtdTable.ITEM_NAME, cursor.getString(cursor
+							.getColumnIndex(GtdTable.ITEM_NAME)));
+					_om.put(GtdTable.ITEM_WRITTEN_MILLSECECOND,
+							cursor.getLong(cursor
+									.getColumnIndex(GtdTable.ITEM_WRITTEN_MILLSECECOND)));
+					_om.put(GtdTable.KEY_ID, cursor.getInt(cursor
+							.getColumnIndex(GtdTable.KEY_ID)));
+					list.add(_om);
+				}
+				return list;
+			}
+			
+			
+////			@Override
+//			public List<ObjectMap<String,Object>> retrieveWeekData(String om) {
+//				StringBuilder bd = new StringBuilder();
+//				bd.append("select * from ").append(GtdTable.TABLE_NAME)
+//						.append(" where ")
+//						.append(GtdTable.ITEM_NAME)
+//						.append(" = " )
+//						.append(om)
+////						.append(" order by ")
+////						.append(MyDayRecordTable.ITEM_WRITTEN_MILLSECECOND)
+////						.append(" desc")
+//						;
+//				Log.d("SQL_RETRIEVE", bd.toString());
+//
+//				Cursor cursor = helper.find(bd.toString(), null);
+//				List<ObjectMap<String,Object>> list = new ArrayList<ObjectMap<String,Object>>(cursor.getCount());
+//
+//				while (cursor.moveToNext()) {
+//					ObjectMap<String, Object> _om = new ObjectMap<String, Object>();
+//					
+//					
+//					_om.put(GtdTable.ITEM_NAME, cursor.getString(cursor
+//							.getColumnIndex(GtdTable.ITEM_NAME)));
+////							.getColumnIndex(om)));
+//					_om.put(GtdTable.ITEM_WRITTEN_MILLSECECOND,
+//							cursor.getLong(cursor
+//									.getColumnIndex(GtdTable.ITEM_WRITTEN_MILLSECECOND)));
+//					_om.put(GtdTable.KEY_ID, cursor.getInt(cursor
+//							.getColumnIndex(GtdTable.KEY_ID)));
+//					list.add(_om);
+//				}
+//				return list;
+//			}
+			
+//			public int getDaysBetween (Calendar d1, Calendar d2){
+//				 if (d1.after(d2)){  // swap dates so that d1 is start and d2 is end
+//				           java.util.Calendar swap = d1;
+//				           d1 = d2;
+//				           d2 = swap;
+//				      }
+//				       int days = d2.get(Calendar.DAY_OF_YEAR) - d1.get(Calendar.DAY_OF_YEAR);
+//				       int y2 = d2.get(Calendar.YEAR);
+//				     if (d1.get(Calendar.YEAR) != y2){
+//				           d1 = (Calendar) d1.clone();
+//				           do{
+//				             days += d1.getActualMaximum(Calendar.DAY_OF_YEAR);//得到当年的实际天数
+//				               d1.add(Calendar.YEAR, 1);
+//				          } while (d1.get(Calendar.YEAR) != y2);
+//				 }
+//				 return days;
+//			}
+			@Override
+			public boolean updateData(ObjectMap<String, Object> om) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+			@Override
+			public boolean delData(ObjectMap<String, Object> om) {
+				StringBuilder bd = new StringBuilder();
+				bd.append(GtdTable.SMS_ID).append(" = ?");
+				return helper.delete(GtdTable.TABLE_NAME, bd.toString(),
+						new String[] { String.valueOf(om
+								.getIntegerValue(GtdTable.SMS_ID)) });
+			}
+			
+			public boolean AlterAddCol(String col_name, String data_type) {
+				StringBuilder bd = new StringBuilder();
+				bd.append("ALTER TABLE ")
+					.append(GtdTable.TABLE_NAME)
+					.append(" ADD ").append(col_name).append("  ")
+					.append(data_type).append(" not null");
+				return true;
+			}
+		}
+
+  
+}

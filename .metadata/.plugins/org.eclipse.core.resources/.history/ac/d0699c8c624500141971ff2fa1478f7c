@@ -1,0 +1,4 @@
+
+public class GtdTest {
+	private String sms = "";
+}

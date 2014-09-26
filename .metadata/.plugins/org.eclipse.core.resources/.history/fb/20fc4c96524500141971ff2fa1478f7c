@@ -1,0 +1,84 @@
+package msg.GTD;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import msg.GTD.GetSmsData.MessageListener;
+import android.app.Activity;
+import android.os.Bundle;
+import android.content.Context;
+import android.database.Cursor;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+ 
+/**
+ * 
+ * @version 1.00
+ * @author 
+ */
+public class MsgGTDActivity extends Activity {
+
+    private TextView mTextView;
+    private ListView gList;
+    private GtdTable gtdTable = new GtdTable(MsgGTDActivity.this);
+    private GetSmsData mSMSBroadcastReceiver;
+    List<SmsData> data = null;
+    
+    private SmsContent sms = new SmsContent();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        data = new GtdTable(MsgGTDActivity.this).retrieveData(null);
+        gList = (ListView) findViewById(R.id.listView1);
+        List<GtdTable> list ;
+        //gList = new ListView(this);
+        List<HashMap<String,Object>> mdata = new ArrayList<HashMap<String,Object>>();  
+        for(SmsData sms: data){  
+            HashMap<String,Object>map = new HashMap<String,Object>();  
+            map.put("id", person.getId());  
+            map.put("name", person.getName());  
+            map.put("age", person.getAge());  
+            data.add(map);  
+        }  
+        Cursor cursor = mdata.get
+        SimpleCursorAdapter  adapter = new SimpleCursorAdapter(MsgGTDActivity.this, mdata, R.layout.smsitem, new String[]{"content"}, new int[]{R.id.TextView_SmsBody});  
+        setContentView(gList);
+        init();
+    }
+
+	private void init() {
+//		mTextView = (TextView) findViewById(R.id.textView);
+		mSMSBroadcastReceiver = new GetSmsData();
+		mSMSBroadcastReceiver.setOnReceivedMessageListener(new MessageListener() {
+					@Override
+					public void OnReceived(SmsContent sms) {
+						displayToast(sms.getSmsContent());
+						GtdTable.ExeSql es = gtdTable.new ExeSql(
+								MsgGTDActivity.this);
+						ObjectMap<String, Object> om = new ObjectMap<String, Object>();
+						om.put(GtdTable.CONTENT, sms.getSmsContent());
+						om.put(GtdTable.ITEM_WRITTEN_MILLSECECOND,
+								System.currentTimeMillis());
+						es.addData(om);
+						//mTextView.setText(sms.getSmsContent());
+					}
+				});
+	}
+	
+	private void displayToast(String str){
+		Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+	}
+ 
+
+}

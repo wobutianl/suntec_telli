@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>百度语音使用手册</title>
+<meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+<meta name="title" content="百度语音使用手册"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-09-17T18:15+0800"/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">百度语音使用手册</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 百度语音识别SDK使用指南</a>
+<ul>
+<li><a href="#sec-1-1">1.1 注册开放平台</a></li>
+<li><a href="#sec-1-2">1.2 申请开启语音识别服务</a></li>
+<li><a href="#sec-1-3">1.3 添加BDVRCLIENT到项目工程</a></li>
+<li><a href="#sec-1-4">1.4 权限声明</a></li>
+<li><a href="#sec-1-5">1.5 API方式语音识别</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 实现识别监听器</a></li>
+<li><a href="#sec-1-5-2">1.5.2 获得识别BDVRClient单例对象</a></li>
+<li><a href="#sec-1-5-3">1.5.3 请求参数设置</a></li>
+<li><a href="#sec-1-5-4">1.5.4 开始语音识别</a></li>
+<li><a href="#sec-1-5-5">1.5.5 结束语音输入</a></li>
+<li><a href="#sec-1-5-6">1.5.6 取消语音识别</a></li>
+<li><a href="#sec-1-5-7">1.5.7 播放提示音</a></li>
+<li><a href="#sec-1-5-8">1.5.8 监听语音能量</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 百度语音合成SDK使用指南</a>
+<ul>
+<li><a href="#sec-2-1">2.1 注册开放平台</a></li>
+<li><a href="#sec-2-2">2.2 申请开启语音合成服务</a></li>
+<li><a href="#sec-2-3">2.3 添加BDTTSClient到工程</a></li>
+<li><a href="#sec-2-4">2.4 权限声明</a></li>
+<li><a href="#sec-2-5">2.5 语音合成</a>
+<ul>
+<li><a href="#sec-2-5-1">2.5.1 基本合成</a></li>
+<li><a href="#sec-2-5-2">2.5.2 参数设置</a></li>
+<li><a href="#sec-2-5-3">2.5.3 音频流类型设置</a></li>
+<li><a href="#sec-2-5-4">2.5.4 播放控制</a></li>
+<li><a href="#sec-2-5-5">2.5.5 状态监听</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 百度语音识别SDK使用指南</h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 注册开放平台</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li>开发者首先需要在百度开发者中心(<a href="http://developer.baidu.com">http://developer.baidu.com</a>)注册账号并创建一个应用。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 申请开启语音识别服务</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<ul>
+<li>在使用语音识别服务之前，需要申请开启服务。同样是在百度开发者中心进行申请开启，申请成功之后，即拥有服务的使用权限。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 添加BDVRCLIENT到项目工程</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<ul>
+<li>将开发包的LIBS目录整体COPY到工程目录，LIBS目录包括了各平台的SO库，开发者应该根据需要进行删减。其中，galaxy.jar<br/>
+</li>
+</ul>
+
+<p>是百度Android公共基础库，因此如果项目中还集成了其它百度SDK，请将该JAR包移除。将开发包的res目录整体copy到工程目录，<br/>
+此文件包括语音识别服务的相关音效文件，如果不使用，可以忽略。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 权限声明</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<ul>
+<li>BDVRClient需要相关权限，因此需要在AndroidManifest.xml中添加以下权限：
+</li>
+</ul>
+
+
+
+
+<pre class="example">&lt;uses-permissionandroid:name="android.permission.RECORD_AUDIO"/&gt;
+&lt;uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/&gt;
+&lt;uses-permissionandroid:name="android.permission.INTERNET"/&gt;
+&lt;uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/&gt;
+</pre>
+
+<ul>
+<li>如果需要使用蓝牙设备作为输入源，需要额外在AndroidManifest.xml文件添加下列权限：
+</li>
+</ul>
+
+
+
+
+<pre class="example">&lt;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/&gt;
+&lt;uses-permission android:name="android.permission.BROADCAST_STICKY "/&gt;
+&lt;uses-permission android:name="android.permission.BLUETOOTH "/&gt;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> API方式语音识别</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<ul>
+<li>开发者可以直接使用语音识别API定制自己的语音交互。下面将从初始化、参数设置、状态处理、状态控件、音量反馈、结果处理<br/>
+</li>
+</ul>
+
+<p>等方面逐步介绍.
+</p>
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> 实现识别监听器</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ul>
+<li>为了不阻塞UI，BDVRClient将异步的工作，因此开发者在使用BDVRClient时需要实现一个识别状态监听器，以便应用获取<br/>
+</li>
+</ul>
+
+<p>BDVRClient识别过程事件通知以及识别结果。此监听会在主线程被调用，用户可以直接操作UI，同时需要注意不要进行耗时操作，<br/>
+以防引起ANR。
+</p><ul>
+<li>实现VoiceClientStatusChangeListener开发者需要重写三个方法，这三个回调方法分别用来接收BDVRClient在后台网络请<br/>
+</li>
+</ul>
+
+<p>求发起和结束时的通知、识别进度的通知、以及出错时具体错误信息的通知。后面应用程序发起识别时需要将此监听器传入
+BDVRClient中。
+</p>
+<ul>
+<li id="sec-1-5-1-1">onClientStatusChange<br/>
+<ul>
+<li>此方法提供识别过程的事件通知，事件类型参考在VoiceRecognitionClient中
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">EventName</td><td class="left">Description</td></tr>
+<tr><td class="left">CLIENT_STATUS_START_RECORDING</td><td class="left">引擎准备就绪事件，开始录制音频。此时可以在UI上提示用户可以说话。</td></tr>
+<tr><td class="left">CLIENT_STATUS_SPEECH_START</td><td class="left">检测到用户语音起点事件。</td></tr>
+<tr><td class="left">CLIENT_STATUS_AUDIO_DATA</td><td class="left">有音频数据输出,音频数据为单声道,采样率依赖内部实现或者用户的设置。</td></tr>
+<tr><td class="left">CLIENT_STATUS_SPEECH_END</td><td class="left">检测到用户语音尾点事件,此时引擎会关闭录音设备不再接收用户语音。</td></tr>
+<tr><td class="left">CLIENT_STATUS_UPDATE_RESULTS</td><td class="left">中间结果返回事件,返回中间识别结果,识别过程中可能会被多次调用。</td></tr>
+<tr><td class="left">CLIENT_STATUS<sub>USER</sub><sub>CANCELED</sub></td><td class="left">用户取消事件。</td></tr>
+<tr><td class="left">CLIENT_STATUS_FINISH</td><td class="left">识别结束事件,返回最终识别结果,类型为List&lt;String&gt;。</td></tr>
+</tbody>
+</table>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-5-1-2">onError<br/>
+<ul>
+<li>此方法会接收到识别异常回调。异常类别及错误码定义在VoiceRecognitionClient中。分为ERROR_CLIENT、
+</li>
+</ul>
+
+<p>ERROR_RECORDER、ERROR_NETWORK、ERROR_SERVER，错误定义参见ERROR_前缀的常量。
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-1-5-1-3">示例代码<br/>
+
+
+
+<pre class="example">class MyVoiceRecogListener implements VoiceClientStatusChangeListener{
+    @Override
+    public void onClientStatusChange(int status, Object obj){
+        switch(status){
+        case VoiceRecognitionClient.CLIENT_STATUS_START_RECORDING:
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_START:
+            //检测到语音起点
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_AUDIO_DATA:
+            //有音频数据输出
+            if (obj!= null &amp;&amp;objinstanceof byte[]) {
+                //处理数据
+            }
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_SPEECH_END:
+            //已经检测到语音终点，等待网络返回
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_FINISH:
+            //语音识别完成
+            if(currentVoiceType== VOICE_TYPE_SEARCH){
+                mStatusTextView.setText(R.string.finished);
+                //obj是一个ArrayList&lt;String&gt;，里面有多个候选词
+            }
+            else if(currentVoiceType== VOICE_TYPE_INPUT){
+                //obj是一个List&lt;List&lt;Candidate&gt;&gt;，里面有多个候选词 
+            }
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_UPDATE_RESULTS:
+            //多句模式会有部分结果（一个分句）返回
+            if(currentVoiceType== VOICE_TYPE_SEARCH){
+                //obj是一个ArrayList&lt;String&gt;，里面有多个候选词
+            }else if(currentVoiceType== VOICE_TYPE_INPUT){
+                //obj是一个List&lt;List&lt;Candidate&gt;&gt;，里面有多个候选词
+                List&lt;List&lt;Candidate&gt;&gt; result =(List&lt;List&lt;Candidate&gt;&gt;)obj;
+            }
+            break;
+        case VoiceRecognitionClient.CLIENT_STATUS_USER_CANCELED:
+            //通知用户已取消
+            break;
+        default:
+            break;
+        }
+    }
+
+    @Override
+    public void onError(interrorType,interrorCode){
+        //errorType为错误类型，errorCode为错误码。此回调先于onClientStatusChange的
+        CLIENT_STATUS_ERROR
+    }
+
+    @Override
+    public void onNetworkStatusChange(int status, Object obj){
+    // 这里不做任何操作不影响简单识别
+    }
+}
+</pre>
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> 获得识别BDVRClient单例对象</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
+<ul>
+<li>BDVRClient以单例模式运行，通过调用
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">mRecognitionClient = VoiceRecognitionClient.getInstance(context.getApplicationContext());
+mRecognitionClient.setTokenApis(your_API_KEY,your_SECRET_KEY);
+</pre>
+
+<p>
+方法获得单例对象后，需要使用开放平台ApiKey、SecretKey初始化。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> 请求参数设置</h4>
+<div class="outline-text-4" id="text-1-5-3">
+
+<ul>
+<li>每次识别请求通过VoiceRecognitionConfig设置参数。详细参阅API文档。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-4" class="outline-4">
+<h4 id="sec-1-5-4"><span class="section-number-4">1.5.4</span> 开始语音识别</h4>
+<div class="outline-text-4" id="text-1-5-4">
+
+<ul>
+<li>通过调用VoiceRecognitionClient对象的startVoiceRecognition()方法，即可开始语音识别。<br/>
+</li>
+</ul>
+
+<p>startVoiceRecognition()方法需要传入两个参数：识别监听器和识别参数信息。
+</p><ul>
+<li>例如，示例程序，在“开始”按钮的OnClickListener的onClick回调中，添加以下代码：
+</li>
+</ul>
+
+
+
+
+<pre class="example">publicvoidonClick(View v){
+  int ret = mRecognitionClient.startVoiceRecognition(
+            new MyVoiceRecogListener(),
+            new VoiceRecognitionConfig());
+  if(code ==VoiceRecognitionClient.START_WORK_RESULT_WORKING){
+      // 启动成功
+  }else{
+  //启动失败，错误码描述参见VoiceRecognitionClient START_WORK_RESULT_前缀的常量定义
+  }
+}
+</pre>
+
+<ul>
+<li>即可开始语音识别。如果启动失败，不会在回调内获得事件通知，需要直接做错误处理。BDVRClient在开始识别后，<br/>
+</li>
+</ul>
+
+<p>会启动录音、预处理、上传到服务器并获取识别结果。识别过程中监听器会接收到事件通知，更新相应UI即可。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-5" class="outline-4">
+<h4 id="sec-1-5-5"><span class="section-number-4">1.5.5</span> 结束语音输入</h4>
+<div class="outline-text-4" id="text-1-5-5">
+
+<ul>
+<li>进行语音识别时周围环境可能会嘈杂。可能会干扰BDVRClient判断用户语音结束的时机，造成BDVRClient一直工<br/>
+</li>
+</ul>
+
+<p>作在录音识别中。因此BDVRClient提供了一个接口供开发者来主动结束录音，进而更加保证语音识别的准确性。
+</p><ul>
+<li>在“说完了”按钮的onClickListener中，通过重写onClick()方法：
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">@Override
+public void onClick(View v){
+    mRecognitionClient.speakFinish();
+}
+</pre>
+
+<p>
+即结束语音输入。
+</p><ul>
+<li>在结束语音输入后，BDVRClient将停止录音。若BDVRClient当前已经检测到了语音则等待服务器返回识别结果；若实<br/>
+</li>
+</ul>
+
+<p>际没有检测到用户说话，会返回出错信息提示用户。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-6" class="outline-4">
+<h4 id="sec-1-5-6"><span class="section-number-4">1.5.6</span> 取消语音识别</h4>
+<div class="outline-text-4" id="text-1-5-6">
+
+<ul>
+<li>对于用户来说，一次语音识别有可能是误操作进入，或者由于网络环境不好，一直处于等待中，用户需要主动停止本次<br/>
+</li>
+</ul>
+
+<p>语音识别。BDVRClient提供了用户取消接口，来响应用户取消操作，并安全释放相关资源。
+</p><ul>
+<li>在“取消”按钮的onClickListener中，通过重写onClick()方法：
+</li>
+</ul>
+
+
+
+
+<pre class="example">@Override
+public void onClick(View v){
+    mRecognitionClient.stopVoiceRecognition();
+}
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-7" class="outline-4">
+<h4 id="sec-1-5-7"><span class="section-number-4">1.5.7</span> 播放提示音</h4>
+<div class="outline-text-4" id="text-1-5-7">
+
+<ul>
+<li>语音识别开始和完成时，BDVRClient可以播放一个很短的如“嘀”的提示音来提醒用户可以说话或说话完成。开发者可<br/>
+</li>
+</ul>
+
+<p>以通过接口设定BDVRClient将要播放的提示音，步骤如下：
+</p><ul>
+<li>添加音频文件到工程
+  请提前将提示音文件拷贝到/res/raw文件夹下。支持Wav、Mp3格式文件。
+</li>
+<li>启用识别开始提示音
+</li>
+</ul>
+
+
+
+
+<pre class="example">VoiceRecognitionConfigconfig=newVoiceRecognitionConfig();
+// 设置识别开始提示音
+config.enableBeginSoundEffect(R.raw.bdspeech_recognition_start);
+// 设置说话结束提示音
+config.enableEndSoundEffect(R.raw.bdspeech_speech_end);
+</pre>
+
+<p>
+注：提示音仅用于提醒用户注意，长度以不干扰用户识别等待时间为宜，建议提示音的时长不超过0.3s，开发者在选择音频
+文件时应当注意。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-8" class="outline-4">
+<h4 id="sec-1-5-8"><span class="section-number-4">1.5.8</span> 监听语音能量</h4>
+<div class="outline-text-4" id="text-1-5-8">
+
+<ul>
+<li>开发者可能希望实时地获取当前用户说话的声音音量大小，以便在应用程序界面上显示（如跳动的音量条），或者提示用<br/>
+</li>
+</ul>
+
+<p>户当前说话声音太大或太小。当开发者需要获取当前音量功能时可通过如下方法实现：
+</p><ul>
+<li>获取语音能量
+  在识别过程中，应用程序通过调用：
+</li>
+</ul>
+
+
+
+
+<pre class="example">mRecognitionClient.getCurrentDBLevelMeter();
+</pre>
+
+<ul>
+<li>来获得当前语音能量。获得的返回值是一个已经归一化后的int值，范围是0-100，对应表示声<br/>
+</li>
+</ul>
+
+<p>音强度由小到大。
+</p><ul>
+<li>关闭语音能量计算
+  如果开发不需要音量反馈功能，可以通过VoiceRecognitionConfig，关闭计算语音能量：
+</li>
+</ul>
+
+
+
+
+<pre class="example">config.enableVoicePower(false);
+</pre>
+
+<ul>
+<li>注：开启语音能量计算功能后BDVRClient将自动不停地在底层计算当前音量，调用getCurrentDBLevelMeter()<br/>
+</li>
+</ul>
+
+<p>方法并不会导致BDVRClient计算当前的语音能量，而是返回最近一次计算的语音能量值。开启音量计算功能后，即使<br/>
+不调用getCurrentDBLevelMeter()方法，BDVRClient自己也会不断计算更新。BDVRClient计算音量的频率大约为<br/>
+每秒30次，开发者可根据应用程序需要决定是否开启音量计算功能以及向BDVRClient获取最近音量信息的频率。
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 百度语音合成SDK使用指南</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 注册开放平台</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>开发者需要在百度开发者中心(<a href="http://developer.baidu.com/">http://developer.baidu.com/</a>)注册帐号，并创建一个应用。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 申请开启语音合成服务</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul>
+<li>在使用语音识别服务之前，需要申请开启服务。申请通过后，即拥有服务的使用权限。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 添加BDTTSClient到工程</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul>
+<li>将开发包中的libs目录整体拷贝到工程目录，libs目录包括了各平台的SO库，开发者视应用需要可以进行删减。<br/>
+</li>
+</ul>
+
+<p>galaxy<sub>lite</sub>.jar是百度Android公共基础库，如果项目中还集成了其它百度SDK，请将此Jar包移除。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> 权限声明</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<ul>
+<li>BDTTSClient需要权限如下，需要在AndroidManifest.xml文件增加：
+</li>
+</ul>
+
+
+
+
+<pre class="example">&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+&lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> 语音合成</h3>
+<div class="outline-text-3" id="text-2-5">
+
+
+
+</div>
+
+<div id="outline-container-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1"><span class="section-number-4">2.5.1</span> 基本合成</h4>
+<div class="outline-text-4" id="text-2-5-1">
+
+
+
+
+
+<pre class="example">// 注：第二个参数当前请传入任意非空字符串即可
+SpeechSynthesizer speechSynthesizer = 
+new SpeechSynthesizer(getApplicationContext(), "holder", this);
+//注：your-apiKey和your-secretKey需要换成在百度开发者中心注册应用得到的对应值
+speechSynthesizer.setApiKey("your-apiKey", "your-secretKey");
+speechSynthesizer.speak("百度一下");
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5-2" class="outline-4">
+<h4 id="sec-2-5-2"><span class="section-number-4">2.5.2</span> 参数设置</h4>
+<div class="outline-text-4" id="text-2-5-2">
+
+<ul>
+<li>在调用speak方法开始合成并朗读之前，可以对参数进行配置，代码如下：
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, 
+SpeechSynthesizer .SPEAKER_FEMALE);
+speechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "5");
+speechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEED, "5");
+speechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5");
+speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_ENCODE, 
+SpeechSynthesizer.AUDIO_ENCODE_AMR);
+speechSynthesizer.setParam(SpeechSynthesizer.PARAM_AUDIO_RATE, 
+SpeechSynthesizer.AUDIO_BITRATE_AMR_15K85);
+</pre>
+
+
+<p>
+注：目前暂不支持PARAM_NUM_PRON,  PARAM_ENG_PRON,  PARAM_PUNC,<br/>
+PARAM_BACKGROUND, PARAM_STYLE, PARAM_TERRITORY等参数。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-5-3" class="outline-4">
+<h4 id="sec-2-5-3"><span class="section-number-4">2.5.3</span> 音频流类型设置</h4>
+<div class="outline-text-4" id="text-2-5-3">
+
+<ul>
+<li>如果需要对音频播报的音频流进行设置，可以调用如下接口：
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">speechSynthesizer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5-4" class="outline-4">
+<h4 id="sec-2-5-4"><span class="section-number-4">2.5.4</span> 播放控制</h4>
+<div class="outline-text-4" id="text-2-5-4">
+
+<ul>
+<li>通过cancel()、pause()、resume()可以对播放流程进行控制。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5-5" class="outline-4">
+<h4 id="sec-2-5-5"><span class="section-number-4">2.5.5</span> 状态监听</h4>
+<div class="outline-text-4" id="text-2-5-5">
+
+<ul>
+<li>为了更好地实现用于界面，BDTTSClient提供了SpeechSynthesizerListener监听接口用于对合<br/>
+</li>
+</ul>
+
+<p>成器的状态进行通知。
+</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-09-17T18:15+0800</p>
+<p class="author">Author: </p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

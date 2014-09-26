@@ -1,0 +1,12 @@
+<map id="thread.Test.ThreadTestActivity.dataPhrase" name="thread.Test.ThreadTestActivity.dataPhrase">
+<area shape="rect" id="node2" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#a2cdd9a71e6cf17cb6ed70778aae78cf8" title="thread.Model.L_XMLMsg.getSid" alt="" coords="306,5,513,32"/>
+<area shape="rect" id="node3" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#afbc1646851db48ce1071dc6f8786e958" title="thread.Model.L_XMLMsg.getTts" alt="" coords="307,56,512,83"/>
+<area shape="rect" id="node4" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#a511dfbd859a77ecdd33b48556b71ec52" title="thread.Model.L_XMLMsg.get\lDisplay" alt="" coords="316,107,503,149"/>
+<area shape="rect" id="node5" href="$classthread_1_1_test_1_1_thread_test_activity.html#a9a160e8d31fa45885302b6d7adf62a3e" title="thread.Test.ThreadTestActivity.send" alt="" coords="295,173,524,200"/>
+<area shape="rect" id="node6" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#afb3ff5ce6fcf45f7faf8a090d4d03f04" title="thread.Model.L_XMLMsg.get\lAppName" alt="" coords="316,225,503,266"/>
+<area shape="rect" id="node7" href="$classthread_1_1_test_1_1_thread_test_activity.html#a50a4e0c3b5f3bae6b4c5a0dec6c7fee3" title="thread.Test.ThreadTestActivity.startApp" alt="" coords="284,291,535,317"/>
+<area shape="rect" id="node9" href="$classthread_1_1_test_1_1_thread_test_activity.html#ae9e590ddaeb3a4887148b657bcbac10e" title="thread.Test.ThreadTestActivity.serverEnd" alt="" coords="280,341,539,368"/>
+<area shape="rect" id="node10" href="$classthread_1_1_test_1_1_thread_test_activity.html#a7257539b24858c534338c25a747e07dc" title="thread.Test.ThreadTestActivity.server\lStart" alt="" coords="292,393,527,434"/>
+<area shape="rect" id="node11" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html#abe74914659fba49ac694964fbd5fa4ff" title="thread.Model.L_XMLMsg.getType" alt="" coords="302,459,517,485"/>
+<area shape="rect" id="node8" href="$classthread_1_1_test_1_1_thread_test_activity.html#af8348aef43647c5278bbf58d689feb94" title="thread.Test.ThreadTestActivity.start\lOtherApp" alt="" coords="587,283,813,325"/>
+</map>

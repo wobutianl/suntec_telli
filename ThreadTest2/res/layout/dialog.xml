@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:background="@drawable/dialog_bg"
-    android:layout_alignParentBottom="true"
-    >
+    android:layout_alignParentBottom="true">
     
    <TextView 
     android:id="@+id/dialog_status_TextView" 
@@ -37,21 +36,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium" >
         </TextView>
         
-    <!-- <ProgressBar
-        android:id="@+id/volumeProgressbar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/volumeTextView"
-        android:layout_below="@+id/volumeTextView"
-        android:visibility="visible"
-        android:max="100" >
-        </ProgressBar> -->
-        
     <thread.Test.RoundProgressBar
         android:id="@+id/volumeProgressbar"
-        android:layout_width="80px"
-        android:layout_height="80px"
+        android:layout_width="120px"
+        android:layout_height="120px"
         android:layout_toRightOf="@+id/volumeTextView"
         android:background="@drawable/bar_bg"
         android:max="100"/>
@@ -66,13 +54,26 @@
         android:layout_centerVertical="true" 
         android:layout_centerHorizontal="true">
         </ProgressBar>
-    </RelativeLayout>  
-    <Button 
-    android:text="取消" 
-    android:id="@+id/dialog_button_cancel" 
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true">
-    </Button>
+    </RelativeLayout> 
+      
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:text="取消"
+            android:id="@+id/dialog_button_cancel" 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="完成" 
+            android:id="@+id/dialog_button_finish" 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>
 

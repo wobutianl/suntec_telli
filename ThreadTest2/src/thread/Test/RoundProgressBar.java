@@ -1,3 +1,11 @@
+/**
+ * @file RoundProgressBar.java
+ * 
+ * @brief source file of defining a roundprogressbar
+ * 
+ * define a roundprogressbar to display the microphone volume dynamically 
+ */
+
 package thread.Test;
 
 import android.content.Context;

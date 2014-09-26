@@ -3,9 +3,7 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:weightSum="1"
 	android:background="@drawable/background"
-	android:id="@+id/screen"
-
-	>
+	android:id="@+id/screen" android:gravity="center_horizontal">
 
 	<ListView 
 		android:id="@+id/listView1" 
@@ -15,12 +13,6 @@
 		android:descendantFocusability="blocksDescendants"
 		android:layout_above="@+id/autoCompleteTextView1">
 		</ListView>
-		
-	<Button android:layout_width="match_parent" android:text="开始"
-		android:layout_height="45dp" android:id="@+id/beginBtn"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentLeft="true">
-		</Button>
 		
 	<!--不让它一来就获得焦点-->
 	<AutoCompleteTextView 
@@ -37,4 +29,5 @@
 		android:layout_height="wrap_content" android:id="@+id/sendBtn"
 		android:layout_alignTop="@+id/autoCompleteTextView1"
 		android:layout_alignParentRight="true"></Button>
+	<ImageButton android:layout_width="match_parent" android:id="@+id/beginBtn" android:background="@drawable/voicebegin" android:layout_height="45dp" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"></ImageButton>
 </RelativeLayout>

@@ -1,0 +1,31 @@
+import java.util.regex.Pattern;
+
+
+public class GtdTest {
+	private static String sms = "今天，10点到12点，淮海中路，逛街";
+	private static String noDaysms = "10点到12点，淮海中路，逛街";
+	
+	static String day;
+	static String start;
+	static String end;
+	static String place;
+	static String content;
+	
+	public static void splitSms(String str){
+		Pattern pattern = Pattern.compile("[,，到]");
+		String[] strs = pattern.split(str);
+		for (int i=0;i<strs.length;i++) {
+			day = strs[0];
+			start = strs[1];
+			end = strs[2];
+			place = strs[3];
+			content = strs[4];
+		    System.out.println(strs[i]);
+		} 
+	}
+	
+    public static void main(String[] args) {  
+    	splitSms(sms);
+        System.out.println("1000");  
+    }  
+}

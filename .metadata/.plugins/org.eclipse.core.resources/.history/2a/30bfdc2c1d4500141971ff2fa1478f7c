@@ -1,0 +1,75 @@
+package msg.GTD;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+/**
+ * database for GTD data
+ * @author zhuxiaolin
+ *
+ */
+public class DBHelper extends SQLiteOpenHelper {
+	private static final String DBNAME = "GTD";
+	private DBHelper myDBHelper;
+	private SQLiteDatabase myDB;
+
+	private final Context myContext;
+
+	public DBHelper(Context context) {
+		super(context, DBNAME, null, 2);
+		this.myContext = context;
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	}
+
+	public DBHelper open() throws SQLException {
+		myDBHelper = new DBHelper(myContext);
+		myDB = myDBHelper.getWritableDatabase();
+		return this;
+	}
+
+	public Cursor ExecQuery(String query) {
+		// myDBHelper.open();
+		return myDB.rawQuery(query, null);
+		// myDBHelper.close();
+
+	}
+
+	public void ExecSQL(String query) throws SQLException {
+
+		myDB.execSQL(query);
+	}
+
+	public long insertSQL(String table, String nullColumnHack,
+			ContentValues values) throws SQLException {
+
+		return myDB.insertOrThrow(table, nullColumnHack, values);
+
+	}
+
+	public int updateSQL(String table, ContentValues values,
+			String whereClause, String[] whereArgs) throws SQLException {
+
+		return myDB.update(table, values, whereClause, whereArgs);
+
+	}
+
+	public Cursor ExecQueryParam(String query, String[] param)
+			throws SQLException {
+		// myDBHelper.open();
+		return myDB.rawQuery(query, param);
+		// myDBHelper.close();
+
+	}
+
+}

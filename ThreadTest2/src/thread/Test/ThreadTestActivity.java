@@ -53,6 +53,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -100,7 +101,7 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 	private TextView volumetextview;
 
 	// ///<///< VR ///<///<///<///<
-	private Button btnBegin; ///< begin VR button
+	private ImageButton btnBegin; ///< begin VR button
 	private PSETTelliVoiceRecognitioner vr = new PSETTelliVoiceRecognitioner(); ///< VR class
 	private static String result; ///< VR转换后的结果
 
@@ -145,7 +146,7 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 		setContentView(R.layout.main);
 
 		// ///<// VR ///<///<///<///<
-		btnBegin = (Button) findViewById(R.id.beginBtn);
+		btnBegin = (ImageButton) findViewById(R.id.beginBtn);
 		btnBegin.setOnClickListener(ThreadTestActivity.this);
 
 		Constraints.mASREngine = VoiceRecognitionClient.getInstance(this);
@@ -183,6 +184,9 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 		dialog.setTitle("Custom Dialog");
 		cancelBtn = (Button) dialog.findViewById(R.id.dialog_button_cancel);
 		cancelBtn.setOnClickListener(ThreadTestActivity.this);
+		
+		Button finish_btn = (Button) dialog.findViewById(R.id.dialog_button_finish);  
+        finish_btn.setOnClickListener(this);
 
 		mVolumeBar = (RoundProgressBar) dialog.findViewById(R.id.volumeProgressbar);
 		dialogstatus = (TextView) dialog
@@ -231,7 +235,7 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 					dialog.dismiss();
 					result = (String) (msg.obj);
 					send(result, false);
-					if (equalApp(result)) {
+					if (equalApp(result)||equalPhone(result)) {
 					} 
 					else {
 						XmlString = serverVR(p_server, result, sid);
@@ -255,6 +259,17 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 						// 显示错误信息
 					}
 					break;
+				case Constraints.RECOGNITION_RECOGNITION_ERROR:
+				    // 语音识别失败
+				    SetWaitBarVisiblity(false);
+					dialog.dismiss();
+					send(getString(R.string.error_occur), true);
+				    setParams();
+				    ret = speechSynthesizer.speak(getString(R.string.error_occur));
+                    if (ret != 0) {
+                        //显示错误信息
+                    }
+                    break;
 				default:
 					break;
 				}
@@ -268,6 +283,7 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 		}
 		for (Iterator<String> i = mContacts.keySet().iterator(); i.hasNext();) {
 			String contact = i.next();
+			apps.add(contact);
 			apps.add("打电话给" + contact);
 		}
 		
@@ -285,23 +301,23 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 				dataPhrase(XmlString);
 			}
 		}
-		chatListView.setOnItemClickListener(new ItemClick());
+//		chatListView.setOnItemClickListener(new ItemClick());
 	}
 	
 	 /*
      * item上的OnClick事件
      */
-    public final class ItemClick implements OnItemClickListener {
-
-        public void onItemClick(AdapterView<?> parent, View arg1, int position, long id) {
-            
-            
-//            ListView lview=(ListView)parent;
-//            testTable t=(testTable)lview.getItemAtPosition(position);            
-            Toast.makeText(getApplicationContext(), "click", 1).show();
-        }
-
-    }
+//    public final class ItemClick implements OnItemClickListener {
+//
+//        public void onItemClick(AdapterView<?> parent, View arg1, int position, long id) {
+//            
+//            
+////            ListView lview=(ListView)parent;
+////            testTable t=(testTable)lview.getItemAtPosition(position);            
+//            Toast.makeText(getApplicationContext(), "click", 1).show();
+//        }
+//
+//    }
 	
 	@Override
 	public void onClick(View v) {
@@ -315,7 +331,7 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 		// / begin VR
 		case R.id.beginBtn:			
 			if(isConnectedNet()){
-//				dialog.show();
+				dialog.show();
 				if (Constraints.mVoiceRecognitionerHandler != null) {
 					// 通知子线程发起识别
 					Message toVoiceRecognitioner = Constraints.mVoiceRecognitionerHandler
@@ -337,12 +353,22 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 						.sendMessage(toVoiceRecognitioner);
 			}
 			break;
+        case R.id.dialog_button_finish:
+        	Log.d(TAG, "finish begin");
+        	if (Constraints.mVoiceRecognitionerHandler != null) {               
+                //录音完成
+                Message toVoiceRecognitioner = Constraints.mVoiceRecognitionerHandler.obtainMessage();
+                toVoiceRecognitioner.what = Constraints.USER_FINISH_SPEECH;
+                Constraints.mVoiceRecognitionerHandler.sendMessage(toVoiceRecognitioner);
+                Log.d(TAG, "finis");
+            }
+            break;
 		// / text input Button
 		case R.id.sendBtn:
 			autoStr = contentEditText.getText().toString();
 			Log.d(TAG, "打开" + autoStr);
 			if(!autoStr.isEmpty()){
-			if (equalApp(autoStr)) {
+			if (equalApp(autoStr)||equalPhone(autoStr)) {
 				contentEditText.setText("");
 			} else {
 				send(autoStr, false);
@@ -444,6 +470,15 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 				} 
 			}
 		}
+//		if (app_flag == 0) {
+//			send(Result.substring(2, Result.length())
+//					+ "软件不存在，请重新输入。", false);
+//			app_flag = 1;
+//		}
+		return false;
+	}
+		
+	private boolean equalPhone(String Result){
 		int phone_flag = 0;
 		for (Iterator<String> i = mContacts.keySet().iterator(); i.hasNext();) {
 			String phoneName = i.next();
@@ -462,11 +497,6 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 				} 
 			}
 		}
-//		if (app_flag == 0) {
-//			send(Result.substring(2, Result.length())
-//					+ "软件不存在，请重新输入。", false);
-//			app_flag = 1;
-//		}
 //		if (phone_flag == 0) {
 //			send(Result.substring(4, Result.length())
 //					+ "联系人不存在，请重新输入。", false);
@@ -636,12 +666,18 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 			Log.d(TAG, "data from Data model is null");
 		}
 		if (l_msg.getAppName() != null) {
-			startApp(l_msg.getAppName());
+			if(equalApp(l_msg.getAppName())){
+				startApp(l_msg.getAppName());
+			}
+			else{
+				send("软件" + l_msg.getAppName().toString() + "不存在", true);
+			}
 			Log.d(TAG, "end server ");
 			serverEnd(p_server, sid);
 			serverStart(p_server);
 		}
 		if(l_msg.getType() == "stop"){
+//			serverEnd(p_server, sid);
 			serverStart(p_server);
 		}
 	}
@@ -668,27 +704,6 @@ public class ThreadTestActivity extends Activity implements OnClickListener,
 		chatList.add(chatEntity);
 		chatAdapter.notifyDataSetChanged(); // refresh data
 		chatListView.setSelection(chatList.size() - 1);
-//		if(isComeMsg == true){
-//			startTime  = System.currentTimeMillis();
-////			Toast.makeText(this, String.valueOf(startTime), Toast.LENGTH_LONG).show();
-//		}
-//		if(isComeMsg == false){
-//			EndTime = System.currentTimeMillis();
-////			Toast.makeText(this, String.valueOf(EndTime), Toast.LENGTH_LONG).show();
-//		}
-//		if(EndTime - startTime >= 300000){
-////			serverEnd(p_server, sid);
-////			serverStart(p_server);
-//			
-////			onRestart();
-////			PowerManager pManager=(PowerManager) getSystemService(Context.POWER_SERVICE);  
-////            pManager.reboot("重启");  
-////		    Intent i = getBaseContext().getPackageManager()  
-////		            .getLaunchIntentForPackage(getBaseContext().getPackageName());  
-////		    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  
-////		    startActivity(i);  
-////			Toast.makeText(this, String.valueOf("start again"), Toast.LENGTH_LONG).show();
-//		}
 	}
 
 	///////// start APP /////

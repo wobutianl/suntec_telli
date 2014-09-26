@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="///&lt;" key="selection"/>
+		<item value="cancelBtn" key="selection"/>
 		<list key="findhistory">
+			<item value="cancelBtn"/>
+			<item value="dialog"/>
+			<item value="Dialog"/>
+			<item value="disable"/>
+			<item value="d"/>
+			<item value="speechSynthesizer"/>
 			<item value="///"/>
 			<item value="serverEnd"/>
-			<item value="mVolumeBar"/>
-			<item value="server vr"/>
-			<item value="new LinearLayout(this);"/>
-			<item value="p_server"/>
-			<item value="serverVR"/>
-			<item value="xmlstr"/>
 		</list>
 		<list key="replacehistory">
 			<item value="///&lt;"/>

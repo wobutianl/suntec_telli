@@ -1,0 +1,102 @@
+package msg.GTD;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import msg.GTD.GetSmsData.MessageListener;
+import android.app.Activity;
+import android.os.Bundle;
+import android.content.Context;
+import android.database.Cursor;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+ 
+/**
+ * 
+ * @version 1.00
+ * @author 
+ */
+public class MsgGTDActivity extends Activity {
+
+    private ListView gList;
+    private GetSmsData mSMSBroadcastReceiver;
+    List<SmsData> data = null;
+    
+    private SmsContent sms = new SmsContent();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        gList = (ListView)this.findViewById(R.id.listView1);
+        
+        init();
+        
+        data = new GtdTable(MsgGTDActivity.this).retrieveData(null);
+//        displayToast(data.get(1).toString());
+        
+
+        
+        List<HashMap<String,Object>> mdata = new ArrayList<HashMap<String,Object>>(); 
+        
+
+		for (SmsData sms : data) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("content", sms.getContent());
+			displayToast(sms.getContent());
+			mdata.add(map);
+		}
+		SimpleAdapter adapter = new SimpleAdapter(MsgGTDActivity.this, mdata,
+				R.layout.smsitem, new String[] { "TextView_SmsBody" },
+				new int[] { R.id.TextView_SmsBody });
+		gList.setAdapter(adapter);
+//		gList.notifyAll();
+        
+
+
+//		SimpleAdapter adapter = new SimpleAdapter(this, getData(),
+//				R.layout.smsitem, new String[] { "title", "info", "img" },
+//				new int[] { R.id.title, R.id.info, R.id.img });
+//		gList.setAdapter(adapter);
+	}
+
+	private List<HashMap<String, Object>> getData() {
+		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("TextView_SmsBody", "G1");
+		
+		list.add(map);
+
+		return list;
+	}
+    
+	private void init() {
+		mSMSBroadcastReceiver = new GetSmsData();
+		mSMSBroadcastReceiver.setOnReceivedMessageListener(new MessageListener() {
+					@Override
+					public void OnReceived(SmsContent sms) {
+						displayToast(sms.getSmsContent());
+						GtdTable es = new GtdTable(MsgGTDActivity.this);
+						SmsData om = new SmsData();
+						om.setContent(sms.getSmsContent());
+						om.setWrite_time(System.currentTimeMillis());
+						es.addData(om);
+					}
+				});
+	}
+	
+	private void displayToast(String str){
+		Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+	}
+ 
+
+}

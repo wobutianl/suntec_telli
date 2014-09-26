@@ -1,0 +1,246 @@
+package msg.GTD;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
+
+public class GtdDB {
+	public static final String DB_DBNAME="gtd_db";  
+    
+    public static final String DB_TABLENAME="sms_content";  
+      
+    public static final int VERSION = 1;  
+      
+    public static SQLiteDatabase dbInstance;   
+      
+    private DBHelper myDBHelper;  
+      
+    private StringBuffer tableCreate;  
+      
+    private Context context;  
+      
+    public GtdDB(Context context) {  
+        this.context = context;  
+    }  
+      
+    public void openDatabase() {  
+        if(dbInstance == null) {  
+            myDBHelper = new DBHelper(context,DB_DBNAME,VERSION);  
+            dbInstance = myDBHelper.getWritableDatabase();  
+        }  
+    }  
+    /** 
+     *  
+     * @param user 
+     * @return 
+     */  
+    public long insert(SmSEntity smsEntity)  
+    {  
+        ContentValues values = new ContentValues();  
+       // values.put("id", smsEntity.getId());  
+        values.put("content",  smsEntity.getContent());  
+        values.put("chatTime", smsEntity.getChatTime());  
+        values.put("isComeMsg",smsEntity.getTrueOrfalse());  
+        values.put("type", smsEntity.getType());  
+        return dbInstance.insert(DB_TABLENAME, null, values);  
+    }  
+      
+    /** 
+     *  
+     * @param privacy  
+     * @return list 
+     */  
+      
+    public ArrayList getAllUser(boolean privacy) {  
+        ArrayList list = new ArrayList();  
+        Cursor cursor = null;  
+        if(privacy) {  
+            cursor = dbInstance.query(DB_TABLENAME,   
+                    new String[]{"_id","name","mobilephone","officephone","familyphone","address","othercontact","email","position","company","zipcode","remark","imageid"},   
+                    "privacy=1",   
+                    null,   
+                    null,   
+                    null,   
+                    null);  
+        } else {  
+            cursor = dbInstance.query(DB_TABLENAME,   
+                    new String[]{"_id","name","mobilephone","officephone","familyphone","address","othercontact","email","position","company","zipcode","remark","imageid"},   
+                    "privacy=0",  
+                    null,   
+                    null,   
+                    null,   
+                    null);  
+        }  
+           
+          
+        while(cursor.moveToNext()) {  
+            HashMap item = new HashMap();  
+            item.put("_id", cursor.getInt(cursor.getColumnIndex("_id")));  
+            item.put("name", cursor.getString(cursor.getColumnIndex("name")));  
+            item.put("mobilephone", cursor.getString(cursor.getColumnIndex("mobilephone")));  
+            item.put("officephone", cursor.getString(cursor.getColumnIndex("officephone")));  
+            item.put("familyphone", cursor.getString(cursor.getColumnIndex("familyphone")));  
+            item.put("address", cursor.getString(cursor.getColumnIndex("address")));  
+            item.put("othercontact", cursor.getString(cursor.getColumnIndex("othercontact")));  
+            item.put("email", cursor.getString(cursor.getColumnIndex("email")));  
+            item.put("position", cursor.getString(cursor.getColumnIndex("position")));  
+            item.put("company", cursor.getString(cursor.getColumnIndex("company")));  
+            item.put("zipcode", cursor.getString(cursor.getColumnIndex("zipcode")));  
+            item.put("remark", cursor.getString(cursor.getColumnIndex("remark")));  
+            item.put("imageid", cursor.getInt(cursor.getColumnIndex("imageid")));  
+            list.add(item);  
+        }  
+          
+        return list;  
+    }  
+      
+    public void delete(int _id) {  
+        dbInstance.delete(DB_TABLENAME, "id=?", new String[]{String.valueOf(_id)});  
+    }  
+    public void deleteAll(int privacy) {  
+        dbInstance.delete(DB_TABLENAME, "privacy=?", new String[]{String.valueOf(privacy)});  
+    }  
+      
+    public int getTotalCount() {  
+        Cursor cursor = dbInstance.query(DB_TABLENAME, new String[]{"count(*)"}, null, null, null, null, null);  
+        cursor.moveToNext();  
+        return cursor.getInt(0);  
+    }  
+      
+    public ArrayList<SmSEntity> getAll()  
+    {  
+        ArrayList<SmSEntity> list = new ArrayList();  
+        String sql = "select * from " + DB_TABLENAME;  
+        Cursor cursor = dbInstance.rawQuery(sql, null);  
+        while (cursor.moveToNext())  
+        {  
+            //HashMap item = new HashMap();  
+            SmSEntity smSEntity = new SmSEntity();  
+            smSEntity.setId(cursor.getInt(cursor.getColumnIndex("id")));  
+            smSEntity.setContent(cursor.getString(cursor.getColumnIndex("content")));  
+            smSEntity.setChatTime(cursor.getString(cursor.getColumnIndex("chatTime")));  
+            smSEntity.setTrueOrfalse(cursor.getString(cursor.getColumnIndex("isComeMsg")));  
+            System.out.println("smSEntity.getTrueOrfalse()-->" + smSEntity.getTrueOrfalse());  
+            smSEntity.setType(cursor.getString(cursor.getColumnIndex("type")));  
+            System.out.println("smSEntity.getComeMsg()-->" + smSEntity.getComeMsg());  
+            list.add(smSEntity);  
+        }  
+        return list;  
+          
+    }  
+      
+    public void backupData(boolean privacy) {  
+        StringBuffer sqlBackup = new StringBuffer();  
+        Cursor cursor = null;  
+        if(privacy) {  
+            cursor = dbInstance.query(DB_TABLENAME,   
+                    new String[]{"_id","name","mobilephone","officephone","familyphone","address","othercontact","email","position","company","zipcode","remark","imageid,privacy"},   
+                    "privacy=1",   
+                    null,   
+                    null,   
+                    null,   
+                    null);  
+        } else {  
+            cursor = dbInstance.query(DB_TABLENAME,   
+                    new String[]{"_id","name","mobilephone","officephone","familyphone","address","othercontact","email","position","company","zipcode","remark","imageid,privacy"},   
+                    "privacy=0",  
+                    null,   
+                    null,   
+                    null,   
+                    null);  
+        }  
+           
+          
+        while(cursor.moveToNext()) {  
+            sqlBackup.append("insert into " + DB_TABLENAME + "(name,mobilephone,officephone,familyphone,address,othercontact,email,position,company,zipcode,remark,imageid,privacy)")  
+            .append(" values ('")  
+            .append(cursor.getString(cursor.getColumnIndex("name"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("mobilephone"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("officephone"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("familyphone"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("address"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("othercontact"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("email"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("position"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("company"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("zipcode"))).append("','")  
+            .append(cursor.getString(cursor.getColumnIndex("remark"))).append("',")  
+            .append(cursor.getInt(cursor.getColumnIndex("imageid"))).append(",")  
+            .append(cursor.getInt(cursor.getColumnIndex("privacy")))  
+            .append(");").append("\n");  
+        }  
+        saveDataToFile(sqlBackup.toString(),privacy);  
+          
+    }  
+  
+      
+    private void saveDataToFile(String strData,boolean privacy) {  
+        String fileName = "";  
+        if(privacy) {  
+            fileName = "priv_data.bk";  
+        } else {  
+            fileName = "comm_data.bk";  
+        }  
+        try {  
+        String SDPATH = Environment.getExternalStorageDirectory() + "/";  
+        File fileParentPath = new File(SDPATH + "zpContactData/");  
+        fileParentPath.mkdirs();  
+        File file = new File(SDPATH + "zpContactData/" + fileName);  
+        System.out.println("the file previous path = " + file.getAbsolutePath());  
+          
+        file.createNewFile();  
+        System.out.println("the file next path = " + file.getAbsolutePath());  
+        FileOutputStream fos = new FileOutputStream(file);  
+          
+        fos.write(strData.getBytes());  
+        fos.flush();  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+    public void restoreData(String fileName) {  
+        try {  
+        String SDPATH = Environment.getExternalStorageDirectory() + "/";  
+        File file = null;  
+        if(fileName.endsWith(".bk")) {  
+            file = new File(SDPATH + "zpContactData/"+ fileName);  
+        } else {  
+            file = new File(SDPATH + "zpContactData/"+ fileName + ".bk");  
+        }  
+        BufferedReader br = new BufferedReader(new FileReader(file));  
+        String str = "";  
+        while((str=br.readLine())!=null) {  
+            System.out.println(str);  
+            dbInstance.execSQL(str);  
+        }  
+          
+        } catch(Exception e) {  
+            e.printStackTrace();  
+        }  
+    }  
+      
+    public boolean findFile(String fileName) {  
+        String SDPATH = Environment.getExternalStorageDirectory() + "/";  
+        File file = null;  
+        if(fileName.endsWith(".bk")) {  
+            file = new File(SDPATH + "zpContact/"+fileName);  
+        } else {  
+            file = new File(SDPATH + "zpContact/"+fileName + ".bk");  
+        }  
+          
+        if(file.exists()) {  
+            return true;  
+        } else {  
+            return false;  
+        }  
+}

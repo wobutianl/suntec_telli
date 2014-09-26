@@ -1,0 +1,10 @@
+<map id="thread.Test.ThreadTestActivity" name="thread.Test.ThreadTestActivity">
+<area shape="rect" id="node5" href="$classthread_1_1p_src_1_1_u_r_l_msg.html" title="Structure used to transport URL data. " alt="" coords="298,188,441,215"/>
+<area shape="rect" id="node8" href="$classthread_1_1p_src_1_1p__main.html" title="Interface used to send string XML to main thread, which got form server. " alt="" coords="613,157,747,184"/>
+<area shape="rect" id="node10" href="$classthread_1_1_data_1_1_data_thread.html" title="parse String data from Server " alt="" coords="601,489,759,516"/>
+<area shape="rect" id="node31" href="$classthread_1_1_v_r_1_1_p_s_e_t_telli_voice_recognitioner.html" title="Class of Voice Recognition Thread. " alt="" coords="593,423,767,465"/>
+<area shape="rect" id="node12" href="$classthread_1_1_model_1_1_l___x_m_l_msg.html" title="a message module parsed from xml " alt="" coords="287,508,452,535"/>
+<area shape="rect" id="node13" href="$classthread_1_1_test_1_1_round_progress_bar.html" title="thread.Test.RoundProgressBar" alt="" coords="580,603,780,629"/>
+<area shape="rect" id="node22" href="$classthread_1_1_test_1_1_two_adapter.html" title="thread.Test.TwoAdapter" alt="" coords="601,919,759,945"/>
+<area shape="rect" id="node32" href="$classthread_1_1_v_r_1_1_p_s_e_t_telli_voice_recognitioner_1_1_p_s_e_t_telli_voice_recog_listener.html" title="Inner class of recognition class. " alt="" coords="272,305,467,361"/>
+</map>

@@ -1,0 +1,6 @@
+
+public class GtdTest {
+	private String sms = "今天，10点到12点，淮海中路，逛街";
+	
+	
+}

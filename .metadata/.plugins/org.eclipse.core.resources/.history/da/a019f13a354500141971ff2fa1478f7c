@@ -1,0 +1,51 @@
+package msg.GTD;
+
+import java.util.List;
+
+import msg.GTD.GetSmsData.MessageListener;
+import android.app.Activity;
+import android.os.Bundle;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+ 
+/**
+ * 
+ * @version 1.00
+ * @author 
+ */
+public class MsgGTDActivity extends Activity {
+
+    private TextView mTextView;
+    private GetSmsData mSMSBroadcastReceiver;
+    private SmsContent sms = new SmsContent();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        init();
+    }
+
+	private void init() {
+		mTextView = (TextView) findViewById(R.id.textView);
+		mSMSBroadcastReceiver = new GetSmsData();
+		mSMSBroadcastReceiver.setOnReceivedMessageListener(new MessageListener() {
+					@Override
+					public void OnReceived(SmsContent sms) {
+						displayToast(sms.getSmsContent());
+						mTextView.setText(sms.getSmsContent());
+					}
+				});
+	}
+	
+	private void displayToast(String str){
+		Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+	}
+ 
+
+}
