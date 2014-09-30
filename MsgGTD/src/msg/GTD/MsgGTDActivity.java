@@ -52,6 +52,8 @@ public class MsgGTDActivity extends Activity {
 		gList.setAdapter(adapter);		
 	}
 
+    SmsParse parse = new SmsParse();
+    SmsData smsdata = new SmsData();
 	private void init() {
 		mSMSBroadcastReceiver = new GetSmsData();
 		mSMSBroadcastReceiver
@@ -60,11 +62,12 @@ public class MsgGTDActivity extends Activity {
 					public void OnReceived(SmsContent sms) {
 						displayToast(sms.getSmsContent());
 						GtdTable es = new GtdTable(MsgGTDActivity.this);
-						SmsData om = new SmsData();
-						om.setContent(sms.getSmsContent());
-						om.setWrite_time(System.currentTimeMillis());
-						es.addData(om);
-						send(sms.getSmsContent());
+						smsdata = parse.splitSms(sms.getSmsContent());
+//						SmsData om = new SmsData();
+//						om.setContent(sms.getSmsContent());
+//						om.setWrite_time(System.currentTimeMillis());
+						es.addData(smsdata);
+						sendToList(sms.getSmsContent());
 					}
 				});
 	}
@@ -73,14 +76,14 @@ public class MsgGTDActivity extends Activity {
 	 * @param str	:message
 	 * @param isComeMsg     :diacharge the message
 	 */
-	private void send(String str) { // 
-
+	private void sendToList(String str) { // 
 		LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
 		map.put("TextView_SmsBody", str);
 		mdata.add(0, map);  // insert data to front
 		adapter.notifyDataSetChanged(); // refresh data
 //		gList.setSelection(mdata.size() - 1);
 	}
+	
 	private void displayToast(String str){
 		Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
 	}

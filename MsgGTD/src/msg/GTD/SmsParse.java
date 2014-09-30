@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class SmsParse {
 	private static String sms = "今天，10点到12点，淮海中路，逛街";
-	private static String noDaysms = "10点到12点，淮海中路，逛街";
+	private static String noDaysms = "10点,12点，淮海中路，逛街";
 	
 	static String day;
 	static String start;
@@ -13,19 +13,25 @@ public class SmsParse {
 	static String place;
 	static String content;
 	
-	public static void splitSms(String str){
-		Pattern pattern = Pattern.compile("[,，到]");
+	private SmsData smsData = new SmsData();
+	
+	public SmsData splitSms(String str){
+		Pattern pattern = Pattern.compile("[,，]");
 		String[] strs = pattern.split(str);
 		for (int i = 0; i < strs.length; i++) {
-			day = strs[0];
-
-			start = strs[1];
-			end = strs[2];
-			place = strs[3];
-			content = strs[4];
+//			day = strs[0];
+//			start = strs[1];
+			smsData.setStartTime(strs[0]);
+			smsData.setEndTime(strs[1]);
+			smsData.setPlace(strs[2]);
+			smsData.setContent(strs[3]);
+			smsData.setWrite_time(System.currentTimeMillis());
+//			end = strs[2];
+//			place = strs[3];
+//			content = strs[4];
 			System.out.println(strs[i]);
-
 		}
+		return smsData;
 	}
 
 	private static int[] getDay() {
