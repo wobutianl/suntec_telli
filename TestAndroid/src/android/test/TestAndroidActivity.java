@@ -129,11 +129,11 @@ public class TestAndroidActivity extends Activity {
 			invalidateOptionsMenu();
 		}
 	}
-	// Æô¶¯³ÌÐòÊ±ºòÒª×öµÄÊÂ¡£ Æô¶¯ActionBar£¬¼¸¸öFragment,¶ÔÓ¦¼¸¸öTab¡£
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ ï¿½ï¿½ï¿½ï¿½ActionBarï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fragment,ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Tabï¿½ï¿½
 	private void initActionBar() {
 		mActionBar = getActionBar();
 		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		// È¥µôÄ¬ÈÏ±êÌâÀ¸
+		// È¥ï¿½ï¿½Ä¬ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½
 		mActionBar.setDisplayShowHomeEnabled(false);
 		mActionBar.setDisplayShowTitleEnabled(false);
 		// Set up tabs
@@ -339,7 +339,7 @@ public class TestAndroidActivity extends Activity {
 	public void setCurrentTab(TabState tab, boolean notifyListener) {
 		if (tab == null)
 			throw new NullPointerException();
-		// Êµ¼ÊÉÏ°´ÕÕContactsÖÐµÄÉè¼Æ£¬Õâ¸öÊÇÓ¦¸ÃÓÐÐ§µÄ£¬µ«ÔÚ´ËÄ£Äâ³ÌÐòÖÐ£¬Ëü»á³öÏÖÎÊÌâ£¬Òò´ËÔÝÊ±½«´Ë¶ÎÈ¥µô
+		// Êµï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½Contactsï¿½Ðµï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ð§ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ë¶ï¿½È¥ï¿½ï¿½
 		// if (tab == mCurrentTab) {
 		// return;
 		// }
@@ -399,7 +399,7 @@ public class TestAndroidActivity extends Activity {
 	}
 	
 	
-	// List fragment ½¨Á¢
+	// List fragment ï¿½ï¿½ï¿½ï¿½
 	public  static class ArraListFragment extends ListFragment {
 		
 		@Override
@@ -432,7 +432,7 @@ public class TestAndroidActivity extends Activity {
 		
         GtdTable sTable = new GtdTable(TestAndroidActivity.this);
 
-		// fragmentÆô¶¯Ê±ºòµ÷ÓÃµÄÐÅÏ¢
+		// fragmentï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ï¢
 		@Override
 		public void onActivityCreated(Bundle savedInstanceState) {
 			// TODO Auto-generated method stub
@@ -442,16 +442,16 @@ public class TestAndroidActivity extends Activity {
 			setHasOptionsMenu(true);
 			displayToast(" no sms ");
 						
-	        Cursor c = sTable.find(findSql, obj) 
-	        displayToast(" no query ");
-			mAdapter = new SimpleCursorAdapter(getActivity(),
-					android.R.layout.simple_list_item_2, c, new String[] {
-							sTable.getContent(), sTable.getType() },
-					new int[] { android.R.id.text1, android.R.id.text2 }, 0);
-			setListAdapter(mAdapter);
-			setListShown(false);
-			
-			getLoaderManager().initLoader(0, null, this);
+//	        Cursor c = sTable.find(findSql, obj)
+//	        displayToast(" no query ");
+//			mAdapter = new SimpleCursorAdapter(getActivity(),
+//					android.R.layout.simple_list_item_2, c, new String[] {
+//							sTable.getContent(), sTable.getType() },
+//					new int[] { android.R.id.text1, android.R.id.text2 }, 0);
+//			setListAdapter(mAdapter);
+//			setListShown(false);
+//
+//			getLoaderManager().initLoader(0, null, this);
 //			onCreateLoader(0, savedInstanceState);
 		}
 
@@ -467,7 +467,7 @@ public class TestAndroidActivity extends Activity {
 		// item.setActionView(sv);
 		// }
 		
-		// µ±²éÑ¯µÄÎÄ±¾±ä»¯µÄÊ±ºò
+		// ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ä»¯ï¿½ï¿½Ê±ï¿½ï¿½
 		@Override
 		public boolean onQueryTextChange(String newText) {
 			// TODO Auto-generated method stub
@@ -484,14 +484,14 @@ public class TestAndroidActivity extends Activity {
 			return true;
 		}
 
-		// ÎÄ±¾ÓÐÌá½»µÄÊ±ºò
+		// ï¿½Ä±ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½Ê±ï¿½ï¿½
 		@Override
 		public boolean onQueryTextSubmit(String query) {
 			// TODO Auto-generated method stub
 			return true;
 		}
 		
-		// µã»÷List ItemÊ±ºò
+		// ï¿½ï¿½ï¿½List ItemÊ±ï¿½ï¿½
 		@Override
 		public void onListItemClick(ListView l, View v, int position, long id) {
 			// TODO Auto-generated method stub
@@ -501,7 +501,7 @@ public class TestAndroidActivity extends Activity {
 			Toast.makeText(getActivity(), "name:" + name, Toast.LENGTH_SHORT)
 					.show();
 		}
-		// ¼ÓÔØÊý¾Ý
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		@Override
 		public Loader<Cursor> onCreateLoader(int id, Bundle args) {
 			// TODO Auto-generated method stub
@@ -520,7 +520,7 @@ public class TestAndroidActivity extends Activity {
 					Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
 		}
 
-		// ½áÊø¼ÓÔØ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		@Override
 		public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
 			// TODO Auto-generated method stub

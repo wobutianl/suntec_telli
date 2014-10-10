@@ -1,4 +1,5 @@
-ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc
-ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jface.textfont
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.jdt.ui.presentation
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jdt.ui.editors.textfont
+RUN_IN_BACKGROUND=true
 eclipse.preferences.version=1
-org.eclipse.jface.textfont=1|Consolas|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+org.eclipse.jdt.ui.editors.textfont=1|Consolas|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;

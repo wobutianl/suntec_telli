@@ -58,7 +58,6 @@ public class MsgGTDActivity extends Activity {
 		mSMSBroadcastReceiver = new GetSmsData();
 		mSMSBroadcastReceiver
 				.setOnReceivedMessageListener(new MessageListener() {
-					@Override
 					public void OnReceived(SmsContent sms) {
 						displayToast(sms.getSmsContent());
 						GtdTable es = new GtdTable(MsgGTDActivity.this);

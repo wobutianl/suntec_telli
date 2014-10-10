@@ -1,0 +1,48 @@
+package thread.Test;
+
+/**
+ * @brief an chat Class for chat list View 
+ * 
+ * @author zhuxiaolin
+ *
+ */
+public class ChatEntity {
+
+	private int userImage; ///< image for ListView
+	private String content;///<  chat content
+	private String chatTime;///<  the chat time
+	private boolean isComeMsg;///<  is come msg or receive message
+
+	public int getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(int userImage) {
+		this.userImage = userImage;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getChatTime() {
+		return chatTime;
+	}
+
+	public void setChatTime(String chatTime) {
+		this.chatTime = chatTime;
+	}
+
+	public boolean isComeMsg() {
+		return isComeMsg;
+	}
+
+	public void setComeMsg(boolean isComeMsg) {
+		this.isComeMsg = isComeMsg;
+	}
+
+}

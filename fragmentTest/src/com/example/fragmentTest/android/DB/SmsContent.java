@@ -1,0 +1,21 @@
+package com.example.fragmentTest.android.DB;
+
+public class SmsContent {
+	
+	private String smsAddress;
+	private String smsContent;
+	
+	public String getSmsAddress() {
+		return smsAddress;
+	}
+	public void setSmsAddress(String smsAddress) {
+		this.smsAddress = smsAddress;
+	}
+	public String getSmsContent() {
+		return smsContent;
+	}
+	public void setSmsContent(String smsContent) {
+		this.smsContent = smsContent;
+	}
+	
+}

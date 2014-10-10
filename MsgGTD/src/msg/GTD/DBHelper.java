@@ -190,15 +190,25 @@ public class DBHelper extends SQLiteOpenHelper {
 		return true;
 	}
 
-	// -------Override-------
-	@Override
-	public void onCreate(SQLiteDatabase db) {
+	public void onCreate(SQLiteDatabase arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	public void onUpgrade(SQLiteDatabase arg0, int arg1, int arg2) {
 		// TODO Auto-generated method stub
+		
 	}
+
+	// -------Override-------
+//	@Override
+//	public void onCreate(SQLiteDatabase db) {
+//	}
+//
+//	@Override
+//	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+//		// TODO Auto-generated method stub
+//	}
 }
 //	/**
 //	 * 每一个table的内部类ExeSql都实现这个接口
